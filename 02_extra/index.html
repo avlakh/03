@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML форми</title>
+    <!--робив без семантичної логіки, а просто для практики-->
+</head>
+<body>
+    <form method="get" id="my_form" onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+        <fieldset>
+            <legend>Общие данние</legend>
+            <label for="disabled_area">Заблокированное поле</label>
+            <input type="text" name="disabled_area" id="disabled_area" placeholder="Меня нельзя менять" disabled><br>
+            <label for="some_text">Какой-то текст</label>
+            <input type="some_text" name="some_text" id="some_text" placeholder="Меня только читать"><br>
+            <label for="pet_name">Имя питомца</label>
+            <input type="text" name="pet_name" id="pet_name" placeholder="Кот Бегемот"><br>
+            <label for="email">Ваш email</label>
+            <input type="email" name="email" id="email" placeholder="ivanov@domain.com"><br>
+            <label for="password">Секретний пароль</label>
+            <input type="password" name="password" id="password"><br>
+            <label for="birthday">Дата рождения Пушкина А.С.</label>
+            <input type="date" name="date" id="date"><br>
+            <label for="age">Возраст вашего дерева возле дома</label>
+            <input type="number" name="age" id="age"><br>
+            <label for="gender">Ваш пол</label>
+            <input type="radio" name="gender" value="parket" checked>Паркет
+            <input type="radio" name="gender" value="laminat">Ламинат
+            <input type="radio" name="gender" value="kovrolin">Ковролин<br>
+            <label for="socialmedia">Социальние сети</label>
+            <input type="checkbox" name="socialmedia[]" value="Facebook">Лицокнига
+            <input type="checkbox" name="socialmedia[]" value="Twitter">Птичка
+            <input type="checkbox" name="socialmedia[]" value="Instagram">Инста
+            <input type="checkbox" name="socialmedia[]" value="Linkedin">Линкедин
+        </fieldset>
+        <fieldset>
+            <legend>Другая информация</legend>
+            <label for="ngbrcolor">Любимий цвет соседа</label>
+            <input type="color" name="ngbrcolor" id="ngbrcolor">
+            
+        </fieldset>
+    </form>
+</body>
+</html>

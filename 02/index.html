@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Семантичні елементи</title>
+</head>
+<!--Використав логіку Вікіпедії, де після заголовка і короткого опису йде навігаційне меню з посиланнами на конкретні підрозділи сторінки. Саме тому дав меню після хедера артікля, але перед секціями. З радістю вислухаю фідбек чи це правильно\неправильно, логічно\нелогічно. У статті були деякі помилки, тож я дозволив собі їх виправити -->
+<body>
+    <main>
+        <article>
+            <header>
+                <h1>HTML5 Семантичні елементи</h1>
+                <p>Семантичний елемент чітко описує його значення як для браузера, так і для розробника.</p>
+                <p>Приклади не <strong>семантичних</strong> елементів: &lt;div&gt; і &lt;span&gt; - нічого не говорить про його вміст.</p>
+                <p>Приклади <strong>семантичних</strong> елементів: &lt;form&gt;, &lt;table&gt; і &lt;article&gt; - чітко визначає його зміст.</p>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="#Pidtrymka_brauseriv">Підтримка браузерів</a></li>
+                    <li><a href="#Novi_semantychni_elementy_v_HTML5">Нові семантичні елементи в HTML5</a></li>
+                    <li><a href="#HTML5_section_element">HTML5 &lt;section&gt; елемент</a></li>
+                    <li><a href="#HTML5_article_element">HTML5 &lt;article&gt; елемент</a></li>
+                    <li><a href="#HTML5_header_element">HTML5 &lt;header&gt; елемент</a></li>
+                    <li><a href="#HTML5_footer_element">HTML5 &lt;footer&gt; елемент</a></li>
+                </ul>
+            </nav>
+            <section id="Pidtrymka_brauseriv">
+                <h2>Підтримка браузерів</h2>
+                <p>
+                    <img src="assets/icons/chrome.png" alt="Google Chrome" height="50" width="50">
+                    <img src="assets/icons/edge.png" alt="Microsoft Edge" height="50" width="50">
+                    <img src="assets/icons/ff.png" alt="Mozilla Firefox" height="50" width="50">
+                    <img src="assets/icons/safari.png" alt="Safari" height="50" width="50">
+                    <img src="assets/icons/opera.png" alt="Opera" height="50" width="50">
+                </p>
+                <p>Семантичні елементи HTML5 підтримуються у всіх сучасних браузерах.</p>
+                <p>Крім того, ви можете "навчити" старих браузерів, як обробляти "невідомі елементи".</p>
+                <p>Прочитайте про це в <a href="https://www.blogger.com/blog/page/edit/2590532390801722394/850003172824707311#">підтримці браузера HTML5.</a></p>
+            </section>
+            <section id="Novi_semantychni_elementy_v_HTML5">
+                <h2>Нові семантичні елементи в HTML5</h2>
+                <p>HTML5 пропонує нові семантичні елементи для визначення різних частин веб-сторінки:</p>
+                <ul>
+                    <li>&lt;section&gt;</li>
+                    <li>&lt;article&gt;</li>
+                    <li>&lt;header&gt;</li>
+                    <li>&lt;footer&gt;</li>
+                </ul>
+            </section>
+            <section id="HTML5_section_element">
+                <h2>HTML5 &lt;section&gt; елемент</h2>
+                <p>Елемент &lt;section&gt; визначає розділ в документі.</p>
+                <p>Згідно з документацією в3к'с HTML5: "розділ представляє собою тематичну угруповання контенту, зазвичай з заголовком".</p>
+                <p>Домашня сторінка зазвичай може бути розділена на розділи для ознайомлення, змісту і контактної інформації.</p>
+                <img src="assets/examples_screens/example_section.jpeg" alt="Приклад_section">
+            </section>
+            <section id="HTML5_article_element">
+                <h2>HTML5 &lt;article&gt; елемент</h2>
+                <p>Елемент &lt;article&gt; визначає незалежний, автономний вміст.</p> 
+                <p>Стаття повинна мати сенс самостійно, і вона повинна мати можливість читати його незалежно від іншої частини веб-сайту</p>
+                <p>Приклади того, де можна використовувати елемент &lt;article&gt;:</p>
+                <ul>
+                    <li>повідомлення на форумі</li>
+                    <li>блозі</li>
+                    <li>газетна стаття</li>
+                </ul>
+                <img src="assets/examples_screens/example_article.jpeg" alt="Приклад_article">
+            </section>
+            <section id="HTML5_header_element">
+                <h2>HTML5 &lt;header&gt; елемент</h2>
+                <p>Елемент &lt;header&gt; задає заголовок для документа або розділу.</p>
+                <p>Елемент &lt;header&gt; повинен використовуватися в якості контейнера для вступного змісту.</p>
+                <p>В одному документі може бути кілька елементів &lt;header&gt;.</p>
+                <p>У наступному прикладі визначається заголовок для статті:</p>
+                <img src="assets/examples_screens/example_header.jpeg" alt="Приклад_header">
+            </section>
+            <section id="HTML5_footer_element">
+                <h2>HTML5 &lt;footer&gt; елемент</h2>
+                <p>Елемент &lt;footer&gt; вказує нижній колонтитул для документа або розділу.</p>
+                <p>Нижній колонтитул зазвичай містить автора документа, інформацію про авторське право, посилання на умови використання, контактні дані і т.д.</p>
+                <p>В одному документі може бути кілька елементів &lt;footer&gt;</p>
+                <img src="assets/examples_screens/example_footer.jpeg" alt="Приклад_footer">
+            </section>
+            <!--Сіві не підв'язані в нав меню, бо трактую це не як частину статті, а як просто додаткове завдання на практику, бо логічно після кожної статті не йтиме такий контент. Якби було щось типу контакту, додав би футер, але до цього контенту він мені не дуже пасує. Ще один момент - в валідаторі писало, що елемент frameborder для iframe устарів, я його звідси видалив і більше не показує цю помилку, тобто розумію, що код валідний, але він обходиться якось за допомогою CSS -->
+            <section>
+                <h3>CV in English</h3>
+                <iframe src="01/CV-eng/index.html" height="400" width="800"></iframe>
+            </section>
+            <section>
+                <h3>CV in Ukrainian</h3>
+                <iframe src="01/CV-ukr/index.html" height="400" width="800"></iframe>
+            </section>
+            <br>
+            <section>
+                <h3>Дивіться наше відео "День відкритих дверей в Beetroot Academy":</h3>
+                <iframe width="956" height="538" src="https://www.youtube.com/embed/FII4DRuiLLI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+        </article>    
+    </main>
+</body>
+</html>
