@@ -1,1 +1,1 @@
-[my git](https://avlakh.github.io/03/)
+[Check out my Git!](https://avlakh.github.io/03/)
