@@ -5,42 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML форми</title>
-    <!--робив без семантичної логіки, а просто для практики-->
+    <style>
+        label {display: inline-block; width: 300px; text-align: left; margin: 5px;}
+        body {font-family: Arial, Helvetica, sans-serif; background-color: #FFFFCC;}
+        fieldset {margin-bottom: 25px;}
+        h1 {margin: 20px;}
+        #socialmedia { margin: auto; display: inline-block;}
+    </style>
 </head>
 <body>
+    <h1>HTML Forms exercise</h1>
     <form method="get" id="my_form" onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
         <fieldset>
             <legend>Общие данние</legend>
             <label for="disabled_area">Заблокированное поле</label>
             <input type="text" name="disabled_area" id="disabled_area" placeholder="Меня нельзя менять" disabled><br>
             <label for="some_text">Какой-то текст</label>
-            <input type="some_text" name="some_text" id="some_text" placeholder="Меня только читать"><br>
+            <input type="text" name="some_text" id="some_text" placeholder="Меня только читать"><br>
             <label for="pet_name">Имя питомца</label>
-            <input type="text" name="pet_name" id="pet_name" placeholder="Кот Бегемот"><br>
+            <input type="text" name="pet_name" id="pet_name" placeholder="Кот Бегемот" required><br>
             <label for="email">Ваш email</label>
-            <input type="email" name="email" id="email" placeholder="ivanov@domain.com"><br>
+            <input type="email" name="email" id="email" placeholder="ivanov@domain.com" required><br>
             <label for="password">Секретний пароль</label>
             <input type="password" name="password" id="password"><br>
-            <label for="birthday">Дата рождения Пушкина А.С.</label>
+            <label for="date">Дата рождения Пушкина А.С.</label>
             <input type="date" name="date" id="date"><br>
             <label for="age">Возраст вашего дерева возле дома</label>
             <input type="number" name="age" id="age"><br>
-            <label for="gender">Ваш пол</label>
-            <input type="radio" name="gender" value="parket" checked>Паркет
-            <input type="radio" name="gender" value="laminat">Ламинат
-            <input type="radio" name="gender" value="kovrolin">Ковролин<br>
-            <label for="socialmedia">Социальние сети</label>
-            <input type="checkbox" name="socialmedia[]" value="Facebook">Лицокнига
-            <input type="checkbox" name="socialmedia[]" value="Twitter">Птичка
-            <input type="checkbox" name="socialmedia[]" value="Instagram">Инста
-            <input type="checkbox" name="socialmedia[]" value="Linkedin">Линкедин
+            <label>Ваш пол</label>
+            <input type="radio" name="gender" id="gender_1" value="parket" checked>Паркет
+            <input type="radio" name="gender" id="gender_2" value="laminat">Ламинат
+            <input type="radio" name="gender" id="gender_3" value="kovrolin">Ковролин<br>
+            <label>Социальние сети</label>
+            <input type="checkbox" name="socialmedia_1" value="Facebook">Лицокнига
+            <input type="checkbox" name="socialmedia_2" value="Twitter">Птичка
+            <input type="checkbox" name="socialmedia_3" value="Instagram">Инста
+            <input type="checkbox" name="socialmedia_4" value="Linkedin">Линкедин
         </fieldset>
         <fieldset>
             <legend>Другая информация</legend>
             <label for="ngbrcolor">Любимий цвет соседа</label>
-            <input type="color" name="ngbrcolor" id="ngbrcolor">
-            
+            <input type="color" name="ngbrcolor" id="ngbrcolor"><br>
+            <label for="telephone">Телефон поддержки</label>
+            <input type="tel" name="number" id="telephone"><br>
+            <label for="time">Время следующего занятия</label>
+            <input type="time" name="lesson-time" id="time"><br>
+            <label for="favorite-site">Ссилка на любимий сайт</label>
+            <input type="url" name="site" id="favorite-site" placeholder="https://google.com" required><br>
+            <label for="number_10">Число от 1 до 10</label>
+            <input type="range" name="number_10" id="number_10"><br>
+            <label for="image_share">Поделись картинкой</label>
+            <input type="file" name="share" id="image_share">
+        </fieldset>
+        <fieldset>
+            <legend>Не инпути</legend>
+            <label for="dropdown">Любимий напиток</label>
+            <select name="dropdown" id="dropdown">
+                <option disabled selected>-=Виберите напиток=-</option>
+                <optgroup label="Безалкогольние">
+                    <option value="tea">Чай</option>
+                    <option value="coffee">Кофе</option>
+                    <option value="kompot">Компот</option>
+                    <option value="juice">Сок</option>
+                </optgroup>
+                <optgroup label="Бухлишко">
+                    <option value="beer">Пиво</option>
+                    <option value="wine">Вино</option>
+                    <option value="rome">Ром</option>
+                    <option value="cognac">Коньяк</option>
+                    <option value="tequila">Текила</option>
+                </optgroup>
+            </select>
+            <br>
+            <label for="multiple_choice">Любимие напитки</label>
+            <select name="multiple_choice" id="multiple_choice" multiple size="11" required>
+                <optgroup label="Безалкогольние">
+                    <option value="tea">Чай</option>
+                    <option value="coffee">Кофе</option>
+                    <option value="kompot">Компот</option>
+                    <option value="juice">Сок</option>
+                </optgroup>
+                <optgroup label="Бухлишко">
+                    <option value="beer">Пиво</option>
+                    <option value="wine">Вино</option>
+                    <option value="rome">Ром</option>
+                    <option value="cognac">Коньяк</option>
+                    <option value="tequila">Текила</option>
+            </optgroup>
+            </select>
+            <br>
+            <label for="comment">Комментарий на свободную тему</label>
+            <textarea name="comment" id="comment" cols="40" rows="6" maxlength="200" ></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Кнопочки</legend>
+            <button type="submit">Отправить</button>
+            <button type="reset">Сбросить</button>
+            <button type="button">Просто кнопка</button>
+            <button disabled>Йа заблокирована :(</button>
         </fieldset>
     </form>
+    <h2><a href="../index.html">Go back to "My homework"</a></h2>
 </body>
 </html>
