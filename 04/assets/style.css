@@ -12,7 +12,7 @@ html, body {
 body {
     background-color: #fff;
     font-family: 'Open Sans', sans-serif;
-    color: #232323;
+    color: #070707;
     font-size: 16px;
 }
 
@@ -28,7 +28,8 @@ body {
 
 #header .container {
     border-bottom: 1px solid #828282;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
 }
 
 #main_menu ul {
@@ -51,4 +52,97 @@ body {
 #main_menu ul li a.active, 
 #main_menu ul li a:hover {
     color: #070707;
+}
+
+.white {
+    background-color: #fff;
+}
+
+.gray {
+    background-color: #f6f6f6;
+}
+
+.first_screen {
+    padding: 33px 0 100px;
+}
+
+#profile_photo {
+    width: 100%;
+    vertical-align: top;
+}
+
+section {
+    padding: 100px 0;
+}
+
+h1 {
+    font-size: 47.3392px;
+    line-height: 64px;
+    margin-bottom: 38px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 34px;
+    line-height: 46px;
+    margin-bottom: 28px;
+}
+
+.content {
+    text-align: center;
+    width: 480px;
+    margin: 0 auto;
+}
+
+.content p {
+    margin-bottom: 60px;
+}
+
+.skills {
+    text-align: center;
+}
+
+.container .skills img {
+    margin: 0 32px;
+}
+
+.portfolio_pages {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.portfolio_pages a, 
+.portfolio_pages a:visited {
+    color: #070707;
+}
+
+#portfolio_pages_fashion {
+    margin-top: 15px;
+}
+
+#fashion_portfolio {
+    margin-top: 67px;
+}
+
+#reebook_portfolio {
+    margin-top: 128px;
+}
+
+#portfolio_pages_reebok {
+    margin-top: 8px;
+}
+
+#braun_portfolio {
+    margin-top: 136px;
+}
+
+#portfolio_pages_braun {
+    margin-top: 1px;
+}
+
+button {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
 }
