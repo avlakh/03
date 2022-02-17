@@ -142,6 +142,10 @@ h2 {
     text-align: center;
 }
 
+#container_portfolio {
+    padding-bottom: 138px;
+}
+
 #gray_container_portfolio_h2 {
     padding: 81px 0 0 0;
 }
@@ -180,7 +184,7 @@ h2 {
 }
 
 #white_container_contacts_h2 {
-    padding-top: 194px;
+    padding-top: 55px;
 }
 
 #my_only_button {
