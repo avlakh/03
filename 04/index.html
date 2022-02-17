@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Denis Novik</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -16,77 +16,90 @@
             <nav id="main_menu">
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#about_me_anchor">About Me</a></li>
+                    <li><a href="#skills_anchor">Skills</a></li>
+                    <li><a href="#portfolio_anchor">Portfolio</a></li>
+                    <li><a href="#contacts_anchor">Contacts</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <article>
-            <section class="first_screen white">
-                <div class="container">
-                    <h1>Denis Novik</h1>
-                    <img src="assets/images/denis-profile-photo.jpg" alt="Denis Novik" id="profile_photo">
+        <section class="first_screen white">
+            <div class="container">
+                <h1>Denis Novik</h1>
+                <img src="assets/images/denis-profile-photo.jpg" alt="Denis Novik" id="profile_photo">
+            </div>
+        </section>
+        <section class="gray"  id="about_me_anchor">
+            <div class="container">
+                <h2>About me</h2>
+                <div class="content">
+                    <p>Hi, I'm Denis – UX/UI designer from Minsk.<br> I'm interested in design and everything connected with it.</p>
+                    <p>I'm studying at courses "Web and mobile design<br> interfaces" in IT-Academy.</p>
+                    <p>Ready to implement excellent projects<br> with wonderful people.</p>
                 </div>
-            </section>
-            <section class="gray">
-                <div class="container">
-                    <h2>About Me</h2>
-                    <div class="content">
-                        <p>Hi, I'm Denis – UX/UI designer from Minsk.<br> I'm interested in design and everything connected with it.</p>
-                        <p>I'm studying at courses "Web and mobile design<br> interfaces" in IT-Academy.</p>
-                        <p>Ready to implement excellent projects<br> with wonderful people.</p>
-                    </div>
+            </div>
+        </section>
+        <section class="white" id="skills_anchor">
+            <div class="container">
+                <div class="content">
+                    <h2>Skills</h2>
+                    <p>I work in such programs as</p>
                 </div>
-            </section>
-            <section class="white">
-                <div class="container">
-                    <div class="content">
-                        <h2>Skills</h2>
-                        <p>I work in such programs as</p>
-                    </div>
-                    <div class="skills">
-                        <img src="assets/images/photoshop.jpg" alt="Adobe Photoshop">
-                        <img src="assets/images/illustrator.jpg" alt="Adobe illustrator">
-                        <img src="assets/images/after-effects.jpg" alt="Adobe After Effects">
-                        <img src="assets/images/figma.jpg" alt="Figma">
-                    </div>
+                <div class="skills">
+                    <ul>
+                        <li><img src="assets/images/photoshop.jpg" alt="Adobe Photoshop"></li>
+                        <li><img src="assets/images/illustrator.jpg" alt="Adobe illustrator"></li>
+                        <li></i><img src="assets/images/after-effects.jpg" alt="Adobe After Effects"></li>
+                        <li><img src="assets/images/figma.jpg" alt="Figma"></li>
+                    </ul>
                 </div>
-            </section>
-            <section class="gray">
-                <div class="container">
-                    <h2>Portfolio</h2>
-                    <a href="#"><img src="assets/images/portfolio-fashion-store.jpg" alt="Fashion Store Portfolio" id="fashion_portfolio"></a>
-                    <p class="portfolio_pages" id="portfolio_pages_fashion"><a href="#">Online fashion store -<br>Homepage</a></p>
-                    <a href="#" id="reebok_portfolio"><img src="assets/images/portfolio_reebok.jpg" alt="Reebok Portfolio" id="reebook_portfolio"></a>
-                    <p class="portfolio_pages" id="portfolio_pages_reebook"><a href="#">Reebok Store - Concept</a></p>
-                    <a href="#"><img src="assets/images/portfolio-braun.jpg" alt="Braun Portfolio" id="braun_portfolio"></a>
-                    <p class="portfolio_pages" id="portfolio_pages_braun"><a href="#">Braun Landing Page - Concept</a></p>
-                </div>
-            </section>
-            <section class="white">
-                <div class="container">
-                    <h2>Contacts</h2>
-                    <p class="content">Want to know more or just chat?<br> You are welcome!</p>
-                    <div class="button">
-                        <button>
-                            <a href="#">Send message</a>
-                        </button>
-                    </div>
-                    <div class="container icons">
-                        <a href="#"><img src="assets/images/icons/linked_in.svg" alt="LinkedIn"></a>
-                        <a href="#"><img src="assets/images/icons/insta.svg" alt="Instagram"></a>
-                        <a href="#"><img src="assets/images/icons/behance.svg" alt="Behance"></a>
-                        <a href="#"><img src="assets/images/icons/basketball.svg" alt="Basketball"></a>
-                    </div>
-                    <!-- Саш, я шось намудрив з цими іконками - я вже і так пробував, і сяк, в мене вони трохи криві :( -->
-                    <p id="bottom_text"><a href="#" id="bottom_text">Like me on<br> LinkedIn, Instagram, Behance,<br> Dribble</a></p>
-                </div>
-            </section>
-        </article>
+            </div>
+        </section>
+        <section class="gray" id="portfolio_anchor">
+            <div class="container">
+                <h2 id="gray_container_portfolio_h2">Portfolio</h2>
+                <a href="#"><img src="assets/images/portfolio-fashion-store.jpg" alt="Fashion Store Portfolio" id="fashion_portfolio"></a>
+                <p class="portfolio_pages" id="portfolio_pages_fashion"><a href="#">Online fashion store -<br>Homepage</a></p>
+                <a href="#" id="reebok_portfolio"><img src="assets/images/portfolio_reebok.jpg" alt="Reebok Portfolio" id="reebook_portfolio"></a>
+                <p class="portfolio_pages" id="portfolio_pages_reebook"><a href="#">Reebok Store - Concept</a></p>
+                <a href="#"><img src="assets/images/portfolio-braun.jpg" alt="Braun Portfolio" id="braun_portfolio"></a>
+                <p class="portfolio_pages" id="portfolio_pages_braun"><a href="#">Braun Landing Page - Concept</a></p>
+            </div>
+        </section>
     </main>
+    <footer>
+        <section class="white"  id="contacts_anchor">
+            <div class="container">
+                <h2 id="white_container_contacts_h2">Contacts</h2>
+                <div class="content">
+                    <p id="p_under_content">Want to know more or just chat?<br> You are welcome!</p>
+                </div>
+                <div id="my_only_button">
+                    <button type="button">Send message</button>
+                </div>
+                <div class="container_icons">
+                    <ul>
+                        <li><a href="#"><img src="assets/images/icons/linked_in.svg" alt="LinkedIn" target="_blank" noopener noreffer></a></li>
+                        <li><a href="#"><img src="assets/images/icons/insta.svg" alt="Instagram" target="_blank" noopener noreffer></a></li>
+                        <li><a href="#"><img src="assets/images/icons/behance.svg" alt="Behance" target="_blank" noopener noreffer></a></li>
+                        <li><a href="#"><img src="assets/images/icons/basketball.svg" alt="Basketball" target="_blank" noopener noreffer></a></li>
+                    </ul>
+                </div>
+                <p id="bottom_text">Like me on<br> LinkedIn, Instagram, Behance,<br> Dribble</p>
+            </div>
+        </section>
+    </footer>
 </body>
 </html>
+
+    
+<!-- 
+- в цьому макеті тег <article> зовсім зайвий, його можна прибрати - DONE
+- останню секцію треба витягнути із <main> та замінити її на <footer> - DONE
+- з іконками соц. мереж треба було зробити так само як і з головним меню - ul>li тоді вони стануть по середені - DONE
+- не треба в конопку вставляти посилання, це дуже схожі за дією елементи, пам'ятаєшь у Тетяни була така ж сама помилка, я тоді пояснював - DONE
+- текст у самому низу не треба робити посиланням, там перераховуються декілька соц. мереж, а посилання тільки одне - не логічно - DONE
+- з <div class="content"> все вірно, а в останній секції чомусь його немає, замість нього клас встановлено на <p> - DONE 
+    -->

@@ -34,12 +34,12 @@ body {
 
 #main_menu ul {
     text-align: center;
-    padding: 30px 0;
+    padding: 17px 0 29px 0px;
 }
 
 #main_menu ul li {
     display: inline-block;
-    margin: 0 35px;
+    margin: 0 18px;
 }
 
 #main_menu ul li a {
@@ -63,22 +63,25 @@ body {
 }
 
 .first_screen {
-    padding: 33px 0 100px;
+    padding: 27px 0;
+    height: 617px;
 }
 
 #profile_photo {
     width: 100%;
     vertical-align: top;
-}
-
-section {
-    padding: 100px 0;
+    margin-left: 5px;
+    margin-top: -1px;
 }
 
 h1 {
-    font-size: 47.3392px;
+    font-size: 47px;
     line-height: 64px;
     margin-bottom: 38px;
+}
+
+.gray#about_me_anchor {
+    padding-bottom: 18px;
 }
 
 h2 {
@@ -86,24 +89,51 @@ h2 {
     font-size: 34px;
     line-height: 46px;
     margin-bottom: 28px;
+    margin-top: -4px;
+    padding-top: 100px;
 }
 
 .content {
     text-align: center;
     width: 480px;
-    margin: 0 auto;
+    margin: 0 auto 78px;
 }
 
 .content p {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 25px;
 }
 
-.skills {
+.content p:last-child {
+    margin-bottom: 0px;
+}
+
+.white#skills_anchor {
+    height: 623px;
+    padding-top: 1px;
+}
+
+
+.skills ul {
     text-align: center;
+}
+
+.skills ul li {
+    display: inline-block;
+    margin: -2px 86px 0px 0px; 
+}
+
+.skills ul li:last-child {
+    margin-right: 0px;
 }
 
 .container .skills img {
     margin: 0 32px;
+}
+
+.container .skills img:last-child {
+    margin: 0px;
 }
 
 .portfolio_pages {
@@ -112,21 +142,25 @@ h2 {
     text-align: center;
 }
 
+#gray_container_portfolio_h2 {
+    padding: 81px 0 0 0;
+}
+
 .portfolio_pages a, 
 .portfolio_pages a:visited {
     color: #070707;
 }
 
 #portfolio_pages_fashion {
-    margin-top: 15px;
+    margin-top: 9px;
 }
 
 #fashion_portfolio {
-    margin-top: 67px;
+    margin-top: 43px;
 }
 
 #reebook_portfolio {
-    margin-top: 128px;
+    margin-top: 101px;
 }
 
 #portfolio_pages_reebok {
@@ -141,45 +175,60 @@ h2 {
     margin-top: 1px;
 }
 
-.button {
+#p_under_content {
+    margin: -8px 0 0 0;
+}
+
+#white_container_contacts_h2 {
+    padding-top: 194px;
+}
+
+#my_only_button {
     text-align: center;
 }
 
-button {
+.white .container button {
+    text-align: center;
     background-color: #000;
     width: 180.5px;
     height: 42px;
     text-decoration: none;
     border-radius: 20px;
-    margin-top: 78px;
-}
-
-.white .container .button a,
-.white .container .button a a:hover,
-.white .container .button a a:visited,
-.white .container .button a a:link,
-.white .container .button a a:active
-{
-    text-decoration: none;
-    color: #fff;
+    margin-top: -6px;
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
     line-height: 25px;
     letter-spacing: 0.1em;
+    color: #fff;
+    cursor: pointer;
+    transition: all .2s ease;
 }
 
-.container .icons {
+.white .container button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.container .container_icons ul li {
     display: inline-block;
     text-align: center;
     margin-top: 37px;
+    margin: 37px 60px 0 0;
 }
 
-.icons img {
+.container .container_icons ul li:last-child{
+    margin-right: 0px;
+}
+
+.container .container_icons ul {
+    text-align: center;
+}
+
+.container_icons img {
     height: 40px;
     width: 40px;
-    margin: 0 60px 0 0;
 }
 
 #bottom_text {
@@ -187,5 +236,5 @@ button {
     line-height: 19px;
     text-align: center;
     color: #828282;
-    margin-top: 44px;
+    margin-top: 40px;
 }
