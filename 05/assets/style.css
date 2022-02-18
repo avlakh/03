@@ -109,6 +109,10 @@ body {
     margin-bottom: 14px;
 }
 
+[type=checkbox]:checked {
+    color: #000;
+}
+
 .footer_text {
     width: 534px;
     height: 45px;
