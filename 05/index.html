@@ -11,26 +11,52 @@
     <title>Dinner shopping list</title>
 </head>
 <body>
-    <div class="wrap">
     <header>
         <div class="container header">
             <h1 id="h1_styling">CSS Dinner Shopping List</h1>
             <p id="h1_p">Let’s go to the mall!</p>
         </div>
     </header>
-    </div>
     <main>
         <div class="container main">
-            <div class="purple_list">
-                <div class="checkboxes">
-                    <label class="label_lighter"><input type="checkbox" name="checkbox"><span class="first_span">A lot of pickles</span><span>(for the next lessons about CSS)</span></label>
-                    <label class="label_darker"><input type="checkbox" name="checkbox"><span class="first_span">10 apples</span><span> (for more CSS manipulations)</span></label>
-                    <label class="label_lighter"><input type="checkbox" name="checkbox"><span class="first_span">20 oranges</span><span> (because they are awesome)</span></label>
-                    <label class="label_darker"><input type="checkbox" name="checkbox"><span class="first_span">13 plates</span><span> (hm... they always dissapear)</span></label>
-                    <label class="label_lighter"><input type="checkbox" name="checkbox"><span class="first_span">15 bentos</span></label>
-                    <label class="label_darker"><input type="checkbox" name="checkbox"><span class="first_span">1 bottle of Sake</span><span> (for my friends)</span></label>
-                </div>
-            </div>
+            <ul class="list">
+                <li>
+                    <input type="checkbox" name="goods[]" value="1" id="goods_1">
+                    <label for="goods_1">
+                        <span>A lot of pickles<small>(for the next lessons about CSS)</small></span>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" name="goods[]" value="1" id="goods_2">
+                    <label for="goods_2">
+                        <span>10 apples<small> (for more CSS manipulations)</small></span>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" name="goods[]" value="1" id="goods_3">
+                    <label for="goods_3">
+                        <span>20 oranges<small> (because they are awesome)</small></span>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" name="goods[]" value="1" id="goods_4">
+                    <label for="goods_4">
+                        <span>13 plates<small> (hm... they always dissapear)</small></span>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" name="goods[]" value="1" id="goods_5">
+                    <label for="goods_5">
+                        <span>15 bentos</span>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" name="goods[]" value="1" id="goods_6">
+                    <label for="goods_6">
+                        <span>1 bottle of Sake <small> (for my friends)</small></span>
+                    </label>
+                </li>
+            </ul>
             <div class="footer_text">
                 <p>Bon appetit :)</p>
             </div>
