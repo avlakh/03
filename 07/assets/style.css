@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #2B81AC;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    background-color: #3399CC;
+    margin-top: 100px;
+    padding: 94px 130px 95px;
+}
+
+.cities {
+    list-style: none;
+    text-align: center;
+    font-size: 0;
+}
+
+.cities:hover > .cities_list {
+    opacity: .7;
+    transition: all .2s ease;
+}
+
+.cities:hover > .cities_list:hover {
+    opacity: 1.0;
+}
+
+.cities li {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 19px;
+    width: 25%;
+    font-weight: 700;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.degrees {
+    font-weight: 400;
+    padding-top: 4px;
+    text-align: center;
+}
+
+.wi {
+    padding-left: 4px;
+}
+
+
+.cities li:first-child {
+    width: 50%;
+    border-width: 3px 1.5px 1.5px 3px; 
+    padding: 16px 98px;
+}
+
+.cities li:nth-child(2) {
+    background-color: #33CCCC;
+    border-width: 3px 1.5px 1.5px 1.5px; 
+    padding: 16px 32px;
+}
+
+.cities li:nth-child(3) {
+    background-color: #996699;
+    border-width: 3px 3px 1.5px 1.5px; 
+    padding: 16px 32px;
+}
+
+.cities li:nth-child(4) {
+    background-color: #C24747;
+    border-width: 1.5px 1.5px 1.5px 3px; 
+    padding: 16px 32px;
+}
+
+.cities li:nth-child(5) {
+    background-color: #E2674A;
+    border-width: 1.5px; 
+    padding: 16px 32px;
+}
+
+.cities li:nth-child(6) {
+    background-color: #FFCC66;
+    border-width: 1.5px; 
+    padding: 16px 32px;
+}
+
+.cities li:nth-child(7) {
+    background-color: #99CC99;
+    border-width: 1.5px 3px 1.5px 1.5px; 
+    padding: 16px 32px;
+}
+
+.cities li:nth-child(8) {
+    background-color: #669999;
+    border-width: 1.5px 1.5px 1.5px 3px; 
+    padding: 16px 32px;
+}
+
+.cities li:nth-child(9) {
+    background-color: #CC6699;
+    border-width: 1.5px; 
+    width: 50%;
+    padding: 16px 98px;
+    white-space: nowrap;
+}
+
+.cities li:nth-child(10) {
+    background-color: #339966;
+    border-width: 1.5px 3px 1.5px 1.5px; 
+    padding: 16px 32px;
+}
+
+.cities li:last-child {
+    background-color: #666699;
+    border-width: 1.5px 3px 3px 3px; 
+    width: 100%;
+    padding: 16px 227px;
+    white-space: nowrap;
+}
+
+.one_line {
+    text-align: center;
+}
+
