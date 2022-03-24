@@ -215,3 +215,63 @@ header .btn {
 .sign_up_button {
     text-align: center;
 }
+
+hr {
+    color: #BCD0E5;
+    height: 1px;
+    margin: 146px auto 102px;
+    width: 1109px;
+    text-align: center;
+}
+
+.flex_footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    padding-bottom: 83px;
+}
+
+#footer_logo {
+    /* випозиціонувати, коли будуть зроблені решта дві секції */
+}
+
+
+.footer_nav ul {
+    list-style: none;
+    text-align: right;
+}
+
+
+.footer_nav li a {
+    color: #544837;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    margin: 0 15px 0 15px;
+}
+
+.footer_nav li a:hover,
+.footer_nav li a.active {
+    text-decoration: underline;
+    color: var(--orange-color);
+}
+
+.about_us {
+    order: 1;
+}
+
+.footer_sign_up { 
+    display: flex;
+    flex-direction: column;
+    order: -1;
+}
+
+#sign_up_textfield {
+    margin-bottom: 21px;
+}
+
+#signupbutton {
+    width: 131px;
+    height: 39px;
+    line-height: 24px;
+}
