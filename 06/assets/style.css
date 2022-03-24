@@ -229,6 +229,9 @@ hr {
     flex-direction: row-reverse;
     justify-content: space-evenly;
     padding-bottom: 83px;
+    width: 586px;
+    height: 205px;
+    margin-left: 480px;
 }
 
 #footer_logo {
@@ -264,6 +267,7 @@ hr {
     display: flex;
     flex-direction: column;
     order: -1;
+    margin-left: 82px;
 }
 
 #sign_up_textfield {
