@@ -189,10 +189,16 @@ header .btn {
 
 .superpower_list {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     align-content: center;
-    margin-bottom: 61px;
+    margin-bottom: 35px;
+    padding-left: 14px;
+}
+
+.superpower {
+    width: calc(25% - 24px);
+    padding-right: 20px;
 }
 
 .superpower > img {
@@ -216,34 +222,32 @@ header .btn {
     text-align: center;
 }
 
-hr {
-    color: #BCD0E5;
-    height: 1px;
-    margin: 146px auto 102px;
-    width: 1109px;
-    text-align: center;
+#signupnow {
+    width: 177px;
+    padding: 0px;
+    margin-bottom: 146px;
 }
 
-.flex_footer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-    padding-bottom: 83px;
-    width: 586px;
-    height: 205px;
-    margin-left: 480px;
+.main_footer {
+    border-top: 1px solid #BCD0E5;
+    padding-bottom: 82px;
 }
 
-#footer_logo {
-    /* випозиціонувати, коли будуть зроблені решта дві секції */
+#footer_inside {
+    margin-top: 102px;
 }
 
-
-.footer_nav ul {
-    list-style: none;
+.footer_nav {
     text-align: right;
 }
 
+.footer_nav > div {
+    display: inline-block;
+}
+
+.footer_nav ul {
+    list-style: none;
+}
 
 .footer_nav li a {
     color: #544837;
@@ -260,13 +264,15 @@ hr {
 }
 
 .about_us {
-    order: 1;
+    text-align: left;
 }
 
-.footer_sign_up { 
-    display: flex;
-    flex-direction: column;
-    order: -1;
+.disclaimer {
+    margin-left: 129px;
+    text-align: left;
+}
+
+.footer_sign_up {
     margin-left: 82px;
 }
 
@@ -278,4 +284,6 @@ hr {
     width: 131px;
     height: 39px;
     line-height: 24px;
+    padding: 0px;
+    display: block;
 }
