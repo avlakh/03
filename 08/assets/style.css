@@ -10,28 +10,15 @@ html, body {
 }
 
 body {
+    background-image: url('images/bgc_image.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 890px 98px;
     background-color: #fff;
     font-family: "Roboto", "PT Sans", sans-serif;
     color: #000;
     font-size: 1rem;
-}
-
-h2 {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 48px;
-    text-transform: uppercase;
-    margin-bottom: 35px;
-}
-
-p {
-    font-family: 'PT Sans';
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 48px;
-    margin-bottom: 35px;
+    position: relative;
 }
 
 .container {
@@ -54,7 +41,7 @@ p {
 
 .left_side_header > img {
     height: 43px;
-    width: 25px;
+    width: 43px;
 }
 
 .left_side_header > h4 {
@@ -64,8 +51,81 @@ p {
     margin-left: 42px;
 }
 
+header {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+aside {
+    width: 750px;
+    margin-right: 200px;
+    position: sticky;
+    top: 65px;
+}
+
+ul {
+    list-style: none;
+    margin-top: 50px;
+}
+
+li {
+    margin-bottom: 93px;
+}
+
+.aside_h2 {
+    padding-right: 22px;
+}
+
+.h2_border {
+    border-bottom: 1px solid #BFBFBF;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 48px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.flex_page_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+p {
+    font-family: 'PT Sans';
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 35px;
+}
+
 .main_text {
-    margin-top: 82px;
+    margin-top: 123px;
+    position: relative;
+}
+
+.black_border {
+    width: 80px;
+    border-top: 12px solid #000;
+    margin-bottom: 10px;
+    scroll-margin-top: 100px;
 }
 
 .h2_number {
