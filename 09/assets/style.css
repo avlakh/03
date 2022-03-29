@@ -70,7 +70,8 @@ h2 {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    border: 1px solid #BFBFBF;
+    border-top: 1px solid #BFBFBF;
+    border-bottom: 1px solid #BFBFBF;
 }
 
 .flip_card {
