@@ -1,0 +1,144 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000; 
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.main_text {
+    margin-top: 100px;
+}
+
+h2 {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.grey_dash {
+    margin: 0 auto;
+    border-top: 4px solid #DDDBDB;
+    width: 45px;
+    margin-bottom: 40px;
+}
+
+.main_text > p {
+    margin: 0 auto 60px;
+    width: 570px;
+    text-align: center;
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3C3C3C;
+}
+
+.flex_image {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+
+.flip_card {
+    background-color: transparent;
+    width: 270px;
+    height: 270px;
+    perspective: 1000px;
+}
+
+.flip_card_inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    margin-bottom: 20px;
+}
+
+.flip_card:hover .flip_card_inner {
+    transform: rotateY(180deg);
+}
+
+.flip_card_front, .flip_card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip_card_front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip_card_back {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#18B5DC;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+#first_image {
+    height: 270px;
+    width: 270px;
+}
+
+.names > h4 {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #282528;
+}
+
+.names > p {
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    color: #646464;
+}
+
+.icons_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons_square {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 42px;
+    width: 42px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+}
