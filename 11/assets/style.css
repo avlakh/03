@@ -1,0 +1,251 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #F2F2F2;
+    font-family: inter, sans-serif;
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.main_flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    background-color: #fff;
+    width: 90%;
+    max-width: 540px;
+    margin: 0 21px;
+    border-radius: 10px;
+}
+
+a {
+    transition: all .2s ease;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.main1 > h2 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.4px;
+    color: #1C1C1C;
+    padding-top: 20px;
+    margin: 0 0 20px 20px;
+}
+
+.form_wrap {
+    max-width: 500px;
+    margin: 0 20px 17px;
+}
+
+.names_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.names {
+    width: 245px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 15px;
+    line-height: 22px;
+    color: #545454;
+}
+
+input[type=text],
+input[type=email],
+select,
+input[type=telephone] {
+    width: 100%;
+    height: 38px;
+    border: 1px solid #545454;
+    border-radius: 6px;
+    padding: 6px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+select:focus,
+input[type=text]:hover,
+input[type=email]:hover,
+select:hover,
+input[type=radio]:hover,
+input[type=telephone]:hover {
+    outline: none;
+    border: 2px solid #409cff;
+}
+
+.email_wrap {
+    margin-bottom: 20px;
+}
+
+.email_wrap > input[type=email] {
+    margin-bottom: 7px;
+}
+
+p {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.1px;
+    color: #969696;
+}
+
+.radio_gender {
+    margin-bottom: 12px;
+}
+
+input[type=radio] {
+    opacity: 0;
+}
+
+input[type=radio]+label {
+    position: relative;
+    padding-left: 30px;
+    display: inline-block;
+}
+
+input[type=radio]+label::before {
+    content: '';
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid #E4E4E4;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+input[type=radio]+label::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    outline: 7px solid #007BFF;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transform: all .2s ease;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    z-index: 2;
+}
+
+input[type=radio]:checked+label::after {
+    opacity: 1;
+}
+
+.country_city {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.country > select,
+.city > input[type=text] {
+    width: 245px;
+}
+
+button {
+    height: 38px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #545454;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 22px;
+}
+
+button:hover {
+    outline: none;
+    border: 2px solid #409cff;
+}
+
+.sign_up_border {
+    margin: 0 20px 20px;
+    border-bottom: 1px solid #E4E4E4;;
+}
+
+.sign_up_border > p {
+    text-align: center;
+    margin: 0 45px 20px;
+}
+
+h4 {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #545454;
+    padding-bottom: 31px;
+}
+
+.main2 > h3 {
+    font: 600;
+    font-size: 24px;
+    line-height: 32px;  
+    letter-spacing: -0.4px;
+    color: #1C1C1C;
+    margin: 20px 0 20px 20px;
+}
+
+.profile_photo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 20px 20px;
+}
+
+.profile_photo > img {
+    margin-right: 20px;
+}
+
+input[type=file] {
+    margin-bottom: 9px;
+}
+
+.profile_button {
+    width: 150px
+}
+
+.phone_number {
+    width: 245px;
+}
