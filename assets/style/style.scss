@@ -1,0 +1,54 @@
+* {
+    padding: 10;
+    margin: 10;
+}
+
+body {
+    background-color: #D9FFF5;
+    color: #000000;
+    font-family: 'Comic Neue' sans-serif;
+    font-size: 20px;
+    background-image: url('../images/blind_coder.png');
+    background-repeat: no-repeat;
+    background-position: 1200px bottom;
+}
+
+li {
+    padding: 8px;
+    list-style: none;
+}
+
+h1,
+p {
+    margin-left: 25px;
+}
+
+h1, 
+a, 
+p {
+    font-family: 'Comic Neue';
+}
+
+a {
+    text-decoration: none;
+    color: #121311;
+    &:hover {
+        padding: 5px;
+        border: 2px solid #000;
+        border-radius: 10px;
+    }
+    &:active {
+        color: lighten($color: #000, $amount: 50);
+    }
+}
+
+.main_section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.homeworks_left,
+.homeworks_right {
+    width: 500px;
+}

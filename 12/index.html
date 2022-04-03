@@ -4,16 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Our Team</title>
+    <script src="https://kit.fontawesome.com/020b69c638.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body>
-    <nav id="main_menu">
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact Us</a></li>
-        </ul>
-    </nav>   
+     <header>
+        <div class="container header_text">
+            <h3>the geniuses behind our work</h3>
+            <h2>our team</h2>
+        </div>
+        <div class="header_bottom_container">
+            <div class="header_yellow_line"></div>
+            <img src="assets/images/bonfire_icon.svg" alt="bonfire_icon">
+            <div class="header_yellow_line"></div>
+        </div>
+     </header>
+     <main>
+         <div class="container main_flex">
+             <div class="left_image">
+                 <div class="outer_border">
+                     <!-- ага, в мене не вийшло з бордерами хех, я пробував підставити 4 контейнери і розкинути їх флексом бо боках, шоб у них було по два бордери, які б утворювали такий контур рваний, пробував лінії просто додати рандомні, нічо не вийшло, ну таке короч -->
+                     <div class="inner_border">
+                         <img src="assets/images/happy_guy.png" alt="happy_guy">
+                     </div>
+                 </div>
+             </div>
+             <div class="main_yellow_line"></div>
+             <div class="right_text">
+                <h4>Sahariar Kabir</h4>
+                <div class="right_text_yellow_line"></div>
+                <h5>Frontend Developer</h5>
+                <div class="icons">
+                    <a href="https://www.facebook.com/" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+                    <!-- боже, який я тут був радий, коли у фігмі був новий значок гугл плюс, бо я підключав їх з фонтосом, але там був тільки новий значок, ДЯКУЮ!!!!!!!!!!!!!! -->
+                    <a href="i_do_not_exist.com" rel="noopener noreferrer"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.linkedin.com" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis<br> cursus dui sit amet ligula efficitur, sit amet lacinia massa dictum.<br> Etiam accumsan felis a nunc facilisis, ut euismod lacus placerat.<br> Praesent rutrum eget massa a convallis. Nam vitae augue<br> malesuada, accumsan mauris ut, consectetur.</p>
+                <div class="three_containers">
+                    <div class="short_line"></div>
+                    <div class="long_line"></div>
+                    <div class="short_line"></div>
+                </div>
+                <div class="view_profile">
+                    <a href="#" id="profile_button">View profile</a>
+                </div>
+             </div>
+         </div>
+     </main>
 </body>
 </html>
