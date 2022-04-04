@@ -33,9 +33,7 @@ a {
     text-decoration: none;
     color: #121311;
     &:hover {
-        padding: 5px;
-        border: 2px solid #000;
-        border-radius: 10px;
+        text-decoration: underline;
     }
     &:active {
         color: lighten($color: #000, $amount: 50);

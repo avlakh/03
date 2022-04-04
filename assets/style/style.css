@@ -34,9 +34,7 @@ a {
   color: #121311;
 }
 a:hover {
-  padding: 5px;
-  border: 2px solid #000;
-  border-radius: 10px;
+  text-decoration: underline;
 }
 a:active {
   color: gray;
