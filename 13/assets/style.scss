@@ -1,0 +1,155 @@
+$text_color: #16133D;
+
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Roboto', 'Nunito Sans', sans-serif;
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1155px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: $text_color;
+    &:hover {
+        color: #3DB370;
+        text-decoration: underline;
+    }
+    &:active {
+        color: lighten($color: #3DB370, $amount: 30);
+    }
+}
+
+#logo_black {
+    margin: 38px 0 0 1px;
+    padding-bottom: 38px;
+    border-bottom: 1px solid #EFEEF3;
+}
+
+.main_content {
+    padding-top: 55px;
+    margin-bottom: 69px;
+    h3 {
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 21px;
+        color:  #7690A8;
+        margin-bottom: 17px;
+    }
+    h2 {
+        font-family: 'Nunito Sans';
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 52px;
+        letter-spacing: 0.2px;
+        color: $text_color;
+        margin-bottom: 35px;
+    }
+    .card_flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .content_card {
+            width: 360px;
+            padding: 41px 45px 40px 41px;
+            border: 1px solid #E5EAF4;
+            border-radius: 8px;
+            &:not(:first-child) {
+                margin-left: 39px;
+            }
+            &:hover,
+            &:hover .grey_border {
+                border-color: #3DB370;
+            }
+            .grey_border {
+                width: 65px;
+                height: 65px;
+                border: 1px solid rgba(21, 101, 216, 0.1);
+                border-radius: 16px;
+                margin-bottom: 28px;
+                #megaphone_icon {
+                    margin: 15px 10px 15px 16px;
+                }
+                #shop_icon {
+                    margin: 13px 13px 15px 13px;
+                }
+                #phone_icon {
+                    margin: 17px 20px 11px 20px;
+                }
+            }
+            h4 {
+                font-family: 'Roboto';
+                font-size: 24px;
+                line-height: 21px;
+                letter-spacing: 0.2px;
+                color: $text_color;
+                margin-bottom: 14px;
+            }
+            p {
+                width: 274px;
+                font-family: 'Roboto';
+                font-size: 16px;
+                line-height: 28px;
+                color: $text_color;
+                margin-bottom: 26px;
+            }
+            a {
+                font-family: 'Roboto';
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+    }
+
+}
+
+footer {
+    height: 194px;
+    background-color: #16133D;
+    #logo_white {
+        padding: 37px 0 0 3px;
+        margin-bottom: 35px;
+    }
+    .icons {
+        width: 227px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-left: 5px;
+        .icon_border {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background-color: #EFEEF3;
+            border-radius: 5px;
+            &:hover {
+                cursor: pointer;
+                text-decoration: none;
+            }
+            &:hover span {
+                color: #3DB370;
+            }
+        }
+    }
+    
+}

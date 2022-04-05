@@ -1,0 +1,149 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Roboto", "Nunito Sans", sans-serif;
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1155px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #16133D;
+}
+a:hover {
+  color: #3DB370;
+  text-decoration: underline;
+}
+a:active {
+  color: #a8e1c1;
+}
+
+#logo_black {
+  margin: 38px 0 0 1px;
+  padding-bottom: 38px;
+  border-bottom: 1px solid #EFEEF3;
+}
+
+.main_content {
+  padding-top: 55px;
+  margin-bottom: 69px;
+}
+.main_content h3 {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 21px;
+  color: #7690A8;
+  margin-bottom: 17px;
+}
+.main_content h2 {
+  font-family: "Nunito Sans";
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: 0.2px;
+  color: #16133D;
+  margin-bottom: 35px;
+}
+.main_content .card_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.main_content .card_flex .content_card {
+  width: 360px;
+  padding: 41px 45px 40px 41px;
+  border: 1px solid #E5EAF4;
+  border-radius: 8px;
+}
+.main_content .card_flex .content_card:not(:first-child) {
+  margin-left: 39px;
+}
+.main_content .card_flex .content_card:hover, .main_content .card_flex .content_card:hover .grey_border {
+  border-color: #3DB370;
+}
+.main_content .card_flex .content_card .grey_border {
+  width: 65px;
+  height: 65px;
+  border: 1px solid rgba(21, 101, 216, 0.1);
+  border-radius: 16px;
+  margin-bottom: 28px;
+}
+.main_content .card_flex .content_card .grey_border #megaphone_icon {
+  margin: 15px 10px 15px 16px;
+}
+.main_content .card_flex .content_card .grey_border #shop_icon {
+  margin: 13px 13px 15px 13px;
+}
+.main_content .card_flex .content_card .grey_border #phone_icon {
+  margin: 17px 20px 11px 20px;
+}
+.main_content .card_flex .content_card h4 {
+  font-family: "Roboto";
+  font-size: 24px;
+  line-height: 21px;
+  letter-spacing: 0.2px;
+  color: #16133D;
+  margin-bottom: 14px;
+}
+.main_content .card_flex .content_card p {
+  width: 274px;
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 28px;
+  color: #16133D;
+  margin-bottom: 26px;
+}
+.main_content .card_flex .content_card a {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 19px;
+}
+
+footer {
+  height: 194px;
+  background-color: #16133D;
+}
+footer #logo_white {
+  padding: 37px 0 0 3px;
+  margin-bottom: 35px;
+}
+footer .icons {
+  width: 227px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 5px;
+}
+footer .icons .icon_border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: #EFEEF3;
+  border-radius: 5px;
+}
+footer .icons .icon_border:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+footer .icons .icon_border:hover span {
+  color: #3DB370;
+}
