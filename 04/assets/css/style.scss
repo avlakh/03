@@ -1,0 +1,432 @@
+@import './hamburger.scss';
+
+// var
+
+$grey_text_color: #828282;
+$black_text_color: #070707;
+
+// normalize
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Gilroy';
+    color: #070707;
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+
+// header
+
+#main_menu {
+    padding: 30px 0 36px;
+    border-bottom: 1px solid $grey_text_color;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        li {
+            display: inline-block;
+            a {
+                text-decoration: none;
+                line-height: 22px;
+                color: $grey_text_color;
+                &:hover {
+                    color: $black_text_color;
+                }
+            }
+        }
+    }
+}
+
+.hamburger_menu {
+    display: none;
+
+}
+
+
+#side_mobile_container {
+    width: 375px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    padding: 20px;
+    height: 100vh;
+    z-index: 11;
+    transform: translateX(-375px);
+    &.open {
+        transform: translateX(0);
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        #mobile_menu_container {
+            ul {
+                list-style: none;
+                li {
+                    margin-bottom: 68px;
+                    a {
+                        text-decoration: none;
+                        font-weight: 700;
+                        font-size: 34px;
+                        line-height: 42px;
+                        color: $grey_text_color;
+                        &:first-child {
+                            color: $black_text_color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// home - first section
+
+
+.white {
+    background-color: #fff;
+}
+
+.gray {
+    background-color: #f6f6f6;
+}
+
+.home_screen {
+    padding: 27px 0 102px;
+    .denis_text {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 42px;
+        h1 {
+            font-size: 47px;
+            line-height: 59px;
+        }
+        h4 {
+            font-weight: 400;
+            line-height: 22px;
+            padding-right: 52px;
+            padding-bottom: 11px;
+        }
+        h5 {
+            writing-mode: vertical-rl;
+            padding-bottom: 14px;
+            #grey_ru {
+                color: $grey_text_color;
+            }
+        }
+    }
+    #profile_photo {
+        width: 100%;
+    }
+    #thin_profile_photo {
+        display: none;
+        padding-bottom: 30px;
+    }
+}
+
+// about me - second section
+
+.about_me_content {
+    padding: 113px 0 107px;
+    h2 {
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 42px;
+        text-align: center;
+        padding-bottom: 21px;
+    }
+    .about {
+        text-align: center;
+        p {
+            margin-bottom: 44px;
+            line-height: 22px;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+// skills - third section
+
+
+.skills_screen {
+    padding-bottom: 90px;
+    h2 {
+        padding: 86px 0 58px;
+        text-align: center;
+        font-size: 34px;
+        line-height: 42px;
+    }
+    p {
+        text-align: center;
+        font-size: 18px;
+        line-height: 22px;
+        padding-bottom: 86px;
+    }
+    .skills {
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+        flex-wrap: wrap;
+        align-items: center;
+        .skills_card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                margin-bottom: 20px;
+            }
+            h5 {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17px;
+                color: $grey_text_color;
+                text-align: center;
+                margin-bottom: 38px;
+            }
+            ul {
+                list-style: none;
+                li {
+                    display: inline-block;
+                    margin-right: 10px;
+                    &:last-child {
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// portfolio - fourth screen
+
+.portfolio_screen {
+    h2 {
+        text-align: center;
+        padding: 107px 0 55px;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 42px;
+    }
+    .portfolio_images {
+        padding-bottom: 99px;
+        img {
+            width: 100%;
+            margin-bottom: 36px;
+        }
+        h5 {
+            text-align: center;
+            a {
+                font-size: 18px;
+                line-height: 22px;
+                color: $black_text_color;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        
+    }
+
+}
+
+// footer
+
+.contact_screen {
+    h2 {
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 42px;
+        text-align: center;
+        color: $black_text_color;
+        padding-top: 112px;
+    }
+    p {
+        text-align: center;
+        padding: 26px 0 32px;
+        line-height: 22px;
+    }
+    .send_button {
+        text-align: center;
+        margin-bottom: 85px;
+        button {
+            width: 180px;
+            height: 42px;
+            font-weight: 700;
+            text-align: center;
+            background-color: #000;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: 0.1em;
+            color: #fff;
+            cursor: pointer;
+            transition: all .2s ease;
+            &:hover {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        li {
+            display: inline-block;
+            text-align: center;
+            margin-right: 60px;
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+    }
+    #bottom_text {
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        color: $grey_text_color;
+        margin-top: 12px;
+        padding-bottom: 159px;
+    }
+}
+
+
+// media 
+
+
+@media screen and (max-width:768px) {
+    
+    #main_menu {
+        padding: 15px 0 18px;
+    }
+
+    .home_screen {
+        padding: 14px 0 20px;
+    }
+
+    .about_me_content {
+        padding: 50px 0 52px;
+        .about {
+            margin: 22px;
+        }
+    }
+    
+    .skills_screen {
+        padding-bottom: 20px;
+        h2 {
+            padding: 45px 0 30px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            .skills_card {
+                width: 40%;
+                margin-bottom: 80px;
+            }
+        }
+    }
+
+    .portfolio_screen {
+        h2 {
+            padding: 55px 0 25px;
+        }
+        .portfolio_images {
+            padding-bottom: 50px;
+        }
+    }
+
+    .contact_screen {
+        h2 {
+            padding-top: 50px;
+        }
+        .send_button {
+            margin-bottom: 40px;
+        }
+        #bottom_text {
+            padding-bottom: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    
+    #main_menu {
+        display: none;
+    }
+    .denis_text {
+        display: flex;
+        flex-wrap: wrap;
+        h4,
+        h5 {
+            display: none;
+        }
+        .hamburger_menu {
+            display: block;
+            align-self: center;
+        }
+    }
+    .home_screen {
+        #profile_photo {
+            display: none;
+        }
+        #thin_profile_photo {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+    
+
+    .skills {
+        display: flex;
+        flex-direction: column;
+        .skills_card {
+            ul {
+                li {
+                    margin-right: 5px;
+                    width: 10%;
+                }
+            }
+            &:last-child {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .contact_screen {
+        ul {
+            li {
+                margin-right: 30px;
+                &:last-child {
+                    margin-right: 0px;
+                }
+            }
+        }
+        #bottom_text {
+            font-size: 16px;
+        }
+    }
+}
