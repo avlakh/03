@@ -7,39 +7,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/hamburger.scss">
+    <link rel="stylesheet" href="assets/style.min.css">
     <title>Productly</title>
 </head>
 <body>
+    <div id="side_block">
+        <div class="wrapper">
+            <nav id="mobile_menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
     <header>
-        <div class="container clearfix">
+        <div class="container header_flex">
            <div id="logo">
                <a href="#">
                    <img src="assets/images/Logo.svg" alt="productly_logo">
                </a>
             </div>
-            <div class="header_buttons">
-                <button class="btn white">Sign In</button>
-                <button class="btn orange">Sign Up</button>
+            <div class="right_header">
+                <nav class="main_menu">
+                    <ul>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Customers</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </nav>
+                <div class="header_buttons">
+                    <button class="btn white">Sign In</button>
+                    <button class="btn orange">Sign Up</button>
+                </div>
             </div>
-            <nav class="main_menu">
-                <ul>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">Customers</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Resources</a></li>
-                </ul>
-            </nav>
+            <button class="hamburger hamburger--arrow" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+            </button>
         </div>
     </header>
     <main>
-        <div class="container clearfix">
+        <div class="container section1">
             <div class="section1_text">
                 <h2>The Design Thinking<br>superpowers</h2>
                 <p>Tools, tutorials, design and innovation experts, all<br>in one place! The most intuitive way to imagine<br>your next user experience.</p>
                 <div class="section1_links">
                     <button class="btn orange">Get started</button>
-                    <a href="#"><img src="assets/images/section1_triangle.svg" alt="watch_the_video_triangle"><span>Watch the video</span></a>
+                    <div class="a_inside_links">
+                        <a href="#"><img src="assets/images/section1_triangle.svg" alt="watch_the_video_triangle"><span>Watch the video</span></a>
+                    </div>
                 </div>
             </div>
             <div class="section1_image">
@@ -103,7 +126,6 @@
                     <li>We will only switch you to energy companies that we trust and will treat you right</li>
                     <li>We track the markets daily and know where the savings are.</li>
                 </ul>
-                <!-- можемо розібрати ці маркери на наступному уроці? це якийсь атас з ними)) -->
             </div>
         </div>
         <div class="container section5">
@@ -154,6 +176,18 @@
             </div>
         </div>
     </footer>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <script>
+    $(function(){
+        $('.hamburger').on('click', function(){
+            $('.hamburger').toggleClass('is-active');
+            $('#side_block').toggleClass('open');
+        })
+    })
+    </script>
+
 </body>
 </html>
 
