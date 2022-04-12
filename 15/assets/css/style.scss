@@ -1,0 +1,173 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Red Hat Display', 'Lato', sans-serif;
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+h4 {
+    font-family: 'Lato';
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.5em;
+}
+
+h2 {
+    font-family: 'Red Hat Display';
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: 0.05em;
+    padding-top: 49px;
+}
+
+h3 {
+    font-family: 'Red Hat Display';
+    font-size: 23px;
+    line-height: 166%;
+    letter-spacing: 0.1em;
+}
+
+p {
+    font-family: 'Lato';
+    font-size: 19px;
+    line-height: 32px;
+    letter-spacing: 0.05em;
+    color: #565656;
+}
+
+.section_start {
+    padding-top: 73px;
+    .pic {
+        padding-top: 62px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.section_project {
+    padding-top: 126px;
+    p {
+        padding-top: 36px;
+        width: 49%;
+    }
+}
+
+.section_user {
+    padding-top: 211px;
+    .pic {
+        padding-top: 38px;
+        img {
+            width: 100%;
+        }
+    }
+    p {
+        padding-top: 38px;
+    }
+}
+
+.section_sketches {
+    padding-top: 129px;
+    .pic {
+        padding-top: 38px;
+        img {
+            width: 100%;
+        }
+    }
+    p {
+        padding-top: 40px;
+        & + p {
+            padding-top: 36px;
+        }
+    }
+}
+
+.section_final {
+    padding: 129px 0 170px;
+    .pic {
+        padding-top: 38px;
+        img {
+            width: 100%;
+        }
+    }
+    p {
+        padding-top: 42px;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .section_start {
+        padding-top: 110px;
+        h4 {
+            line-height: 21px;
+            letter-spacing: 0.5em;
+        }
+        h2 {
+            font-size: 33px;
+            line-height: 50px;
+            letter-spacing: 0.05em;
+            padding-top: 43px;
+        }
+        .pic {
+            padding-top: 50px;
+            img {
+            }
+        }
+    }
+    .section_project {
+        padding-top: 73px;
+        p {
+            padding-top: 17px;
+            width: 100%;
+            & + p {
+                padding-top: 32px;
+            }
+        }
+    }
+    .section_user {
+        padding-top: 81px;
+        .pic {
+            padding-top: 58px;
+        }
+        p {
+            padding-top: 72px;
+            & + p {
+                padding-top: 33px;
+            }
+        }
+    }
+    .section_sketches {
+        padding-top: 32px;
+        p {
+            padding-top: 64px;
+            & + p {
+                padding-top: 33px;
+            }
+        }
+    }
+    .section_final {
+        padding: 57px 0 100px;
+        p {
+            padding-top: 74px;
+        }
+    }
+}
