@@ -121,6 +121,7 @@ a:hover {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 124px;
+  width: 100%;
 }
 .home_images .images h6 {
   font-size: 16px;
@@ -326,6 +327,7 @@ footer .footer_flex .t_cs p {
     flex-direction: column;
     align-items: center;
     margin-bottom: 15px;
+    width: 100%;
   }
   .home_images .images .image_text img {
     align-self: center;
