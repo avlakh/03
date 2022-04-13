@@ -1,4 +1,4 @@
-@import url(./hamburgers.scss);
+@import url(hamburgers.scss);
 
 // normalize
 
@@ -40,6 +40,40 @@ a {
 }
 
 // html markup 
+
+#side_block {
+    display: none;
+    width: 375px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: azure;
+    padding: 20px;
+    height: 300px;
+    z-index: 11;
+    transform: translateX(-375px);
+    &.open {
+        transform: translateX(0);
+        width: 100vw;
+    }
+    #mobile_menu {
+        display: flex;
+        justify-content: space-around;
+        ul {
+            list-style-type: none;
+            li {
+                margin-bottom: 30px;
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        button {
+            align-self: flex-start;
+        }
+    }
+}
+
 
 .header_content{
     padding-top: 95px;
@@ -86,21 +120,7 @@ a {
         }
     }
 }
-#side_block {
-    display: none;
-    width: 300px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: lightyellow;
-    padding: 20px;
-    height: 100vh;
-    z-index: 11;
-    transform: translateX(-300px);
-    &.open {
-        transform: translateX(0);
-    }
-}
+
 
 // main
 
@@ -304,6 +324,10 @@ footer {
         }
     }
 
+#side_block {
+    display: block;
+}
+
     .latest_posts {
         .latest_news_cards {
             display: flex;
@@ -317,17 +341,23 @@ footer {
         }
     }
 
-    .images {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        align-items: flex-start;
+    .home_images {
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            .image_text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 15px;
+                img {
+                    align-self: center;
+                }
+            }
+            
+        }
     }
-    .image_text {
-        width: 90%;
-        margin-right: 20px;
-    }
+    
     .latest_posts {
         .latest_news_cards {
             display: flex;

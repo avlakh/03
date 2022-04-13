@@ -7,9 +7,10 @@
     <title>WP - Manifest</title>
     <link rel="stylesheet" href="assets/css/hamburgers.min.css">
     <link rel="stylesheet" href="assets/css/fonts.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
     <div id="side_block">
         <div class="wrapper">
             <nav id="mobile_menu">
@@ -20,9 +21,15 @@
                     <li><a href="#">blog</a></li>
                     <li><a href="#">contact</a></li>
                 </ul>
+                <button class="hamburger hamburger--arrow" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
             </nav>
         </div>
     </div>
+
     <header>
         <div class="container header_content">
             <div class="upper_main_menu">
@@ -167,5 +174,15 @@
     </footer>
 </body>
 
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+    $('.hamburger').on('click', function(){
+        $('.hamburger').toggleClass('is-active');
+        $('#side_block').toggleClass('open');
+    })
+})
+</script>
 
 </html>
