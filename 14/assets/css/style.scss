@@ -5,7 +5,8 @@
 *, *::before, *::after {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html, body {
@@ -28,6 +29,8 @@ body {
 }
 
 a, button {
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
     transition: all .2s ease;
 }
 
@@ -51,14 +54,21 @@ a {
     padding: 20px;
     height: 300px;
     z-index: 11;
-    transform: translateX(-375px);
+    -webkit-transform: translateX(-375px);
+        -ms-transform: translateX(-375px);
+            transform: translateX(-375px);
     &.open {
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+                transform: translateX(0);
         width: 100vw;
     }
     #mobile_menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
         ul {
             list-style-type: none;
             li {
@@ -69,7 +79,8 @@ a {
             }
         }
         button {
-            align-self: flex-start;
+            -ms-flex-item-align: start;
+                align-self: flex-start;
         }
     }
 }
@@ -78,9 +89,15 @@ a {
 .header_content{
     padding-top: 95px;
     .upper_main_menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         #main_menu {
             ul { 
                 list-style: none;
@@ -128,9 +145,15 @@ a {
     padding-top: 128px;
     margin-bottom: 128px;
     .images {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
         margin-bottom: 124px;
         width: 100%;
         h6 {
@@ -141,8 +164,12 @@ a {
         }
     }
     .description {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         .description_left {
             h3 {
                 font-family: 'Red Hat Display';
@@ -171,8 +198,12 @@ a {
 .latest_posts {
     padding-bottom: 128px;
     .latest_posts_header {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         margin-bottom: 40px;
         h3 {
             font-family: 'Red Hat Display';
@@ -197,8 +228,12 @@ a {
         }
     }
     .latest_news_cards {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         .card_news {
             width: 350px;
             img {
@@ -206,8 +241,12 @@ a {
             }
             .card_news_description {
                 .card_desc_info {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    justify-content: space-between;
+                    -webkit-box-pack: justify;
+                        -ms-flex-pack: justify;
+                            justify-content: space-between;
                     margin-bottom: 24px;
                     h5,
                     h6 {
@@ -245,11 +284,16 @@ a {
 footer {
     background-color: #F4F4F4;
     .footer_flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         padding: 128px 0 128px;
         .footer_address {
-            flex-basis: 34%;
+            -ms-flex-preferred-size: 34%;
+                flex-basis: 34%;
             h1 {
                 font-family: 'Red Hat Display';
                 font-size: 48px;
@@ -280,8 +324,10 @@ footer {
             }
         }
         .t_cs {
-            flex-basis: 19%;
-            align-self: flex-end;
+            -ms-flex-preferred-size: 19%;
+                flex-basis: 19%;
+            -ms-flex-item-align: end;
+                align-self: flex-end;
             margin-bottom: 27px;
             p {
                 font-family: 'Lato';
@@ -309,8 +355,11 @@ footer {
 
 @media screen and (max-width:768px) {
     .upper_main_menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         #main_menu {
             display: none;
         }
@@ -331,10 +380,17 @@ footer {
 
     .latest_posts {
         .latest_news_cards {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             width: 100%;
             .card_news {
                 margin-right: 15px;
@@ -344,16 +400,27 @@ footer {
 
     .home_images {
         .images {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             .image_text {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                flex-direction: column;
-                align-items: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
                 margin-bottom: 15px;
                 width: 100%;
                 img {
-                    align-self: center;
+                    -ms-flex-item-align: center;
+                        align-self: center;
                 }
             }
             
@@ -362,8 +429,11 @@ footer {
     
     .latest_posts {
         .latest_news_cards {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             width: 100%;
             .card_news {
                 margin-right: 15px;
@@ -375,9 +445,14 @@ footer {
 
 @media screen and (max-width:540px) {
     .description {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         .description_left {
             margin-bottom: 48px;
         }
@@ -386,28 +461,50 @@ footer {
         }
     }
     .latest_posts_header {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
     .latest_news_cards {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         .card_news {
             margin-bottom: 30px;
         }
     }
     .footer_flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         & > div {
             margin-bottom: 30px;
         }
         .t_cs {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: flex-start;
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
             margin: 0 auto;
         }
     }

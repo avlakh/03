@@ -11,7 +11,8 @@ $border_container_line: 5px solid #fff;
 *, *::before, *::after {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html, body {
@@ -34,15 +35,26 @@ body {
 }
 
 a {
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
     transition: all .2s ease;
 }
 
 .header_text {
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 107px auto 33px;
         h3 {
             font-family: 'raleway';
@@ -67,9 +79,15 @@ a {
 .header_bottom_container {
     margin: 0 auto;
     width: 450px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     .header_yellow_line {
         width: 210px;
         border-top: 2px solid $yellow_line;
@@ -81,9 +99,14 @@ a {
 }
 
 .main_flex  {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 36px;
     padding-bottom: 133px;
     .left_image {
@@ -171,8 +194,12 @@ a {
             margin-bottom: 25px;
         }
         .icons {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             margin: 0 auto 24px;
             a {
                 width: 30px;
@@ -203,8 +230,12 @@ a {
             margin-bottom: 17px;
         }
         .three_containers {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             height: 4px;
             margin-bottom: 26px;
             .short_line {
@@ -218,8 +249,12 @@ a {
             }
         }
         .view_profile {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             #profile_button {
                 font-family: 'open sans';
                 font-weight: 700;
