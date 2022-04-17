@@ -73,13 +73,13 @@ ul {
   letter-spacing: -0.423077px;
   color: #4A4FF2;
 }
-.intro_text .hello h2 {
+.intro_text .hello p {
   font-weight: 700;
   font-size: 40px;
   line-height: 60px;
   padding-top: 32px;
 }
-.intro_text .hello h2 span {
+.intro_text .hello p span {
   color: #4A4FF2;
 }
 .intro_text .intro_design {
@@ -131,10 +131,8 @@ ul {
 }
 .we_love_work .wlw_list ul {
   display: inline-block;
-  margin-right: 66px;
-}
-.we_love_work .wlw_list ul:last-child {
-  margin-right: 0px;
+  columns: 2;
+  gap: 70px;
 }
 .we_love_work .wlw_list ul li {
   font-size: 18px;
@@ -148,74 +146,54 @@ ul {
 
 .awards {
   border-top: 2px solid #D8D8D8;
-  padding-top: 46px;
-}
-.awards .a3wards,
-.awards .css_awards {
+  padding: 46px 0 58px;
   display: grid;
-  grid-template-columns: 1fr 25% 25% 10%;
-  grid-template-rows: 50%;
-  gap: 49px 0;
-  border-bottom: 2px solid #D8D8D8;
-  padding-bottom: 83px;
+  grid-template-columns: 42% 58%;
 }
-.awards .a3wards h3,
-.awards .css_awards h3 {
+.awards .a3wards {
   font-weight: 700;
   font-size: 22px;
   line-height: 28px;
 }
-.awards .a3wards h4,
-.awards .css_awards h4 {
-  grid-area: 1/2/2/3;
+.awards .awards_nomination {
+  display: grid;
+  gap: 76px 0;
+}
+.awards .awards_position {
+  display: grid;
+  grid-template-columns: 1.5fr 190px 1fr;
+}
+.awards .awards_title {
+  padding-left: 8px;
   font-weight: 700;
   font-size: 18px;
   line-height: 23px;
-  padding: 2px 0 0 31px;
 }
-.awards .a3wards h4:last-of-type,
-.awards .css_awards h4:last-of-type {
-  grid-area: 2/2/3/3;
+.awards .awards_text {
+  padding-left: 20px;
 }
-.awards .a3wards .awards_text,
-.awards .css_awards .awards_text {
-  padding: 5px 50px 0 37px;
-  grid-area: 1/3/2/4;
+.awards .awards_text h5 {
+  padding-top: 4px;
+  font-size: 16px;
+  line-height: 20px;
 }
-.awards .a3wards .awards_text:last-of-type,
-.awards .css_awards .awards_text:last-of-type {
-  grid-area: 2/3/3/4;
-}
-.awards .a3wards .awards_text p,
-.awards .css_awards .awards_text p {
+.awards .awards_text p {
   padding-top: 12px;
   font-size: 16px;
   line-height: 26px;
   opacity: 0.6;
 }
-.awards .a3wards h5,
-.awards .css_awards h5 {
-  grid-area: 1/4/2/5;
+.awards .awards_year {
+  padding-top: 3px;
+  justify-self: end;
   font-size: 16px;
   line-height: 20px;
-  justify-self: end;
-}
-.awards .a3wards h5:last-of-type,
-.awards .css_awards h5:last-of-type {
-  grid-area: 2/4/3/5;
-}
-.awards .a3wards .award_year,
-.awards .css_awards .award_year {
-  padding-top: 5px;
-}
-.awards .css_awards {
-  padding-top: 46px;
 }
 
 .footer_flex {
   display: flex;
   justify-content: space-between;
-  padding-top: 114px;
+  padding-top: 116px;
   padding-bottom: 50px;
 }
 .footer_flex ul {
@@ -241,4 +219,77 @@ ul {
 }
 .footer_flex .footer_icons li:last-child {
   margin-right: 0px;
+}
+
+@media screen and (max-width: 1140px) {
+  .intro_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro_text .hello {
+    margin-bottom: 25px;
+  }
+  .intro_text .intro_design {
+    align-self: center;
+  }
+
+  .grid_gallery {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .we_love_work {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 35px;
+    margin-bottom: 40px;
+  }
+  .we_love_work .wlw_h3 {
+    justify-self: center;
+  }
+  .we_love_work .wlw_list {
+    justify-self: center;
+  }
+}
+@media screen and (max-width: 800px) {
+  .gallery_column {
+    justify-self: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .grid_gallery {
+    padding-top: 20px;
+  }
+
+  .awards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 1fr;
+  }
+  .awards .a3wards {
+    justify-self: center;
+  }
+
+  .second_grid {
+    padding-bottom: 0px;
+  }
+
+  .footer_flex {
+    flex-wrap: wrap;
+    padding: 40px 0 20px 0;
+  }
+}
+@media screen and (max-width: 428px) {
+  .we_love_work .wlw_list ul {
+    columns: 1;
+  }
+
+  .footer_flex .footer_logo {
+    margin-bottom: 20px;
+  }
+  .footer_flex .text_links {
+    margin-bottom: 20px;
+  }
+  .footer_flex .footer_icons {
+    margin-bottom: 0px;
+  }
 }
