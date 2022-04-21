@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
+Sitemap: https://avlakh.github.io/my_homework/06/sitemap.xml
 Host: avlakh.github.io
