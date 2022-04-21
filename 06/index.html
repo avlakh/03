@@ -7,22 +7,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/hamburger.scss">
-    <link rel="stylesheet" href="assets/style.min.css">
-    <title>Productly</title>
+    <link rel="stylesheet" href="assets/css/hamburger.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <title>Productly - Home</title>
+    <meta name="description" content="Productly - The Design Thinking superpowers">
+    <!-- немає іконки тому, що файл іконки дуже маленької якості і при цьому растровий, виглядає дуже стрьомно, навіть фавікон таке лайно не захотів брати хехе -->
+
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="1 days" />
+
+    <meta property="og:title" content="Productly - Home" />
+    <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
+    <meta property="og:image" content="" />
+
+    <meta name="twitter:title" content="Productly - Home">
+    <meta name="twitter:description" content="Productly - The Design Thinking superpowers">
+    <meta name="twitter:image" content="https://enfys.com.ua/assets/favicon/android-chrome-192x192.png">
 </head>
 <body>
     <div id="side_block">
         <div class="wrapper">
-            <nav id="mobile_menu">
+            <nav id="mobile_menu_container">
                 <ul>
                     <li><a href="#">Product</a></li>
                     <li><a href="#">Customers</a></li>
                     <li><a href="#">Pricing</a></li>
                     <li><a href="#">Resources</a></li>
                 </ul>
+                <div class="header_buttons mobile_buttons">
+                    <button class="btn white">Sign In</button>
+                    <button class="btn orange">Sign Up</button>
+                </div>
             </nav>
+            <button class="hamburger hamburger--arrow" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
         </div>
+    </div>
+    <div id="page_overlay">
+
     </div>
 
     <header>
@@ -124,9 +149,33 @@
                 <h2>Product Managers</h2>
                 <p>The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person. </p>
                 <ul class="section4_list">
-                    <li>Never worry about overpaying for your energy again. </li>
-                    <li>We will only switch you to energy companies that we trust and will treat you right</li>
-                    <li>We track the markets daily and know where the savings are.</li>
+                    <li>
+                        <span><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1.45833" y="1.45833" width="32.0833" height="32.0833" rx="12.3958" fill="#FF9900"/>
+                        <rect x="1.45833" y="1.45833" width="32.0833" height="32.0833" rx="12.3958" stroke="#FF9900" stroke-width="2.91667"/>
+                        <path d="M25.7657 12.2393C25.4533 11.9202 24.9468 11.9202 24.6343 12.2393L15.0498 22.0277L11.3657 18.2653C11.0533 17.9462 10.5468 17.9462 10.2343 18.2653C9.92189 18.5843 9.92189 19.1016 10.2343 19.4207L14.4841 23.7608C14.7964 24.0798 15.3033 24.0796 15.6155 23.7608L25.7657 13.3947C26.0781 13.0757 26.0781 12.5584 25.7657 12.2393Z" fill="white"/>
+                        </svg>
+                        </span>
+                        Never worry about overpaying for your energy again. 
+                    </li>
+                    <li>
+                        <span><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1.45833" y="1.45833" width="32.0833" height="32.0833" rx="12.3958" fill="#FF9900"/>
+                        <rect x="1.45833" y="1.45833" width="32.0833" height="32.0833" rx="12.3958" stroke="#FF9900" stroke-width="2.91667"/>
+                        <path d="M25.7657 12.2393C25.4533 11.9202 24.9468 11.9202 24.6343 12.2393L15.0498 22.0277L11.3657 18.2653C11.0533 17.9462 10.5468 17.9462 10.2343 18.2653C9.92189 18.5843 9.92189 19.1016 10.2343 19.4207L14.4841 23.7608C14.7964 24.0798 15.3033 24.0796 15.6155 23.7608L25.7657 13.3947C26.0781 13.0757 26.0781 12.5584 25.7657 12.2393Z" fill="white"/>
+                        </svg>
+                        </span>
+                        We will only switch you to energy companies that we trust and will treat you right
+                    </li>
+                    <li>
+                        <span><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1.45833" y="1.45833" width="32.0833" height="32.0833" rx="12.3958" fill="#FF9900"/>
+                        <rect x="1.45833" y="1.45833" width="32.0833" height="32.0833" rx="12.3958" stroke="#FF9900" stroke-width="2.91667"/>
+                        <path d="M25.7657 12.2393C25.4533 11.9202 24.9468 11.9202 24.6343 12.2393L15.0498 22.0277L11.3657 18.2653C11.0533 17.9462 10.5468 17.9462 10.2343 18.2653C9.92189 18.5843 9.92189 19.1016 10.2343 19.4207L14.4841 23.7608C14.7964 24.0798 15.3033 24.0796 15.6155 23.7608L25.7657 13.3947C26.0781 13.0757 26.0781 12.5584 25.7657 12.2393Z" fill="white"/>
+                        </svg>
+                        </span>
+                        We track the markets daily and know where the savings are.
+                    </li>
                 </ul>
             </div>
         </div>
@@ -182,14 +231,29 @@
     <script src="assets/js/jquery-3.6.0.min.js"></script>
 
     <script>
-    $(function(){
-        $('.hamburger').on('click', function(){
+        
+
+        function toggleMenu () {
             $('.hamburger').toggleClass('is-active');
-            $('#side_block').toggleClass('open');
+            $('#side_block, #page_overlay').toggleClass('open');
+            $('body').toggleClass('lock');
+        }
+
+        $(function () {
+            $('.hamburger, #page_overlay, #mobile_menu_container a').on('click', function() {
+                toggleMenu();
+            })
+
+            $('#mobile_menu_container a, #main_menu a').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop:$($(this).attr('href')).offset().top-$('header').outerHeight()}, 500)
+            })
         })
-    })
+    
+    
+    
+    
     </script>
 
 </body>
 </html>
-
