@@ -1,7 +1,10 @@
+@import url(./hamburger.scss);
+
 *, *::before, *::after {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html, body {
@@ -24,6 +27,8 @@ body {
 }
 
 a, button {
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
     transition: all .2s ease;
 }
 
@@ -40,8 +45,11 @@ a, button {
     cursor: pointer;
     border: none;
     outline: none;
+    background-image: -o-linear-gradient(45deg, #496bfe 38%, #5474fd 38%);
     background-image: linear-gradient(45deg, #496bfe 38%, #5474fd 38%);
-    &:hover {
+    &:hover,
+    &:focus {
+        background-image: -o-linear-gradient(45deg, #496bfe 100%, #5474fd 0%);
         background-image: linear-gradient(45deg, #496bfe 100%, #5474fd 0%);
     }
 }
@@ -58,12 +66,80 @@ ul {
     list-style: none;
 }
 
+.hamburger_menu {
+    display: none;
+
+}
+
 .intro {
     background: url(../images/start_bg.jpg) top/cover no-repeat;
+    #side_block {
+        display: block;
+        width: 300px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #5474fd;
+        padding: 20px;
+        height: 100vh;
+        z-index: 21;
+        transform: translateX(-300px);
+        &.open {
+            transform: translateX(0px);
+        }
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            #mobile_menu_container {
+                ul {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    li {
+                        margin-bottom: 15px;
+                        a {
+
+                            color: #fff;
+                            font-size: 22px;
+                            line-height: 40px;
+                            text-decoration: none;
+                        }
+                        &:last-child {
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+            }
+            .hamburger {
+                align-self: flex-start;
+            }
+        }
+    }
+    #page_overlay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: .7);
+        display: none;
+        z-index: 20;
+        &.open {
+            display: block;
+        }
+    }
     .intro_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         padding-top: 234px;
         .intro_logo {
             margin: 0 56px 3px 0;
@@ -86,11 +162,16 @@ ul {
         width: 100%;
         background-color: #fff;
         margin: 0 auto 105px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         padding: 2px;
+        -webkit-transition: all .2s ease;
+        -o-transition: all .2s ease;
         transition: all .2s ease;
         &:hover {
-            box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 5px 5px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 5px 5px;
+                    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 5px 5px;
         }
         input[type=search] {
             text-align: center;
@@ -113,9 +194,15 @@ ul {
             font-size: 14px;
             line-height: 26px;
             letter-spacing: 1.4px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             padding-left: 25px;
             &:hover {
                 background-color: #0121a6;
@@ -128,8 +215,12 @@ ul {
         }
     }
     .scroll_down {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         margin-right: 55px;
         padding-bottom: 152px;
         a {
@@ -148,33 +239,48 @@ ul {
                 position: absolute;
                 top: 23px;
                 left: 47px;
-                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
             }
             &:hover {
                 text-decoration: none;
-                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                        transform: scale(1.1);
             }
         }
     }
 }
 
-#sticky_anchor {
+
+.sticky_header {
     background-color: #5474FD;
-    min-height: 82px;
+    height: 82px;
+    padding: 26px 0;
     width: 100%;
+    position: -webkit-sticky;
     position: sticky;
     top: 0px;
     z-index: 10;
     .header_flex {
+        overflow: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 27px;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         .header_logo {
             padding: 3px 0 0px 3px;
         }
         #main_menu {
             ul {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
                 li {
                     margin-left: 43px;
@@ -195,8 +301,12 @@ ul {
 .why_choose_us {
     background: url(../images/why_choose_us_bg.jpg) top/cover no-repeat;
     .wcu_flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         padding: 116px 0 108px;
         .wcu_left {
             width: 51%;
@@ -242,18 +352,35 @@ ul {
 }
 
 .destinations {
+    background-image: url(../images/lines_bg.svg);
+    background-size: 52%;
+    background-repeat: no-repeat;
+    background-position: 365px 47px;
     background-color: #333;
     .dest_flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         gap: 38px;
         padding-top: 101px;
         padding-bottom: 114px;
         .dest_elem {
+            background-color: #333;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .dest_elem_img {
                 padding-bottom: 30px;
                 img {
@@ -273,17 +400,15 @@ ul {
 
 }
 
-@media screen and (max-width:500px) {
-    .intro {
-        background-position: -300px;
-    }
-}
-
 .spain_up {
     background: url(../images/spain_up_bg.jpg) top/cover no-repeat;
     .spain_left {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
         padding-top: 226px;
         padding-bottom: 104px;
         .spain_card_up {
@@ -326,8 +451,12 @@ ul {
 .spain_bottom {
     background: url(../images/spain_bottom_bg.jpg) top/cover no-repeat;
     .spain_right {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
         padding-top: 234px;
         padding-bottom: 100px;
         .spain_card_bottom {
@@ -379,8 +508,12 @@ ul {
         letter-spacing: 0.7px;
     }
     .tourists_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         padding-bottom: 193px;
         .tourists_img {
             width: 45%;
@@ -419,9 +552,16 @@ ul {
 .footer {
     background-color: #232323;
     .footer_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         padding-top: 120px;
         .footer_img {
             margin-bottom: 6px;
@@ -440,8 +580,12 @@ ul {
         }
     }
     .footer_links {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         gap: 22px;
         margin-bottom: 47px;
         li {
@@ -452,5 +596,19 @@ ul {
                 color: #5474FD;
             }
         }
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .intro {
+        background-position: -300px;
+    }
+}
+
+@media screen and (max-width:950px) {
+    
+    .hamburger_menu {
+        display: block;
     }
 }
