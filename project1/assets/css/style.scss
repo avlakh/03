@@ -72,7 +72,10 @@ ul {
 }
 
 .intro {
-    background: url(../images/start_bg.jpg) top/cover no-repeat;
+    background-image: url(../images/start_bg.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
     #side_block {
         display: block;
@@ -269,7 +272,6 @@ ul {
     }
 }
 
-
 .sticky_header {
     background-color: #5474FD;
     height: 82px;
@@ -315,7 +317,9 @@ ul {
 }
 
 .why_choose_us {
-    background: url(../images/why_choose_us_bg.jpg) top/cover no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
     .wcu_flex {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -368,7 +372,6 @@ ul {
 }
 
 .destinations {
-    background-image: url(../images/lines_bg.svg);
     background-size: 52%;
     background-repeat: no-repeat;
     background-position: 358px 47px;
@@ -417,7 +420,9 @@ ul {
 }
 
 .spain_up {
-    background: url(../images/spain_up_bg.jpg) top/cover no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
     .spain_left {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -465,7 +470,9 @@ ul {
 }
 
 .spain_bottom {
-    background: url(../images/spain_bottom_bg.jpg) top/cover no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
     .spain_right {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -513,7 +520,9 @@ ul {
 }
 
 .our_tourists {
-    background: url(../images/our_tourists_bg.jpg) top/cover no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
     h2 {
         padding: 130px 0 92px;
         text-align: center;
@@ -624,17 +633,25 @@ ul {
 @media screen and (max-width:1100px) {
     .why_choose_us {
         .wcu_flex {
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             padding-top: 0px;
             .wcu_left {
                 width: 100%;
-                align-self: center;
+                -ms-flex-item-align: center;
+                    align-self: center;
                 text-align: center;
             }
             .wcu_right {
                 padding-top: 50px;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: center;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
                 gap: 50px;
                 .wcu_img_up {
                     padding: 0px;
@@ -647,8 +664,13 @@ ul {
     }
     .our_tourists {
         .tourists_content {
-            flex-direction: column;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
     }
 }
@@ -666,12 +688,19 @@ ul {
     }
     .destinations {
         .dest_flex {
-            flex-direction: column;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .dest_elem {
-                align-self: flex-start;
+                -ms-flex-item-align: start;
+                    align-self: flex-start;
                 &:nth-last-child(2) {
-                    align-self: flex-end;
+                    -ms-flex-item-align: end;
+                        align-self: flex-end;
                 }
             }
         }
@@ -701,6 +730,9 @@ ul {
         }
         .tourists_content {
             padding-bottom: 80px;
+            .tourists_img {
+                width: 70%;
+            }
             .tourists_quote {
                 max-height: none;
                 width: 70%;
@@ -722,8 +754,13 @@ ul {
             }
         }
         .intro_form {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             input[type=search] {
                 text-align: center;
                 width: 100%;
@@ -741,21 +778,33 @@ ul {
         .wcu_flex {
             padding-bottom: 50px;
             .wcu_right {
-                flex-direction: column;
-                align-items: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
             }
         }
     }
     .destinations {
         .dest_flex {
             padding: 50px 0px 50px;
-            flex-direction: column;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .dest_elem {
-                align-self: center;
+                -ms-flex-item-align: center;
+                    align-self: center;
                 margin-bottom: 50px;
                 &:nth-last-child(2) {
-                    align-self: center;
+                    -ms-flex-item-align: center;
+                        align-self: center;
                 }
                 &:last-child {
                     margin-bottom: 0px;

@@ -4,14 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhromaon</title>
+
+    <!-- Title <> Description -->
+
+    <title>Bhromaon | Main</title>
+    <meta name="description" content="Bhromaon - a project done on Beetroot Course">
+
+    <!-- Robots -->
+
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="1 days" />
+
+    <!-- Favicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- OpenGraph -->
+
     <link rel="stylesheet" href="assets/css/hamburger.min.css">
     <link rel="stylesheet" href="assets/css/fonts.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
+
+
 </head>
 <body>
-    <div id="page_overlay"></div>
-    <section class="intro">
+    <div class="intro">
         <div id="side_block">
             <div class="wrapper">
                 <nav id="mobile_menu_container">
@@ -39,7 +62,7 @@
             </div>
             <form action="/" method="get">
                 <div class="intro_form">
-                    <input type="search" name="search" id="search" placeholder="Search Your Travel Destination">
+                    <input type="search" name="search" id="search" placeholder="Search Your Travel Destination" required>
                     <button type="submit" class="btn intro_btn">search<i class="icon-search"></i></button>
                 </div>
             </form>
@@ -47,7 +70,7 @@
                 <a href="#anchor">Scroll Down</a>
             </div>
         </div>
-    </section>
+    </div>
     <main>
         <header class="sticky_header">
             <div class="container header_flex">
@@ -71,7 +94,7 @@
                 </div>
             </div>
         </header>
-        <section class="why_choose_us" id="anchor">
+        <section class="why_choose_us lazy-bg" id="anchor" data-src="assets/images/why_choose_us_bg.jpg">
             <div class="container">
                 <div class="wcu_flex">
                     <div class="wcu_left">
@@ -82,40 +105,40 @@
                     </div>
                     <div class="wcu_right">
                         <div class="wcu_img_up">
-                            <img src="assets/images/wcu_top.jpg" alt="why_choose_us_top_image">
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/wcu_top.jpg" alt="why_choose_us_top_image">
                         </div>
                         <div class="wcu_img_bottom">
-                            <img src="assets/images/wcu_bottom.jpg" alt="why_choose_us_bottom_image">
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/wcu_bottom.jpg" alt="why_choose_us_bottom_image">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="destinations">
+        <section class="destinations lazy-bg" data-src="assets/images/lines_bg.svg">
             <div class="container">
                 <div class="dest_flex">
                     <div class="dest_elem">
                         <div class="dest_elem_img">
-                            <img src="assets/images/destinations_icons/search_places.svg" alt="search_places">
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/destinations_icons/search_places.svg" alt="search_places">
                         </div>
                         <h4>Search Places</h4>
                     </div>
                     <div class="dest_elem">
                         <div class="dest_elem_img">
-                            <img src="assets/images/destinations_icons/select_places.svg" alt="select_places">
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/destinations_icons/select_places.svg" alt="select_places">
                         </div>
                         <h4>Select Places</h4>
                     </div>
                     <div class="dest_elem">
                         <div class="dest_elem_img">
-                            <img src="assets/images/destinations_icons/book_enjoy.svg" alt="book_&_enjoy">
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/destinations_icons/book_enjoy.svg" alt="book_&_enjoy">
                         </div>
                         <h4>Book & Enjoy</h4>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="spain_up">
+        <section class="spain_up lazy-bg" data-src="assets/images/spain_up_bg.jpg">
             <div class="container">
                 <div class="spain_left">
                     <div class="spain_card_up">
@@ -127,7 +150,7 @@
                 </div>
             </div>
         </section>
-        <section class="spain_bottom">
+        <section class="spain_bottom lazy-bg" data-src="assets/images/spain_bottom_bg.jpg">
             <div class="container">
                 <div class="spain_right">
                     <div class="spain_card_bottom">
@@ -139,12 +162,12 @@
                 </div>
             </div>
         </section>
-        <section class="our_tourists">
+        <section class="our_tourists lazy-bg" data-src="assets/images/our_tourists_bg.jpg">
             <div class="container">
                 <h2>What Our  Tourist Say</h2>
                 <div class="tourists_content">
                     <div class="tourists_img">
-                        <img src="assets/images/tourists_img.jpg" alt="what_our_tourists_say">
+                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/tourists_img.jpg" alt="what_our_tourists_say">
                     </div>
                     <div class="tourists_quote">
                         <h4>Sam Sumon</h4>
@@ -157,7 +180,7 @@
             <div class="container">
                 <div class="footer_content">
                     <div class="footer_img">
-                        <img src="assets/images/footer_logo.svg" alt="bhromaon_footer_logo">
+                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/footer_logo.svg" alt="bhromaon_footer_logo">
                     </div>
                     <h3>Safe Travel Anywhere</h3>
                     <ul class="footer_links">
@@ -173,6 +196,7 @@
     </main>
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/lazyload.prod.js"></script>
 
     <script>
         function toggleMenu () {
@@ -181,9 +205,16 @@
             $('body').toggleClass('lock');
         }
         $(function () {
-            $('.hamburger, #page_overlay, #mobile_menu_container a').on('click', function() {
+            $('.hamburger, #page_overlay').on('click', function() {
                 toggleMenu();
             })
+            $(document).on('click', 'a[href^="#"]', function (event) {
+            event.preventDefault();
+
+            $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+            }, 500);
+            });
         })
     </script>
 
