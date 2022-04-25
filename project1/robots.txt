@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://avlakh.github.io/my_homework/project1/sitemap.xml
+Host: avlakh.github.io
