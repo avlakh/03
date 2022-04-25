@@ -1,0 +1,455 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Josefin Sans', 'Aleo', sans-serif;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+a, button {
+    transition: all .2s ease;
+}
+
+.btn {
+    width: 228px;
+    height: 63px;
+    font-family: 'Aleo';
+    font-weight: 400;
+    line-height: 26px;
+    background-color: #5474FD;
+    color: #fff;
+    font-family: 'Aleo';
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(45deg, #496bfe 38%, #5474fd 38%);
+    &:hover {
+        background-image: linear-gradient(45deg, #496bfe 100%, #5474fd 0%);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.intro {
+    background: url(../images/start_bg.jpg) top/cover no-repeat;
+    .intro_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 234px;
+        .intro_logo {
+            margin: 0 56px 3px 0;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        h3 {
+            font-family: 'Josefin Sans';
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 26px;
+            letter-spacing: 6.82px;
+            margin: 0 49px 47px 0;
+        }
+    }
+    .intro_form {
+        max-width: 650px;
+        width: 100%;
+        background-color: #fff;
+        margin: 0 auto 105px;
+        display: flex;
+        padding: 2px;
+        transition: all .2s ease;
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 5px 5px;
+        }
+        input[type=search] {
+            text-align: center;
+            max-width: 500px;
+            width: 80%;
+            height: 57px;
+            border: none;
+            font-family: 'Josefin Sans';
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: 2.8px;
+            padding-left: 13px;
+            &:focus {
+                outline: none;
+            }
+        }
+        .intro_btn {
+            width: 24%;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 26px;
+            letter-spacing: 1.4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 25px;
+            &:hover {
+                background-color: #0121a6;
+            }
+            i {
+                font-size: 28px;
+                margin-left: 10px;
+                padding-bottom: 2px;
+            }
+        }
+    }
+    .scroll_down {
+        display: flex;
+        justify-content: center;
+        margin-right: 55px;
+        padding-bottom: 152px;
+        a {
+            font-family: 'Josefin Sans';
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 26px;
+            letter-spacing: 2.8px;
+            position: relative;
+            &::before {
+                content: '';
+                width: 9px;
+                height: 9px;
+                border-left: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                position: absolute;
+                top: 23px;
+                left: 47px;
+                transform: rotate(-45deg);
+            }
+            &:hover {
+                text-decoration: none;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+#sticky_anchor {
+    background-color: #5474FD;
+    min-height: 82px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    .header_flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 27px;
+        .header_logo {
+            padding: 3px 0 0px 3px;
+        }
+        #main_menu {
+            ul {
+                display: flex;
+                li {
+                    margin-left: 43px;
+                    font-family: 'Aleo';
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 26px;
+                    text-transform: uppercase;
+                    &:first-child {
+                        margin-left: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.why_choose_us {
+    background: url(../images/why_choose_us_bg.jpg) top/cover no-repeat;
+    .wcu_flex {
+        display: flex;
+        justify-content: space-between;
+        padding: 116px 0 108px;
+        .wcu_left {
+            width: 51%;
+            h2 {
+                font-family: 'Aleo';
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 26px;
+                padding: 97px 0 50px;
+            }
+            p {
+                font-family: 'Josefin Sans';
+                line-height: 26px;
+                letter-spacing: 1.6px;
+                color: #E8E8E8;
+                margin-bottom: 29px;
+                &:last-of-type {
+                    margin-bottom: 45px;
+                }
+            }
+            .btn {
+                letter-spacing: 2.8px;
+                padding-top: 6px;
+            }
+        }
+        .wcu_right {
+            .wcu_img_up {
+                padding-right: 91px;
+                img {
+                    max-width: 350px;
+                    width: 100%;
+                }
+            }
+            .wcu_img_bottom {
+                padding: 2px 0 0 91px;
+                img {
+                    max-width: 350px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.destinations {
+    background-color: #333;
+    .dest_flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 38px;
+        padding-top: 101px;
+        padding-bottom: 114px;
+        .dest_elem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .dest_elem_img {
+                padding-bottom: 30px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            h4 {
+                font-family: 'Aleo';
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 26px;
+                color: #E8E8E8;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .intro {
+        background-position: -300px;
+    }
+}
+
+.spain_up {
+    background: url(../images/spain_up_bg.jpg) top/cover no-repeat;
+    .spain_left {
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 226px;
+        padding-bottom: 104px;
+        .spain_card_up {
+            max-width: 543px;
+            background-color: rgba(35, 35, 35, 0.9);
+            padding: 49px 30px 0;
+            h4 {
+                font-family: 'Josefin Sans';
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 26px;
+                letter-spacing: 1.5px;
+                color: #E8E8E8;
+                margin-bottom: 23px;
+            }
+            h3 {
+                font-family: 'Josefin Sans';
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 26px;
+                text-transform: uppercase;
+                margin-bottom: 13px;
+            }
+            p {
+                font-family: 'Josefin Sans';
+                font-weight: 400;
+                line-height: 26px;
+                color: #E8E8E8;
+                margin-bottom: 46px;
+            }
+            .btn {
+                padding-top: 9px;
+                margin-bottom: 48px;
+                letter-spacing: 2.8px;
+            }
+        }
+    }
+}
+
+.spain_bottom {
+    background: url(../images/spain_bottom_bg.jpg) top/cover no-repeat;
+    .spain_right {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 234px;
+        padding-bottom: 100px;
+        .spain_card_bottom {
+            max-width: 543px;
+            background-color: rgba(35, 35, 35, 0.9);
+            padding: 40px 32px 0;
+            h4 {
+                font-family: 'Josefin Sans';
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 26px;
+                letter-spacing: 1.5px;
+                color: #E8E8E8;
+                margin-bottom: 23px;
+            }
+            h3 {
+                font-family: 'Josefin Sans';
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 26px;
+                text-transform: uppercase;
+                margin-bottom: 13px;
+            }
+            p {
+                font-family: 'Josefin Sans';
+                font-weight: 400;
+                line-height: 26px;
+                color: #E8E8E8;
+                margin-bottom: 46px;
+            }
+            .btn {
+                padding-top: 9px;
+                margin-bottom: 48px;
+                letter-spacing: 2.8px;
+            }
+        }
+    }
+}
+
+.our_tourists {
+    background: url(../images/our_tourists_bg.jpg) top/cover no-repeat;
+    h2 {
+        padding: 130px 0 92px;
+        text-align: center;
+        font-family: 'Aleo';
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 26px;
+        letter-spacing: 0.7px;
+    }
+    .tourists_content {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 193px;
+        .tourists_img {
+            width: 45%;
+            img {
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+        .tourists_quote {
+            background-color: #333333;
+            max-height: 282px;
+            width: 67%;
+            padding: 49px 25px 39px 62px;
+            h4 {
+                font-family: 'Josefin Sans';
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 26px;
+                text-transform: uppercase;
+            }
+            i {
+                color: #5474FD;
+                font-size: 35px;
+                padding-right: 10px;
+            }
+            p {
+                font-family: 'Josefin Sans';
+                font-size: 16px;
+                line-height: 26px;
+            }
+
+        }
+    }
+}
+
+.footer {
+    background-color: #232323;
+    .footer_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 120px;
+        .footer_img {
+            margin-bottom: 6px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        h3 {
+            font-family: 'Josefin Sans';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 1.6px;
+            margin-bottom: 19px;
+        }
+    }
+    .footer_links {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        margin-bottom: 47px;
+        li {
+            a {
+                text-decoration: none;
+            }
+            &:hover {
+                color: #5474FD;
+            }
+        }
+    }
+}
