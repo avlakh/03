@@ -59,18 +59,61 @@ a {
 a:hover {
   text-decoration: underline;
 }
+a:active {
+  color: #000;
+}
+
+.button_link {
+  display: block;
+  position: relative;
+  width: 228px;
+  height: 63px;
+  background-color: #5474FD;
+  color: #fff;
+  font-family: "Aleo";
+  text-transform: uppercase;
+  cursor: pointer;
+  padding-top: 18px;
+  text-align: center;
+  letter-spacing: 1.4px;
+  z-index: 10;
+}
+.button_link:hover, .button_link:focus {
+  text-decoration: none;
+  color: #fff;
+}
+.button_link:active {
+  color: #000000;
+}
+.button_link span {
+  position: relative;
+  z-index: 4;
+}
+.button_link:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-image: -o-linear-gradient(45deg, #496bfe 55%, #5474fd 38%);
+  background-image: linear-gradient(45deg, #496bfe 55%, #5474fd 38%);
+  width: 65%;
+  height: 100%;
+  transition: all 0.35s;
+  z-index: 3;
+}
+.button_link:hover::after {
+  width: 100%;
+  background-image: -o-linear-gradient(45deg, #496bfe 100%, #5474fd 0%);
+  background-image: linear-gradient(45deg, #496bfe 100%, #5474fd 0%);
+}
 
 ul {
   list-style: none;
 }
 
-.hamburger_menu {
-  display: none;
-}
-
 .intro {
   background-image: url(../images/start_bg.jpg);
-  background-position: top;
+  background-position: -82px;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -84,7 +127,7 @@ ul {
   background-color: #5474fd;
   padding: 20px;
   height: 100vh;
-  z-index: 21;
+  z-index: 45;
   -webkit-transform: translateX(-320px);
   -ms-transform: translateX(-320px);
   transform: translateX(-320px);
@@ -139,7 +182,7 @@ ul {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
-  z-index: 20;
+  z-index: 40;
 }
 .intro #page_overlay.open {
   display: block;
@@ -171,6 +214,7 @@ ul {
   line-height: 26px;
   letter-spacing: 6.82px;
   margin-bottom: 47px;
+  text-align: center;
 }
 .intro .intro_form {
   max-width: 650px;
@@ -274,7 +318,7 @@ ul {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
-  z-index: 10;
+  z-index: 20;
 }
 .sticky_header .header_flex {
   overflow: auto;
@@ -306,6 +350,9 @@ ul {
 }
 .sticky_header .header_flex #main_menu ul li:first-child {
   margin-left: 0px;
+}
+.sticky_header .header_flex .hamburger_menu {
+  display: none;
 }
 
 .why_choose_us {
@@ -362,9 +409,10 @@ ul {
 }
 
 .destinations {
+  background-image: url(../images/lines_bg.svg);
   background-size: 52%;
   background-repeat: no-repeat;
-  background-position: 358px 47px;
+  background-position: 366px 47px;
   background-color: #333;
 }
 .destinations .dest_flex {
@@ -452,10 +500,9 @@ ul {
   color: #E8E8E8;
   margin-bottom: 46px;
 }
-.spain_up .spain_left .spain_card_up .btn {
-  padding-top: 9px;
+.spain_up .spain_left .spain_card_up .button_link {
+  padding-top: 22px;
   margin-bottom: 48px;
-  letter-spacing: 2.8px;
 }
 
 .spain_bottom {
@@ -502,10 +549,9 @@ ul {
   color: #E8E8E8;
   margin-bottom: 46px;
 }
-.spain_bottom .spain_right .spain_card_bottom .btn {
-  padding-top: 9px;
+.spain_bottom .spain_right .spain_card_bottom .button_link {
+  padding-top: 22px;
   margin-bottom: 48px;
-  letter-spacing: 2.8px;
 }
 
 .our_tourists {
@@ -535,6 +581,8 @@ ul {
   width: 45%;
 }
 .our_tourists .tourists_content .tourists_img img {
+  display: block;
+  margin: 0 auto;
   width: 100%;
   max-width: 450px;
 }
@@ -576,7 +624,7 @@ ul {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 120px;
+  padding-top: 130px;
 }
 .footer .footer_content .footer_img {
   margin-bottom: 6px;
@@ -646,7 +694,12 @@ ul {
     padding: 0px;
   }
 
+  .our_tourists h2 {
+    padding: 70px 0 50px;
+    line-height: 40px;
+  }
   .our_tourists .tourists_content {
+    padding-bottom: 80px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -655,34 +708,12 @@ ul {
     -ms-flex-align: center;
     align-items: center;
   }
-}
-@media screen and (max-width: 900px) {
-  .sticky_header {
-    padding: 12px 0;
+  .our_tourists .tourists_content .tourists_img {
+    width: 70%;
   }
-  .sticky_header #main_menu {
-    display: none;
-  }
-  .sticky_header .hamburger_menu {
-    display: block;
-  }
-
-  .destinations .dest_flex {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-  .destinations .dest_flex .dest_elem {
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-  }
-  .destinations .dest_flex .dest_elem:nth-last-child(2) {
-    -ms-flex-item-align: end;
-    align-self: flex-end;
+  .our_tourists .tourists_content .tourists_quote {
+    max-height: none;
+    width: 70%;
   }
 
   .footer .footer_content {
@@ -692,24 +723,45 @@ ul {
     font-size: 25px;
   }
 }
+@media screen and (max-width: 900px) {
+  .sticky_header {
+    padding: 12px 0;
+  }
+  .sticky_header .header_flex #main_menu {
+    display: none;
+  }
+  .sticky_header .header_flex .hamburger_menu {
+    display: block;
+  }
+
+  .destinations .dest_flex {
+    padding: 50px 0px 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .destinations .dest_flex .dest_elem {
+    margin-left: 50px;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+  .destinations .dest_flex .dest_elem:nth-last-child(2) {
+    margin-right: 50px;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  }
+}
 @media screen and (max-width: 850px) {
   .intro {
     background-position: -200px;
   }
 
-  .our_tourists h2 {
-    padding: 70px 0 50px;
-    line-height: 40px;
-  }
-  .our_tourists .tourists_content {
-    padding-bottom: 80px;
-  }
-  .our_tourists .tourists_content .tourists_img {
-    width: 70%;
-  }
   .our_tourists .tourists_content .tourists_quote {
-    max-height: none;
-    width: 70%;
+    padding: 15px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -760,7 +812,6 @@ ul {
   }
 
   .destinations .dest_flex {
-    padding: 50px 0px 50px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -770,11 +821,12 @@ ul {
     align-items: center;
   }
   .destinations .dest_flex .dest_elem {
+    margin: 0px;
     -ms-flex-item-align: center;
     align-self: center;
-    margin-bottom: 50px;
   }
   .destinations .dest_flex .dest_elem:nth-last-child(2) {
+    margin: 0px;
     -ms-flex-item-align: center;
     align-self: center;
   }
@@ -793,9 +845,5 @@ ul {
 @media screen and (max-width: 500px) {
   .intro {
     background-position: -300px;
-  }
-
-  .our_tourists .tourists_content .tourists_quote {
-    padding: 15px;
   }
 }
