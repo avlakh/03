@@ -76,6 +76,8 @@ ol, ul {
 .container .upper_section .upper_flex .upper_right_flex h2 {
   font-weight: 900;
   font-size: 30px;
+  text-align: center;
+  line-height: 30px;
 }
 .container .upper_section .upper_flex .upper_right_flex ul {
   margin-top: 10px;
