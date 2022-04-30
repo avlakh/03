@@ -1,14 +1,14 @@
 function myPow() {
-    const num = parseInt(prompt('Enter integer number'));
-    const num2 = parseInt(prompt('Enter integer number2'));
+    const num = parseInt(prompt('Введіть число'));
+    const num2 = parseInt(prompt('Введіть натсупне число'));
     const rez = num**num2;
 
     alert(rez);
 }
 
 function avgNum() {
-    const num = parseInt(prompt('Enter integer number'));
-    const num2 = parseInt(prompt('Enter integer number2'));
+    const num = parseInt(prompt('Введіть число'));
+    const num2 = parseInt(prompt('Введіть наступне число'));
     const rez = (num+num2)/2;
     
     alert(rez);
@@ -58,3 +58,17 @@ function findX () {
     alert(`Ікс дорівнює : ${x}`);
 }
 
+function timeToDayEnd () {
+    const hour = +prompt('Enter hour');
+    const minute = +prompt('Enter minutes');
+    const minutesTotalLeft = ((24 * 60) - (hour * 60 + minute));
+    const hoursLeft = parseInt(minutesTotalLeft / 60);
+    const minutesLeft = minutesTotalLeft - hoursLeft * 60; 
+    alert(`hours left: ${hoursLeft}, minutes left: ${minutesLeft}`);
+}
+
+function digit2 () {
+    const abc = +prompt('Введіть трьохзначне число'); 
+    const rez = parseInt((abc % 100) / 10);
+    alert(`Друга цифра ${rez}`);
+}
