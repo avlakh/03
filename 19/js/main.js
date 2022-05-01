@@ -1,3 +1,5 @@
+// SASHA TASK
+
 function myPow() {
     const num = parseInt(prompt('Введіть число'));
     const num2 = parseInt(prompt('Введіть натсупне число'));
@@ -71,4 +73,61 @@ function digit2 () {
     const abc = +prompt('Введіть трьохзначне число'); 
     const rez = parseInt((abc % 100) / 10);
     alert(`Друга цифра ${rez}`);
+}
+
+function digit5 () {
+    const digit = +prompt('Введіть п\'ятизначне число');
+    const operator = digit % 10;
+    const rez = `${operator}${digit}`;
+    alert (`Посунуте число: ${rez}`);
+}
+
+function salary () {
+    const empWage = 250; 
+    const sales = parseInt(prompt('Введіть суму продаж'));
+    const rez = empWage + (sales / 10);
+    alert (`Ваша зарплата ${rez}`);
+}
+
+
+
+// LMS TASK
+
+function yourName () {
+    const yourName = prompt("Введіть ваше ім'я");
+    alert (`Привіт ${yourName}`);
+}
+
+function yourAge () {
+    const year = 2022;
+    let age = prompt('Введіть рік свого народження');
+    let rez = year - age;
+    alert(`Тобі ${rez} років`);
+}
+
+function squareSide () {
+    let side = parseInt(prompt('Введіть сторону квадрату'));
+    let rez = side ** 2;
+    alert(`Периметр квадрату ${rez}`);
+}
+
+function circleSquare () {
+    const P = Math.PI;
+    let radius = parseInt(prompt('Введіть радіус кола'))
+    let rez = Math.PI * radius ** 2;
+    alert(`Радіус кола ${rez}`);
+}
+
+function yourSpeed () {
+    let distance = parseInt(prompt('Введіть відстань в кілометрах'));
+    let hour = parseInt(prompt('Введіть к-ть годин'));
+    let speed = distance / hour;
+    alert (`Ваша швидкість: ${speed}`);
+}
+
+function converter () {
+    const euro = 0.95;
+    const dollar = parseInt(prompt('Введіть долари'));
+    const rez = dollar * euro;
+    alert (`В євро це: ${rez}`);
 }
