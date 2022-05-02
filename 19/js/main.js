@@ -112,7 +112,6 @@ function squareSide () {
 }
 
 function circleSquare () {
-    const P = Math.PI;
     let radius = parseInt(prompt('Введіть радіус кола'))
     let rez = Math.PI * radius ** 2;
     alert(`Радіус кола ${rez}`);
