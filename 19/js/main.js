@@ -77,8 +77,7 @@ function digit2 () {
 
 function digit5 () {
     const digit = +prompt('Введіть п\'ятизначне число');
-    const operator = digit % 10;
-    const rez = `${operator}${digit}`;
+    const rez = parseInt(((digit % 10) * 10000) + (digit / 10))
     alert (`Посунуте число: ${rez}`);
 }
 
@@ -88,7 +87,6 @@ function salary () {
     const rez = empWage + (sales / 10);
     alert (`Ваша зарплата ${rez}`);
 }
-
 
 
 // LMS TASK
