@@ -304,7 +304,19 @@ function yourSymbol () {
 // 13
 
 function digits3 () {
-// на жаль, не маю рішення
+    debugger;
+    const number = prompt('Введіть трьохзначне число');
+    if (number [0] == number [1] && number [1] == number [2]) {
+        alert('Всі цифри однакові');
+    } else if (number[0] == number[1]) {
+        alert('Перша і друга цифра однакові');
+    } else if (number[1] == number[2]) {
+        alert ('Друга і третя цифра однакові');
+    } else if (number[2] == number[0]) {
+        alert ('Перша і третя цифра однакові');
+    } else {
+        alert ('Немає однакових цифр');
+    }
 }
 
 // 14
