@@ -128,7 +128,7 @@ function correctTime () {
 // 5
 
 function yourCoordinate () {
-// на жаль, не маю рішення 
+// на жаль, не маю рішення, можеш наштовхнути?
 }
 
 // Завдання з використанням SWITCH
@@ -335,7 +335,7 @@ function leapYear () {
 // 15
 
 function palindrom () {
-// на жаль, не маю рішення
+// на жаль, не маю рішення, можеш наштовхнути?
 }
 
 // 16
@@ -390,5 +390,5 @@ function circleAndSquare () {
 // 19
 
 function questionsAndAnswers () {
-    // на жаль, не маю рішення
+    // на жаль, не маю рішення, можеш наштовхнути?
 }
