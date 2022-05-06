@@ -1,3 +1,5 @@
+// ПРАКТИКА З УРОКУ - НЕХАЙ ТУТ БУДЕ
+
 function task1() {
     const num = parseInt(document.getElementById('task_1_number').value);
     let rez = '';
@@ -43,3 +45,76 @@ function task4 () {
     }
     document.getElementById('task_4_result').innerText = rez;
 }
+
+// ДОМАШКА
+// знаю, що завдання з попереднього уроку, але я додатково практикувався :D
+
+function homeTask1 () { 
+    const age = parseInt(document.getElementById('home_task_1').value); 
+    let result = '';
+    if (age > 0 && age < 12) {
+        result = 'Ти - дитина!';
+    } else if (age > 12 && age < 18) {
+        result = 'Ти - підліток!';
+    } else if (age > 18 && age < 60) {
+        result = 'Ти - дорослий!';
+    } else if (age > 60 && age < 150) {
+        result = 'Ти - пенсіонер!';
+    } else { 
+        result = 'зеленський_мем_хто_я'
+    }
+    document.getElementById('home_task_1_result').innerText = result;
+}
+
+function homeTask2 () {
+    const keyNumber = document.getElementById('home_task_2').value;
+    let symbol = '';
+    switch (keyNumber) {
+        case '1':
+            symbol = '!';
+            break;
+        case '2':
+            symbol = '@';
+            break;
+        case '3':
+            symbol = '#';
+            break;
+        case '4':
+            symbol = '$';
+            break;
+        case '5':
+            symbol = '%';
+            break;
+        case '6':
+            symbol = '^';
+            break;
+        case '7':
+            symbol = '&';
+            break;
+        case '8':
+            symbol = '*';
+            break;
+        case '9':
+            symbol = '(';
+            break;
+        case '0':
+            symbol = ')';
+            break;
+        default:
+            symbol = 'Виберіть цифру від 1 до 0 на клавіатурі';
+            break;
+    }
+    document.getElementById('home_task_2_result').innerText = symbol;
+}
+
+function homeTask3 () {
+    debugger
+    const number1 = parseInt(document.getElementById('home_task_3_number_1').value);
+    const number2 = parseInt(document.getElementById('home_task_3_number_2').value);
+    let totalNumber;
+    for (let i = number1; i <= number2; i++) {
+        totalNumber += i;
+    }
+    document.getElementById('home_task_3_result').innerText = totalNumber;
+}
+

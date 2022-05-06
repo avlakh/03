@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +9,14 @@
 </head>
 <body>
     <div class="container pt-4">
+        <h2>ПРАКТИКА З УРОКУ</h2>
         <div class="card mb-4">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4"><p>Вивести</p></div>
+                    <div class="col-4"><p>Вивести кількість хешів</p></div>
                     <div class="col-4">
                         <input type="number" id="task_1_number">
-                        <button type="button" class="btn btn-info" onclick="task1()">show hash</button>
+                        <button type="button" class="btn btn-info" onclick="task1()">Покажи хеші</button>
                     </div>
                     <div class="col-4">
                         <p>Результат</p>
@@ -28,10 +29,10 @@
         <div class="card mb-4">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4"><p>Вивести</p></div>
+                    <div class="col-4"><p>Вивести зменшення</p></div>
                     <div class="col-4">
                         <input type="number" id="task_2_number">
-                        <button type="button" class="btn btn-info" onclick="task2()">show number</button>
+                        <button type="button" class="btn btn-info" onclick="task2()">Покажи зменшення</button>
                     </div>
                     <div class="col-4">
                         <p>Результат</p>
@@ -43,17 +44,68 @@
         <div class="card mb-4">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4"><p>Вивести</p></div>
+                    <div class="col-4"><p>Вивести числа з дільниками</p></div>
                     <div class="col-4">
                         <input type="number" id="task_4_number1">
-                        <br>
-                        <input type="number" id="task_4_number2">
-                        <br>
-                        <button type="button" class="btn btn-info" onclick="task4()">show nubmer</button>
+                        <input type="number" id="task_4_number2" class="mb-2">
+                        <button type="button" class="btn btn-info" onclick="task4()">Покажи число</button>
                     </div>
                     <div class="col-4">
                         <p>Результат</p>
                         <div id="task_4_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>ДОМАШКА</h2>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <p>Запитай у користувача його вік і визначи, ким він є: дитиною (0-11), підлітком (12-17), дорослим (18_59) або пенсіонером (60 ...), передбач можливість введення невірних даних.</p>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" id="home_task_1">
+                        <button type="button" class="btn btn-info" onclick="homeTask1()">Покажи хто я</button>
+                    </div>
+                    <div class="col-4">
+                        <p>Результат</p>
+                        <div id="home_task_1_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <p>Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші (1 !, 2 @, 3 # і т. д).</p>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" id="home_task_2">
+                        <button type="button" class="btn btn-info" onclick="homeTask2()">Покажи спецсимвол</button>
+                    </div>
+                    <div class="col-4">
+                        <p>Результат</p>
+                        <div id="home_task_2_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <p>Підрахуй суму всіх чисел в заданому користувачем діапазоні.</p>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" id="home_task_3_number_1">
+                        <input type="number" id="home_task_3_number_2">
+                        <button type="button" class="btn btn-info" onclick="homeTask3()">Покажи суму</button>
+                    </div>
+                    <div class="col-4">
+                        <p>Результат</p>
+                        <div id="home_task_3_result"></div>
                     </div>
                 </div>
             </div>
