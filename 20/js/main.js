@@ -236,7 +236,6 @@ function yourPlanet () {
     let hello;
     let result = (planet == 'Земля' || planet == 'земля') ? hello = 'Привіт, землянин!' : hello = 'Привіт, інопланетянин';
     alert (result); 
-    // в мене чомусь не спрацьовує правильно
 }
 
 // 11
