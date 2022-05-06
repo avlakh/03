@@ -118,9 +118,81 @@ function homeTask3 () {
 }
 
 function homeTask4 () {
-    let number1 = parseInt(+document.getElementById('home_task_4_number_1'));
-    let number2 = parseInt(+document.getElementById('home_task_4_number_2'));
+    debugger
+    let number1 = parseInt(+document.getElementById('home_task_4_number_1').value);
+    let number2 = parseInt(+document.getElementById('home_task_4_number_2').value);
     
-    let biggestDiv = 0;
-    for (let i = )
+    while (number1 != 0 && number2 != 0) {
+        if (number1 > number2) {
+            number1 %= number2;
+        } else {
+            number2 %= number1;
+        }
+    }
+    const biggestDiv = number1 + number2;
+
+    document.getElementById('home_task_4_result').innerText = biggestDiv;
+}
+
+function homeTask5 () {
+    const num1 = parseInt(document.getElementById('home_task_5_number_1').value);
+    const num2 = parseInt(document.getElementById('home_task_5_number_2').value);
+    let rez = '';
+    let i = 1;
+    const minNum = num1<num2 ? num1 : num2;
+    while (i <= minNum) {
+        if (num1%1==0 && num2%i==0) {
+            rez += i+', ';
+        }
+        i++;
+    }
+    if(minNum===num1) {
+        if (num2%num1==0) {
+            rez += num1;
+        }
+    } else {
+        if(num1%num2==0) {
+            rez += num2;
+        }
+    }
+    document.getElementById('home_task_5_result').innerText = rez;
+}
+
+function homeTask6 () {
+// без рішення поки
+}
+
+function homeTask7 () {
+    const num1 = parseInt(document.getElementById('home_task_7_number').value);
+    let discountedPrice;
+    if (num1 >= 200 && num1 < 300) {
+        discountedPrice = num1 - (num1 / 100 * 3); 
+    } else if (num1 >= 300 && num1 < 500) {
+        discountedPrice = num1 - (num1 / 100 * 5);
+    } else if (num1 >= 500) {
+        discountedPrice = num1 - (num1 / 100 * 7);
+    } else {
+        discountedPrice = num1;
+    }
+    document.getElementById('home_task_7_result').innerText = Math.floor(discountedPrice);
+}
+
+function homeTask8 () {
+// без рішення поки
+}
+
+function homeTask9 () {
+// без рішення поки
+}
+
+function homeTask10 () {
+// без рішення поки
+}
+
+function homeTask11 () {
+// без рішення поки
+}
+
+function homeTask12 () {
+// без рішення поки
 }
