@@ -108,13 +108,19 @@ function homeTask2 () {
 }
 
 function homeTask3 () {
-    debugger
-    const number1 = parseInt(document.getElementById('home_task_3_number_1').value);
-    const number2 = parseInt(document.getElementById('home_task_3_number_2').value);
-    let totalNumber;
+    const number1 = parseInt(+document.getElementById('home_task_3_number_1').value);
+    const number2 = parseInt(+document.getElementById('home_task_3_number_2').value);
+    let totalNumber = 0;
     for (let i = number1; i <= number2; i++) {
         totalNumber += i;
     }
     document.getElementById('home_task_3_result').innerText = totalNumber;
 }
 
+function homeTask4 () {
+    let number1 = parseInt(+document.getElementById('home_task_4_number_1'));
+    let number2 = parseInt(+document.getElementById('home_task_4_number_2'));
+    
+    let biggestDiv = 0;
+    for (let i = )
+}

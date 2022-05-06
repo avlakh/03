@@ -234,7 +234,7 @@ function multiplyBy5 () {
 function yourPlanet () {
     let planet = prompt('Вкажіть планету');
     let hello;
-    let result = (planet = 'Земля' || 'земля') ? hello = 'Привіт, землянин!' : hello = 'Привіт, інопланетянин';
+    let result = (planet == 'Земля' || planet == 'земля') ? hello = 'Привіт, землянин!' : hello = 'Привіт, інопланетянин';
     alert (result); 
     // в мене чомусь не спрацьовує правильно
 }
