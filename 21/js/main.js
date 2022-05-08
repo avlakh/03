@@ -262,7 +262,7 @@ function yourGuessNum () {
         highest = 100,
         rez = 0,
         n = 0;
-    if () {
+    if (condition) {
         while (rez) {
             rez = confirm(Math.floor (highest + lowest) / 2);
         }
@@ -296,11 +296,6 @@ function yourDate () {
         rez = 0,
         i = 0;
     while (day) {
-        nextDay = day
+
     }
-}
-
-
-function day () {
-
 }
