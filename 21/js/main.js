@@ -240,15 +240,36 @@ function numberStat () {
 }
 
 // 9
+// зробив масивом, бо була ідея на перечислення днів, і знайшов отаке от рішення, не знаю, як можна по-інакшому
 
 function dayWeek () {
-// без рішення поки - розібрали на уроці
+    let answer = true;
+    const daysWeek = [`Понеділок`, `Вівторок`, `Середа`, `Четвер`, `П'ятниця`, `Субота`, `Неділя`];
+    let i = 0;
+    while (answer) {
+        answer = confirm(`Це ${daysWeek[i]}. А який наступний день тижня?`);
+        if (i === 6) i = -1;
+        i++;
+    }
+    alert ('Кінець');
 }
 
 // 10
 
 function yourGuessNum () {
-// без рішення поки - хз
+    debugger
+    let lowest = 0,
+        highest = 100,
+        rez = 0,
+        n = 0;
+    if () {
+        while (rez) {
+            rez = confirm(Math.floor (highest + lowest) / 2);
+        }
+    } else {
+
+    }
+    alert ('Вітаю, це ваше число!');
 }
 
 // 11
@@ -269,5 +290,17 @@ function timesTable () {
 // 12
 
 function yourDate () {
-// без рішення
+    let day = parseInt(prompt('Який сьогодні день?')),
+        month = parseInt(prompt('Який сьогодні місяць?')),
+        year = parseInt(prompt('Який сьогодні рік?')),
+        rez = 0,
+        i = 0;
+    while (day) {
+        nextDay = day
+    }
+}
+
+
+function day () {
+
 }
