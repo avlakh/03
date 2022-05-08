@@ -9,69 +9,21 @@
 </head>
 <body>
     <div class="container pt-4">
-        <h2>ПРАКТИКА З УРОКУ</h2>
-        <div class="card mb-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-4"><p>Вивести кількість хешів</p></div>
-                    <div class="col-4">
-                        <input type="number" id="task_1_number">
-                        <button type="button" class="btn btn-info" onclick="task1()">Покажи хеші</button>
-                    </div>
-                    <div class="col-4">
-                        <p>Результат</p>
-                        <div id="task_1_result"></div>
-                    </div>
-                </div>
-                <div id="task_1_result"></div>
-            </div>
-        </div>
-        <div class="card mb-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-4"><p>Вивести зменшення</p></div>
-                    <div class="col-4">
-                        <input type="number" id="task_2_number">
-                        <button type="button" class="btn btn-info" onclick="task2()">Покажи зменшення</button>
-                    </div>
-                    <div class="col-4">
-                        <p>Результат</p>
-                        <div id="task_2_result"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-4"><p>Вивести числа з дільниками</p></div>
-                    <div class="col-4">
-                        <input type="number" id="task_4_number1">
-                        <input type="number" id="task_4_number2" class="mb-2">
-                        <button type="button" class="btn btn-info" onclick="task4()">Покажи число</button>
-                    </div>
-                    <div class="col-4">
-                        <p>Результат</p>
-                        <div id="task_4_result"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h2>ДОМАШКА</h2>
-
+        
         <!-- 1 -->
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">1</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p>Запитай у користувача його вік і визначи, ким він є: дитиною (0-11), підлітком (12-17), дорослим (18_59) або пенсіонером (60 ...), передбач можливість введення невірних даних.</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Запитай у користувача його вік і визначи, ким він є: дитиною (0-11), підлітком (12-17), дорослим (18_59) або пенсіонером (60 ...), передбач можливість введення невірних даних.</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
                         <input type="number" id="home_task_1">
                         <button type="button" class="btn btn-info" onclick="age()">Покажи хто я</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_1_result"></div>
                     </div>
@@ -83,15 +35,16 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">2</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p>Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші (1 !, 2 @, 3 # і т. д).</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class=" p-4 text-center">Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші (1 !, 2 @, 3 # і т. д).</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
                         <input type="number" id="home_task_2">
                         <button type="button" class="btn btn-info" onclick="guessNumber()">Покажи спецсимвол</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_2_result"></div>
                     </div>
@@ -103,18 +56,19 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">3</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Підрахуй суму всіх чисел в заданому користувачем діапазоні.</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Підрахуй суму всіх чисел в заданому користувачем діапазоні.</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
                         <label for="home_tast_3_number_1" class="p-2">Введи число 1</label>
                         <input type="number" id="home_task_3_number_1">
                         <label for="home_tast_3_number_1" class="p-2">Введи число 2</label>
                         <input type="number" id="home_task_3_number_2">
                         <button type="button" class="btn btn-info" onclick="numberRange()">Покажи суму</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
                         <p>Результат</p>
                         <div id="home_task_3_result"></div>
                     </div>
@@ -126,18 +80,19 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">4</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Запитай у користувача 2 числа і знайди найбільший спільний дільник.</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Запитай у користувача 2 числа і знайди найбільший спільний дільник.</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
                         <label for="home_task_4_number_1" class="p-2">Введи число 1</label>
                         <input type="number" id="home_task_4_number_1">
                         <label for="home_task_4_number_2" class="p-2">Введи число 2</label>
                         <input type="number" id="home_task_4_number_2">
                         <button type="button" class="btn btn-info" onclick="biggestDiv()">Покажи суму</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_4_result"></div>
                     </div>
@@ -149,18 +104,19 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">5</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Запитай у користувача число і виведи всі дільники цього числа.</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Запитай у користувача число і виведи всі дільники цього числа.</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
                         <label for="home_task_5_number_1" class="p-2">Введи число 1</label>
                         <input type="number" id="home_task_5_number_1">
                         <label for="home_task_5_number_2" class="p-2">Введи число 2</label>
                         <input type="number" id="home_task_5_number_2">
                         <button type="button" class="btn btn-info" onclick="allDivs()">Покажи суму</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_5_result"></div>
                     </div>
@@ -172,14 +128,15 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">6</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <button type="button" class="btn btn-info" onclick="palindrome()">Паліндром</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_6_result"></div>
                     </div>
@@ -191,16 +148,17 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">7</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Запитай у користувача суму покупки і виведи суму до оплати зі знижкою: від 200 до 300 - знижка буде 3%; від 300 до 500 - 5%; від 500 і вище - 7%.</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Запитай у користувача суму покупки і виведи суму до оплати зі знижкою: від 200 до 300 - знижка буде 3%; від 300 до 500 - 5%; від 500 і вище - 7%.</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
                         <label for="home_task_7_number" class="p-2">Введи число</label>
                         <input type="number" id="home_task_7_number">
                         <button type="button" class="btn btn-info" onclick="discount()">Введи число</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_7_result"></div>
                     </div>
@@ -212,14 +170,15 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">8</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <button type="button" class="btn btn-info" onclick="numberStat()">Введи число</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_8_result"></div>
                     </div>
@@ -231,14 +190,15 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">9</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Зацикли відображення днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Зацикли відображення днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <button type="button" class="btn btn-info" onclick="dayWeek()">Введи число</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_9_result"></div>
                     </div>
@@ -250,14 +210,15 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">10</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 і відгадай його наступним способом: кожну ітерацію циклу діли діапазон чисел навпіл, записуй результат в N і питай у користувача «Ваше число> N, N або == N?». Залежно від того що вказав користувач, зменшуй діапазон. Початковий діапазон від 0 до 100, поділи навпіл і отримай 50. Якщо користувач вказав, що його число> 50, то зміни діапазон на від 50 до 100. І так до тих пір, поки користувач не вибере == N (буде корисним почитати про алгоритм: "бінарний пошук").</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 і відгадай його наступним способом: кожну ітерацію циклу діли діапазон чисел навпіл, записуй результат в N і питай у користувача «Ваше число> N, N або == N?». Залежно від того що вказав користувач, зменшуй діапазон. Початковий діапазон від 0 до 100, поділи навпіл і отримай 50. Якщо користувач вказав, що його число> 50, то зміни діапазон на від 50 до 100. І так до тих пір, поки користувач не вибере == N (буде корисним почитати про алгоритм: "бінарний пошук").</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <button type="button" class="btn btn-info" onclick="yourGuessNum()">Введи число</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_10_result"></div>
                     </div>
@@ -269,12 +230,13 @@
 
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">11</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.
                         </p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <button type="button" class="btn btn-info" onclick="timesTable()">Введи число</button>
                     </div>
 
@@ -287,14 +249,15 @@
         
         <div class="card mb-4">
             <div class="card-body">
+                <h2 class="text-center">12</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <p class="p-4">Запитай дату (день, місяць, рік) і виведи наступну за нею дату. Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.</p>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Запитай дату (день, місяць, рік) і виведи наступну за нею дату. Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <button type="button" class="btn btn-info" onclick="yourDate()">Введи число</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
                         <div id="home_task_12_result"></div>
                     </div>

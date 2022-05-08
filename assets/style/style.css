@@ -125,7 +125,7 @@ ol, ul {
   flex-direction: column;
 }
 .container .lessons_section ul li {
-  width: 250px;
+  width: 350px;
   margin-bottom: 15px;
   border-radius: 25px;
   background-color: #ADD8E6;
