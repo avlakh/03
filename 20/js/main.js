@@ -128,26 +128,26 @@ function correctTime () {
 // 5
 
 function yourCoordinate () {
-    const valueY = +prompt('Вкажіть значення Х');
-    const valueX = +prompt('Вкажіть значення Y');
+    const x = +prompt('Вкажіть значення Х');
+    const y = +prompt('Вкажіть значення Y');
     let rez = '';
-    if (Math.sign(x)===1) {
-        if (Math.sign(y)===1) {
+    if (Math.sign(x)===1){
+        if (Math.sign(y)===1){
             rez = 'I квадрант';
-        } else if (Math.sign(y)===-1) {
+        } else if (Math.sign(y)===-1){
             rez = 'IV квадрант';
-        } else if (Math.sign(y)===0) {
+        } else if (Math.sign(y)===0){
             rez = 'Ви на осі X';
         }
-    } else if (Math.sign(x)===-1) {
-        if (Math.sign(y)===1) {
+    } else if (Math.sign(x)===-1){
+        if (Math.sign(y)===1){
             rez = 'II квадрант';
-        } else if (Math.sign(y)===-1) {
+        } else if (Math.sign(y)===-1){
             rez = 'III квадрант'
-        } else if (Math.sign(y)===0) {
+        } else if (Math.sign(y)===0){
             rez = 'Ви на осі X'
         }
-    } else if (Math.sign(x)===0) {
+    } else if (Math.sign(x)===0){
         rez = 'Ви на осі Y';
     }
     alert (rez);
@@ -325,7 +325,6 @@ function yourSymbol () {
 // 13
 
 function digits3 () {
-    debugger;
     const number = prompt('Введіть трьохзначне число');
     if (number [0] == number [1] && number [1] == number [2]) {
         alert('Всі цифри однакові');
