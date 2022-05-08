@@ -49,7 +49,9 @@ function task4 () {
 // ДОМАШКА
 // знаю, що завдання з попереднього уроку, але я додатково практикувався :D
 
-function homeTask1 () { 
+// 1
+
+function age () { 
     const age = parseInt(document.getElementById('home_task_1').value); 
     let result = '';
     if (age > 0 && age < 12) {
@@ -66,7 +68,9 @@ function homeTask1 () {
     document.getElementById('home_task_1_result').innerText = result;
 }
 
-function homeTask2 () {
+// 2
+
+function guessNumber () {
     const keyNumber = document.getElementById('home_task_2').value;
     let symbol = '';
     switch (keyNumber) {
@@ -107,7 +111,9 @@ function homeTask2 () {
     document.getElementById('home_task_2_result').innerText = symbol;
 }
 
-function homeTask3 () {
+// 3
+
+function numberRange () {
     const number1 = parseInt(+document.getElementById('home_task_3_number_1').value);
     const number2 = parseInt(+document.getElementById('home_task_3_number_2').value);
     let totalNumber = 0;
@@ -117,8 +123,9 @@ function homeTask3 () {
     document.getElementById('home_task_3_result').innerText = totalNumber;
 }
 
-function homeTask4 () {
-    debugger
+// 4
+
+function biggestDiv () {
     let number1 = parseInt(+document.getElementById('home_task_4_number_1').value);
     let number2 = parseInt(+document.getElementById('home_task_4_number_2').value);
     
@@ -134,7 +141,9 @@ function homeTask4 () {
     document.getElementById('home_task_4_result').innerText = biggestDiv;
 }
 
-function homeTask5 () {
+// 5
+
+function allDivs () {
     const num1 = parseInt(document.getElementById('home_task_5_number_1').value);
     const num2 = parseInt(document.getElementById('home_task_5_number_2').value);
     let rez = '';
@@ -158,11 +167,26 @@ function homeTask5 () {
     document.getElementById('home_task_5_result').innerText = rez;
 }
 
-function homeTask6 () {
-// без рішення поки
+// 6
+
+function palindrome () {
+    const number = parseInt(prompt("Введіть п'ятизначне число"));
+    let  rez = 0;
+    const firstDigit = Math.floor(number / 10000);
+    const secondDigit = Math.floor((number / 1000) % 10);
+    const fourthDigit = Math.floor((number / 10) % 10); 
+    const fifthDigit = number % 10;
+    if (firstDigit == fifthDigit && secondDigit == fourthDigit) {
+        rez = 'Ваше число паліндром!'
+    } else {
+        rez = 'Ваше число не паліндром!'
+    }
+    document.getElementById('home_task_6_result').innerText = rez;
 }
 
-function homeTask7 () {
+// 7
+
+function discount () {
     const num1 = parseInt(document.getElementById('home_task_7_number').value);
     let discountedPrice;
     if (num1 >= 200 && num1 < 300) {
@@ -177,22 +201,73 @@ function homeTask7 () {
     document.getElementById('home_task_7_result').innerText = Math.floor(discountedPrice);
 }
 
-function homeTask8 () {
-// без рішення поки
+// 8
+
+function numberStat () {
+    let  dodatni = 0, 
+        videmni = 0,
+        nuli = 0,
+        parni = 0,
+        neparni = 0,
+        rezultat = '',
+        number = 0,
+        allNumbers = '',
+        i = 0;
+    const limit = 10; 
+    while (i < limit) {
+        number = parseInt(prompt('Введіть ваше число'));
+        if (!isNaN(number)) {
+            allNumbers += number +', '
+            if (number === 0) {
+                nuli++;
+            } else {
+                if (number > 0) {
+                    dodatni++;
+                } else {
+                    videmni++;
+                }
+            }
+            if (number%2===0) {
+                parni++;
+            } else {
+                neparni++;
+            }
+            i++;
+        }
+    }
+    rezultat = `Додатні: ${dodatni}, від'ємні: ${videmni}, нуль: ${nuli}, парні: ${parni}, непарні: ${neparni}`
+    document.getElementById('home_task_8_result').innerHTML = allNumbers+'<br>'+rezultat;
 }
 
-function homeTask9 () {
-// без рішення поки
+// 9
+
+function dayWeek () {
+// без рішення поки - розібрали на уроці
 }
 
-function homeTask10 () {
-// без рішення поки
+// 10
+
+function yourGuessNum () {
+// без рішення поки - хз
 }
 
-function homeTask11 () {
-// без рішення поки
+// 11
+
+function timesTable () {
+    let r = '<div style="display:flex;flex-wrap:wrap;gap:30px;">';
+    for (let i=2;i<=9;i++) {
+        r += '<ul>';
+        for (let j=1; j<=10; j++) {
+            r += '<li>'+i+' * '+j+' = '+(i*j)+'</li>';
+        }
+        r += '</ul>';
+    }
+    r += '</div>';
+    document.getElementById('home_task_11_result').innerHTML = r;
 }
 
-function homeTask12 () {
-// без рішення поки
+// 12
+
+function yourDate () {
+// без рішення
 }

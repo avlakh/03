@@ -128,7 +128,29 @@ function correctTime () {
 // 5
 
 function yourCoordinate () {
-// на жаль, не маю рішення, можеш наштовхнути?
+    const valueY = +prompt('Вкажіть значення Х');
+    const valueX = +prompt('Вкажіть значення Y');
+    let rez = '';
+    if (Math.sign(x)===1) {
+        if (Math.sign(y)===1) {
+            rez = 'I квадрант';
+        } else if (Math.sign(y)===-1) {
+            rez = 'IV квадрант';
+        } else if (Math.sign(y)===0) {
+            rez = 'Ви на осі X';
+        }
+    } else if (Math.sign(x)===-1) {
+        if (Math.sign(y)===1) {
+            rez = 'II квадрант';
+        } else if (Math.sign(y)===-1) {
+            rez = 'III квадрант'
+        } else if (Math.sign(y)===0) {
+            rez = 'Ви на осі X'
+        }
+    } else if (Math.sign(x)===0) {
+        rez = 'Ви на осі Y';
+    }
+    alert (rez);
 }
 
 // Завдання з використанням SWITCH
@@ -333,8 +355,19 @@ function leapYear () {
 
 // 15
 
-function palindrom () {
-// на жаль, не маю рішення, можеш наштовхнути?
+function palindrome () {
+    const number = parseInt(prompt("Введіть п'ятизначне число"));
+    let  rez = 0;
+    const firstDigit = Math.floor(number / 10000);
+    const secondDigit = Math.floor((number / 1000) % 10);
+    const fourthDigit = Math.floor((number / 10) % 10); 
+    const fifthDigit = number % 10;
+    if (firstDigit == fifthDigit && secondDigit == fourthDigit) {
+        rez = 'Ваше число паліндром!'
+    } else {
+        rez = 'Ваше число не паліндром!'
+    }
+    alert(rez);
 }
 
 // 16
