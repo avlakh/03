@@ -123,6 +123,52 @@
             </div>
         </div>
 
+        <!-- 6 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">6</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. Досконале число - це число, яке дорівнює сумі всіх своїх дільників.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="number1">Введіть число</label>
+                        <input type="number" name="number1" id="perfectNum_number">
+                        <button type="button" class="btn btn-info" onclick="perfectNum()">Отримати результат</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат:</p>
+                        <div id="perfectNum_rez"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">5</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="number1">Введіть перше число</label>
+                        <input type="number" name="number1" id="perfectNumRange_number1">
+                        <label for="number1">Введіть друге число</label>
+                        <input type="number" name="number2" id="perfectNumRange_number2">
+                        <button type="button" class="btn btn-info" onclick="perfectNumRange()">Отримати результат</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат:</p>
+                        <div id="perfectNumRange_rez"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="js/main.js"></script>

@@ -63,3 +63,49 @@ function calc (length, width) {
     }
     document.getElementById('calc_rez').innerText = rez;
 }
+
+// 6
+
+function perfectNumCheck () {
+    let num = parseInt(document.getElementById('perfectNum_number').value);
+    let rez = 0;
+    for (let i = 0; i < num; i++) {
+        if (num % 1 === 0) {
+            rez += i;
+        }
+    }
+    return rez === num;
+}
+
+function perfectNum(num) {
+    num = parseInt(document.getElementById('perfectNum_number').value);
+    let rez = '',
+        a = 0;
+    for (i = num - 1; i > 0; i--) {
+        if (num % i == 0) {
+            a += i;
+        }
+    }
+    if (a == num) {
+        rez = 'Це число досконале';
+    } else {
+        rez = 'Це число недосконале'
+    }
+    document.getElementById('perfectNum_rez').innerText = rez;
+}
+
+// 7
+
+
+function perfectNumRange (minNum, maxNum) {
+    minNum = parseInt(document.getElementById('perfectNumRange_number1').value);
+    maxNum = parseInt(document.getElementById('perfectNumRange_number2').value);
+    let rez = '',
+        range = '';
+    if (minNum > maxNum || isNaN(minNum) || minNum === null || minNum === undefined || isNaN(maxNum) || maxNum === null || maxNum || undefined) {
+        rez = 'Числа введено неправильно. Виправте і спробуйте ще раз'
+    } else {
+    //    в мене тут проблема з поєднанням функцій з обробкою того числа, а потім виведенням його сюди..ну короч, таке шось
+    }
+    document.getElementById('perfectNumRange_rez').innerText = rez;
+}

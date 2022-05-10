@@ -198,7 +198,7 @@ function dayWeek () {
     let i = 0;
     while (answer) {
         answer = confirm(`Це ${daysWeek[i]}. А який наступний день тижня?`);
-        if (i === 6) i = -1;
+        if (i === 6) i = 0;
         i++;
     }
     alert ('Кінець');
@@ -206,20 +206,24 @@ function dayWeek () {
 
 // 10
 
-function yourGuessNum () {
-    debugger
-    let lowest = 0,
-        highest = 100,
-        rez = 0,
-        n = 0;
-    if (condition) {
-        while (rez) {
-            rez = confirm(Math.floor (highest + lowest) / 2);
+function yourGuessNum() {
+    let from = 0,
+        to = 100,
+        mid = 50;
+    do {
+        answer = prompt(`Ваше число < ${mid}? Відповідь: '>' або '<' або '='`);
+        if (answer == '>') {
+            from = mid;
+            mid = Math.floor(((to - from) / 2) + mid);
         }
-    } else {
-        // ?????????????????????????????
+
+        if (answer == '<') {
+            to = mid;
+            mid = Math.floor(((to - from) / 2) + from);
+        }
+    } while (answer !== '=') {
+        alert(`Ваше число ${mid}`)
     }
-    alert ('Вітаю, це ваше число!');
 }
 
 // 11
@@ -239,33 +243,61 @@ function timesTable () {
 
 // 12
 
-function yourDate () {
-    let day = parseInt(prompt('Який сьогодні день?')),
-        month = parseInt(prompt('Який сьогодні місяць?')),
-        year = parseInt(prompt('Який сьогодні рік?')),
-        rez = 0,
-        i = 0;
-        switch (month) {
-            case '1', '3', '5', '7', '8', '10', '12':
-                day = 31;
+function yourDate() {
+    debugger
+    let day = parseInt(document.getElementById('home_task_12_day').value);
+    let month = parseInt(document.getElementById('home_task_12_month').value);
+    let year = parseInt(document.getElementById('home_task_12_year').value);
+    let nextDay = 0,
+        nextMonth = 0,
+        nextYear = 0;
+    if (day <= 0 || day > 31 || isNaN(day) || day === null || day == undefined) {
+        document.getElementById('home_task_12_result').innerText = `Спробуйте ще раз`;
+    } else if (year <= 0 || isNaN(year) || year === null || year == undefined) {
+        document.getElementById('home_task_12_result').innerText = `Спробуйте ще раз`;
+    } else if (month <= 0 || month > 12 || isNaN(month) || month === null || month == undefined) {
+        document.getElementById('home_task_12_result').innerText = `Спробуйте ще раз`;
+    } else {
+        switch (day) {
+            case (day >= 1 && day <= 27):
+                nextDay = day++;
                 break;
-            case '2': 
-                if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
-                    day = 28;
-                    break;
+            case 28:
+                if ((year % 4 == 0 || year % 400 == 0 || year % 100 == 0) && month == 2) {
+                    nextDay = 29;
+                } else if (month == 2 && year % 4 != 0 && year % 400 != 0 && year % 100 != 0) {
+                    nextDay = 1;
+                    nextMonth = day++;
                 } else {
-                    day = 27;
-                    break;
-                } 
-            case '4', '6', '9', '11':
-                day = 30;
+                    nextDay = 29;
+                }
                 break;
-            default: 
-                rez = 'Put correct time';
+            case 30:
+                if (month == 4 || month == 6 || month == 9 || month == 11) {
+                    nextDay = 1;
+                    nextMonth = day++;
+                } else {
+                    nextDay = 31;
+                }
+                break;
+            case 31:
+                if (month == 12) {
+                    nextMonth = 1;
+                    nextDay = 1;
+                    nextYear = year++;
+                } else {
+                    nextMonth = month++;
+                    nextDay = day++;
+                }
+                break;
+            default:
+                document.getElementById('home_task_12_result').innerText = `Спробуйте ще раз`;
                 break;
         }
-        // ?????????????????????????????????????
+        document.getElementById('home_task_12_result').innerText = `${nextDay}:${nextMonth}:${nextYear}`;
+    }
 }
+
 
 
 /*
