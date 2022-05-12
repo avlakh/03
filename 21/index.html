@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript: Conditions, loops</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
@@ -12,6 +12,7 @@
         
         <!-- 1 -->
 
+        <h2>LMS Домашка</h2>
         <div class="card mb-4">
             <div class="card-body">
                 <h2 class="text-center">1</h2>
@@ -110,10 +111,8 @@
                         <p class="p-4 text-center">Запитай у користувача число і виведи всі дільники цього числа.</p>
                     </div>
                     <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
-                        <label for="home_task_5_number_1" class="p-2">Введи число 1</label>
-                        <input type="number" id="home_task_5_number_1">
-                        <label for="home_task_5_number_2" class="p-2">Введи число 2</label>
-                        <input type="number" id="home_task_5_number_2">
+                        <label for="home_task_5_number_1" class="p-2">Введи число</label>
+                        <input type="number" id="home_task_5_number">
                         <button type="button" class="btn btn-info" onclick="allDivs()">Покажи суму</button>
                     </div>
                     <div class="col-4 d-flex flex-column align-items-center justify-content-center">
@@ -156,7 +155,7 @@
                     <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
                         <label for="home_task_7_number" class="p-2">Введи число</label>
                         <input type="number" id="home_task_7_number">
-                        <button type="button" class="btn btn-info" onclick="discount()">Введи число</button>
+                        <button type="button" class="btn btn-info" onclick="discount()">Отримати результат</button>
                     </div>
                     <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
@@ -261,7 +260,7 @@
                         <input type="number" name="home_task_12_number2" id="home_task_12_month">
                         <label for="home_task_12_number3">Введіть рік</label>
                         <input type="number" name="home_task_12_number3" id="home_task_12_year">
-                        <button type="button" class="btn btn-info" onclick="yourDate()">Введи число</button>
+                        <button type="button" class="btn btn-info" onclick="yourDate()">Отримати результат</button>
                     </div>
                     <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <p>Результат</p>
@@ -270,6 +269,233 @@
                 </div>
             </div>
         </div>
+
+        <!-- 13 -->
+
+        <h2>Додаткова домашка від Саші</h2>
+        <h4>Задания, в которых необходимо использовать WHILE.</h4>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">13</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Вывести # столько раз, сколько указал пользователь.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="home_task_13_number">Введіть число</label>
+                        <input type="number" id="home_task_13_number">
+                        <button type="button" class="btn btn-info" onclick="showHash()">Отримати результат</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_13_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">14</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Пользователь ввел число, а на экран вывелись все числа от введенного до 0.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="home_task_14_number">Введіть число</label>
+                        <input type="number" id="home_task_14_number">
+                        <button type="button" class="btn btn-info" onclick="showNumber()">Отримати результат</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_14_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 15 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">15</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Запросить число и степень. Возвести число в указанную степень и вывести результат.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="home_task_15_number">Введіть число</label>
+                        <input type="number" id="home_task_15_number">
+                        <label for="home_task_15_exponent">Введіть ступінь</label>
+                        <input type="number" id="home_task_15_exponent">
+                        <button type="button" class="btn btn-info" onclick="expo()">Отримати результат</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_15_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 16 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">16</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Запросить 2 числа и найти все общие делители.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="home_task_16_number_1">Введіть перше число</label>
+                        <input type="number" id="home_task_16_number_1">
+                        <label for="home_task_16_number_2">Введіть друге число</label>
+                        <input type="number" id="home_task_16_number_2">
+                        <button type="button" class="btn btn-info" onclick="allDivsForNumber()">Отримати результат</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_16_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 17 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">17</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Посчитать факториал введенного пользователем числа.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="home_task_17_number">Введіть число</label>
+                        <input type="number" id="home_task_17_number">
+                        <button type="button" class="btn btn-info" onclick="factorial()">Отримати результат</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_17_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 18 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">18</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <button type="button" class="btn btn-info" onclick="letUserCalc()">Скільки буде 2 + 2 * 2</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_18_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 19 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">19</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Делить число 1000 на 2 до тех пор, пока не получится число меньше 50. Вывести это число и сколько делений произвели.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="home_task_19_number">Введіть число</label>
+                        <input type="number" id="home_task_19_number">
+                        <button type="button" class="btn btn-info" onclick="divBy2()">Поділи</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_19_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 20 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">20</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Вывести все числа от 1 до 100, которые кратные указанному пользователем числу.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="home_task_20_number">Введіть число</label>
+                        <input type="number" id="home_task_20_number">
+                        <button type="button" class="btn btn-info" onclick="from1to100()">Виведи</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_20_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 21 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">21</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Вывести все числа от 1 до 100, которые кратные указанному пользователем числу.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="home_task_21_number_1">Введіть перше число</label>
+                        <input type="number" id="home_task_21_number_1">
+                        <label for="home_task_21_number_2">Введіть друге число</label>
+                        <input type="number" id="home_task_21_number_2">
+                        <button type="button" class="btn btn-info" onclick="every4()">Виведи</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_21_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 22 -->
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="text-center">22</h2>
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p class="p-4 text-center">Вывести все числа от 1 до 100, которые кратные указанному пользователем числу.</p>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <label for="home_task_22_number">Введіть число</label>
+                        <input type="number" id="home_task_22_number">
+                        <button type="button" class="btn btn-info" onclick="primeNumber()">Виведи</button>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <p>Результат</p>
+                        <div id="home_task_22_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="js/main.js"></script>
 </body>

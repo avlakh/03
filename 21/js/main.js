@@ -6,11 +6,11 @@ function age () {
     let result = '';
     if (age > 0 && age < 12) {
         result = 'Ти - дитина!';
-    } else if (age > 12 && age < 18) {
+    } else if (age >= 12 && age < 18) {
         result = 'Ти - підліток!';
-    } else if (age > 18 && age < 60) {
+    } else if (age >= 18 && age < 60) {
         result = 'Ти - дорослий!';
-    } else if (age > 60 && age < 150) {
+    } else if (age >= 60 && age < 150) {
         result = 'Ти - пенсіонер!';
     } else { 
         result = 'зеленський_мем_хто_я'
@@ -94,25 +94,14 @@ function biggestDiv () {
 // 5
 
 function allDivs () {
-    const num1 = parseInt(document.getElementById('home_task_5_number_1').value);
-    const num2 = parseInt(document.getElementById('home_task_5_number_2').value);
-    let rez = '';
-    let i = 1;
-    const minNum = num1<num2 ? num1 : num2;
-    while (i <= minNum) {
-        if (num1%1==0 && num2%i==0) {
-            rez += i+', ';
+    const num = parseInt(document.getElementById('home_task_5_number').value);
+    let rez = '',
+        i = num;
+    while (i > 0) {
+        if (num % i == 0) {
+            rez += i + ', ';
         }
-        i++;
-    }
-    if(minNum===num1) {
-        if (num2%num1==0) {
-            rez += num1;
-        }
-    } else {
-        if(num1%num2==0) {
-            rez += num2;
-        }
+        i--;
     }
     document.getElementById('home_task_5_result').innerText = rez;
 }
@@ -243,59 +232,181 @@ function timesTable () {
 
 // 12
 
-function yourDate() {
-    debugger
+function yourDate () {
     let day = parseInt(document.getElementById('home_task_12_day').value);
     let month = parseInt(document.getElementById('home_task_12_month').value);
     let year = parseInt(document.getElementById('home_task_12_year').value);
-    let nextDay = 0,
-        nextMonth = 0,
-        nextYear = 0;
-    if (day <= 0 || day > 31 || isNaN(day) || day === null || day == undefined) {
-        document.getElementById('home_task_12_result').innerText = `Спробуйте ще раз`;
-    } else if (year <= 0 || isNaN(year) || year === null || year == undefined) {
-        document.getElementById('home_task_12_result').innerText = `Спробуйте ще раз`;
-    } else if (month <= 0 || month > 12 || isNaN(month) || month === null || month == undefined) {
-        document.getElementById('home_task_12_result').innerText = `Спробуйте ще раз`;
-    } else {
-        switch (day) {
-            case (day >= 1 && day <= 27):
-                nextDay = day++;
-                break;
-            case 28:
-                if ((year % 4 == 0 || year % 400 == 0 || year % 100 == 0) && month == 2) {
-                    nextDay = 29;
-                } else if (month == 2 && year % 4 != 0 && year % 400 != 0 && year % 100 != 0) {
-                    nextDay = 1;
-                    nextMonth = day++;
+    let rez = '';
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7: 
+        case 8:
+        case 10:
+            if (day >= 1 && day < 31) {
+                day++;
+            } else if (day = 31) {
+                day = 1;
+                month++
+            } else {
+                rez = 'Введіть правильний день';
+            }
+            break;
+        case 2:
+            if (day >= 1 && day < 28) {
+                day++;
+            } else if (day = 28) {
+                if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+                    day++;
                 } else {
-                    nextDay = 29;
+                    day = 1;
+                    month++;
                 }
-                break;
-            case 30:
-                if (month == 4 || month == 6 || month == 9 || month == 11) {
-                    nextDay = 1;
-                    nextMonth = day++;
-                } else {
-                    nextDay = 31;
-                }
-                break;
-            case 31:
-                if (month == 12) {
-                    nextMonth = 1;
-                    nextDay = 1;
-                    nextYear = year++;
-                } else {
-                    nextMonth = month++;
-                    nextDay = day++;
-                }
-                break;
-            default:
-                document.getElementById('home_task_12_result').innerText = `Спробуйте ще раз`;
-                break;
-        }
-        document.getElementById('home_task_12_result').innerText = `${nextDay}:${nextMonth}:${nextYear}`;
+            } else {
+                rez = 'Введіть правильний день';
+            }
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            if (day >= 1 && day < 30) {
+                day++
+            } else if (day = 30) {
+                day = 1;
+                month++;
+            } else {
+                rez = 'Введіть правильний день'
+            }
+            break;
+        case 12:
+            if (day >= 1 && day < 31) {
+                day++;
+            } else if (day = 31) {
+                day = 1;
+                month = 1;
+                year++;
+            } else {
+                rez = 'Введіть правильний день';
+            }
+            break;
     }
+    rez = `${day}. ${month}. ${year}`
+    document.getElementById('home_task_12_result').innerText = rez;
+}
+
+// 13
+
+function showHash() {
+    const num = parseInt(document.getElementById('home_task_13_number').value)
+    let rez = '',
+        i = 0;
+    while (i < num) {
+        rez += '# ';
+        i++;
+    }
+    document.getElementById('home_task_13_result').innerText = rez;
+}
+
+// 14
+
+function showNumber () {
+    const num = parseInt(document.getElementById('home_task_14_number').value);
+    let rez = '',
+        i = num;
+    while (i>=0) {
+        rez += i + ' ';
+        i--;
+    }
+    document.getElementById('home_task_14_result').innerText = rez;
+}
+
+// 15
+
+function expo () {
+    const num = parseInt(document.getElementById('home_task_15_number').value);
+    const exponent = parseInt(document.getElementById('home_task_15_exponent').value);
+    let rez = 0;
+    rez = Math.pow(num, exponent);
+    document.getElementById('home_task_15_result').innerText = rez;
+}
+
+// 16
+
+function allDivsForNumber () {
+// біда 
+}
+
+// 17
+
+function factorial () {
+    debugger
+    const num = parseInt(document.getElementById('home_task_17_number').value);
+    let rez = 1;
+    let i = num;
+    while (i > 0) {
+        rez = rez * i;
+        i--;
+    }
+    document.getElementById('home_task_17_result').innerText = rez;
+}
+
+// 18
+
+function letUserCalc () {
+    let rez = '';
+    do {
+        rez = prompt('Скільки буде 2 + 2 * 2')
+    } while (rez !== '6');
+}
+
+// 19
+
+function divBy2 () {
+    const num = parseInt(document.getElementById('home_task_19_number').value);
+    rez = num;
+    let i = 0;
+    do {
+        rez = rez / 2;
+        i++;
+    } while (rez >= 50);
+    document.getElementById('home_task_19_result').innerText = `Ваш результат ${rez} і кількість ділення ${i}`;
+}
+
+// 20
+
+function from1to100 () {
+    const num = parseInt(document.getElementById('home_task_20_number').value);
+    let rez = 0;
+    for (let i = 0; i <= 100;i++) 
+    if (num % i == 0) {
+        rez += i + ', '
+    }
+    document.getElementById('home_task_20_result').innerText = rez;
+}
+
+function every4 () {
+    const minNum = parseInt(document.getElementById('home_task_21_number_1').value);
+    const maxNum = parseInt(document.getElementById('home_task_21_number_2').value);
+    let rez = '';
+    for (let i = minNum; i <= maxNum; i = i+4) {
+        rez += i + ', ';
+    }
+    document.getElementById('home_task_21_result').innerText = rez;
+}
+
+function primeNumber () {
+    const num = parseInt(document.getElementById('home_task_22_number').value);
+    let rez = '';
+    for (let i = (num - 1); i > 1; i--) {
+        if (num % i == 0) {
+            rez = 'Це число непросте';
+        } else {
+            rez = 'Це число просте'
+        }
+    }
+    document.getElementById('home_task_22_result').innerText = rez;
 }
 
 
