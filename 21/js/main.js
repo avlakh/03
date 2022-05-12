@@ -341,7 +341,6 @@ function allDivsForNumber () {
 // 17
 
 function factorial () {
-    debugger
     const num = parseInt(document.getElementById('home_task_17_number').value);
     let rez = 1;
     let i = num;
