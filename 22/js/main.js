@@ -141,14 +141,14 @@ function perfectNumRange (minNum, maxNum) {
     debugger
     minNum = parseInt(document.getElementById('perfectNumRange_number1').value);
     maxNum = parseInt(document.getElementById('perfectNumRange_number2').value);
-    if (minNum !== 0 && maxNum !== 0) {
-        let result = '';
-        for (let i = minNum; i <= maxNum; i++) {
-            if (isNumberPerfect(i)) result += `Тут є такі досконалі числа${i} + ', '`;
-        }
-        return result;
-    } else {
-        result = 'У цьому діапазоні немає досконалих чисел'
-    }
+    // if (minNum !== 0 && maxNum !== 0) {
+    //     let result = '';
+    //     for (let i = minNum; i <= maxNum; i++) {
+    //         if (isNumberPerfect(minNum)) result += `Тут є такі досконалі числа${i} + ', '`;
+    //     }
+    //     return result;
+    // } else {
+    //     result = 'У цьому діапазоні немає досконалих чисел'
+    // }
     showResult(result, 'perfectNumRange_rez');
 }
