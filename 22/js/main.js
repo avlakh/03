@@ -26,6 +26,7 @@ function checkTwoNumbers (a, b) {
 }
 
 function twoNumbers (number1, number2) {
+    debugger
     number1 = parseInt(+document.getElementById('twoNumbers_number_1').value);
     number2 = parseInt(+document.getElementById('twoNumbers_number_2').value);
     let rez = 0;
@@ -137,18 +138,21 @@ function perfectNumHTML () {
 // Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим
 
 
+function checkNumberRange (a, b) {
+    let result = '';
+    let i = 0;
+    for (i = a; i <= b; i++) {
+        if (isNumberPerfect(i)) {
+            result += i + ', ';
+        }
+    }
+    return result;
+}
+
 function perfectNumRange (minNum, maxNum) {
-    debugger
     minNum = parseInt(document.getElementById('perfectNumRange_number1').value);
     maxNum = parseInt(document.getElementById('perfectNumRange_number2').value);
-    // if (minNum !== 0 && maxNum !== 0) {
-    //     let result = '';
-    //     for (let i = minNum; i <= maxNum; i++) {
-    //         if (isNumberPerfect(minNum)) result += `Тут є такі досконалі числа${i} + ', '`;
-    //     }
-    //     return result;
-    // } else {
-    //     result = 'У цьому діапазоні немає досконалих чисел'
-    // }
+    result = checkNumberRange (minNum, maxNum);
     showResult(result, 'perfectNumRange_rez');
 }
+
