@@ -37,23 +37,27 @@ function twoNumbers (number1, number2) {
 // 3
 // Напиши функцію, яка обчислює факторіал переданого їй числа.
 
-function factorial (number) {
-    number = parseInt(+document.getElementById('factorial_number').value);
+function calcFactorial (number) { 
     let rez = 1;
     let i = number;
     if (number === 0) {
         rez = 1;
     } else if (number < 0) {
-        rez = `Error`
+        rez = 'Error'
     } else if (number > 0) {
         while (i > 0) {
             rez = rez * i;
             i--;
         }
     }
-    document.getElementById('factorial_rez').innerText = rez;
+    return rez
 }
 
+function factorial (number) {
+    number = parseInt(+document.getElementById('factorial_number').value);
+    rez = calcFactorial(number);
+    document.getElementById('factorial_rez').innerText = rez;
+}
 
 // 4
 // Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. Наприклад: цифри 1, 4, 9 перетворяться в число 149.
@@ -62,7 +66,7 @@ function joinNumber (num1,num2,num3) {
     num1 = parseInt(document.getElementById('joinNumber_number1').value);
     num2 = parseInt(document.getElementById('joinNumber_number2').value);
     num3 = parseInt(document.getElementById('joinNumber_number3').value);
-    const rez = num1 + '' + num2 + '' + num3;
+    const rez = (num1 * 100) + (num2 * 10) + num3;
     document.getElementById('joinNumber_rez').innerText = rez;
 }
 
