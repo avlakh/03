@@ -139,12 +139,12 @@ function addHours (result) {
 const fraction = {
     leftFraction: {
         // чому ВИВОДИТЬСЯ NaN АААААААААААААААААААААААААААААААААААААААААА
-        num: 1,
-        den: 10
+        num: document.getElementById('left_up_fraction').value,
+        den: document.getElementById('left_bottom_fraction').value
     },
     rightFraction: {
-        num: 2,
-        den: 7
+        num: ocument.getElementById('right_up_fraction').value,
+        den: ocument.getElementById('right_bottom_fraction').value
     },
     setValue: function (key, num, den) {
         this[key].num = num,
@@ -203,11 +203,10 @@ const fraction = {
 };
 
 function getMeResult () {
-    debugger
     let symbol = document.getElementById('action_symbol').value;
     let rez;
     if (symbol === '+') {
-        rez = fraction.add();
+        rez = fraction.add(leftUp, leftBottom, rightUp, rightBottom);
     } else if (symbol === '-') {
         rez = fraction.substract();
     } else if (symbol === '*') {
@@ -219,19 +218,6 @@ function getMeResult () {
     }
     document.getElementById('fraction_result').innerText = JSON.stringify(rez);
 }
-
-
-// calcFr: function(sym) {
-//     const resFr1Numer = this.fr1.numer * this.fr2.denom;
-//     const resFr1Denom = this.fr1.denom * this.fr2.denom;
-//     const resFr2Numer = this.fr2.numer * this.fr1.denom;
-
-//     let numer = 0;
-//     if(sym == '+') numer = resFr1Numer + resFr2Numer;
-//     else numer = resFr1Numer - resFr2Numer;
-
-//     return numer + '/' + resFr1Denom;
-// },
 
 
 
