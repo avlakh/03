@@ -29,9 +29,16 @@ const CART = [
     {
         name: 'Milk',
         qty: 2,
-        isBuy: false,
+        isBuy: true,
         price: 23.45,
         total: 46.90
+    },
+    {
+        name: 'Water',
+        qty: 1,
+        isBuy: false,
+        price: 12,
+        total: 12
     }
 ];
 
@@ -94,6 +101,7 @@ function checkAndAddToCart() {
 
 function viewCartTable () {
     let html = '';
+    CART.sort((a, b) => Number(b.isBuy) - Number(a.isBuy))
     CART.forEach(product => {
         html += `
             <tr>
@@ -103,13 +111,14 @@ function viewCartTable () {
                 <td>${product.price.toFixed(2)}</td>
                 <td>${product.total.toFixed(2)}</td>
                 <td>
+                    <button type="button" class="btn btn-primary" onclick="changeProdStatus('${product.name}')">Change status</button>
                     <button type="button" class="btn btn-danger" onclick="askProductDelete('${product.name}')">&times;</button>
                 </td>
             </tr>
         `;
     })
     document.getElementById('cart-tbody').innerHTML = html;
-    document.getElementById('cart-total').innerText = sumTotal();
+    document.getElementById('cart-total').innerText = sumTotal().toFixed(2);
 }
 
 function sumTotal () {
@@ -118,9 +127,22 @@ function sumTotal () {
 
 function askProductDelete (name) {
     if (confirm('Delete '+name+'?')) {
-        let index = CART.findIndex((element) => element.name===name);
+        const index = CART.findIndex((element) => element.name===name);
         CART.splice(index, 1);
         viewCartTable();
         topPanel.info('Product sucessfully deleted');
     } 
 }
+
+function changeProdStatus (name) {
+    const index = CART.findIndex((element) => element.name===name);
+    CART[index].isBuy = !CART[index].isBuy;
+    // if (CART[index].isBuy) {
+    //     CART[index].isBuy = false;
+    // } else {
+    //     CART[index].isBuy = true;
+    // }
+    viewCartTable();
+    topPanel.info('Product status changed');
+}
+

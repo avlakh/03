@@ -12,7 +12,6 @@ let objCar = {
         name: 'Артем',
         beAbleToDrive: true
     },
-    // тут я просто хотів попрактикувати функцію в об'єкті - думаю можна було просто в carInfo описати цю ж функцію і вивести її там - чесно, я не думаю, що це погане рішення, але з радістю почитаю твою думку
     showCarInfo () {
         return `Твоя машина називається ${this.manufacturer}, вона ${this.year} року. Середня швидкість ${this.avgSpeed} км/год? Та ну, ти можеш краще! Бак твій на ${this.fuelTank} літрів і звати тебе, до речі,- ${this.driver.name}`;
     }
@@ -130,21 +129,17 @@ function addHours (result) {
     document.getElementById('objTime_changed_result').innerText = result;
 }
 
-// як тут поставити ліміт в 24 години? я пробував циклом, який би приймав години з об'єкта в ітератор, і ліміт би був 24, але чесно в мене не вийшло якось :(
-
-
 // Максимум
 // Об'єкт
 
 const fraction = {
     leftFraction: {
-        // чому ВИВОДИТЬСЯ NaN АААААААААААААААААААААААААААААААААААААААААА
-        num: document.getElementById('left_up_fraction').value,
-        den: document.getElementById('left_bottom_fraction').value
+        num: 0,
+        den: 0
     },
     rightFraction: {
-        num: ocument.getElementById('right_up_fraction').value,
-        den: ocument.getElementById('right_bottom_fraction').value
+        num: 0,
+        den: 0
     },
     setValue: function (key, num, den) {
         this[key].num = num,
@@ -154,26 +149,31 @@ const fraction = {
         const result = {
             num: this.leftFraction.num * this.rightFraction.num,
             den: this.leftFraction.den * this.rightFraction.den
-        }
+        };
         return this.short(result);
     },
     divide: function () {
         const result = {
             num: this.leftFraction.num * this.rightFraction.den,
             den: this.leftFraction.den * this.rightFraction.num
-        }
+        };
         return this.short(result);
     },
     add: function () {
-        this.calcNum('+');
+        const result = {
+                num: (this.leftFraction.num * this.rightFraction.num) + (this.leftFraction.den * this.rightFraction.num),
+                den: this.leftFraction.den * this.rightFraction.den
+            };
         return this.short(result);
     },
     substract: function () {
-        this.calcNum('-');
+        const result = {
+            num: (this.leftFraction.num * this.rightFraction.num) - (this.leftFraction.den * this.rightFraction.num),
+            den: this.leftFraction.den * this.rightFraction.den
+        };
         return this.short(result);
     },
     short: function (rez) {
-        debugger
         let bigDiv = 0;
         for (let i = Math.min(rez.num, rez.den); i > 0; i--) {
             if (rez.num % i === 0 && rez.den % i === 0) {
@@ -190,48 +190,42 @@ const fraction = {
             return rez;
         }
     },
-    calcNum: function (symbol) {
-        const calcLeft = this.leftFraction.num * this.rightFraction.num;
-        const calcDenom = this.leftFraction.den * this.rightFraction.den;
-        const calcRight = this.leftFraction.den * this.rightFraction.num;
-        let rez = 0;
-            calc = 0;
-        if (symbol === '+') calc = calcLeft + calcRight;
-        else calc = calcLeft - calcRight;
-        rez = {calc, calcDenom};
+    mathAction: function (symbol) {
+        switch(symbol) {
+            case '+':
+                return fraction.add();
+                break;
+            case '-':
+                return fraction.substract();
+                break;
+            case '*':
+                return fraction.multiply();
+                break;
+            case '/':
+                return fraction.divide();
+                break;
+            default:
+                return 'Введіть математичний знак: +, -, *, або /';
+                break;
+        }
     }
 };
 
 function getMeResult () {
-    let symbol = document.getElementById('action_symbol').value;
-    let rez;
-    if (symbol === '+') {
-        rez = fraction.add(leftUp, leftBottom, rightUp, rightBottom);
-    } else if (symbol === '-') {
-        rez = fraction.substract();
-    } else if (symbol === '*') {
-        rez = fraction.multiply();
-    } else if (symbol === '/') {
-        rez = fraction.divide();
-    } else {
-        rez = 'Введіть математичний знак'
-    }
-    document.getElementById('fraction_result').innerText = JSON.stringify(rez);
+    let leftFracNum = parseInt(document.getElementById('left_up_fraction').value),
+        leftFracDen = parseInt(document.getElementById('left_bottom_fraction').value),
+        rightFracNum = parseInt(document.getElementById('right_up_fraction').value),
+        rightFracDen = parseInt(document.getElementById('right_bottom_fraction').value),
+        symbol = document.getElementById('action_symbol').value,
+        rez = '';
+    fraction.setValue('leftFraction', leftFracNum, leftFracDen);
+    fraction.setValue('rightFraction', rightFracNum, rightFracDen);
+    rez = fraction.mathAction(symbol);
+    document.getElementById('fraction_result').innerText = `${rez.num} / ${rez.den}`;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+// ВОНО ПРАЦЮЄ!!!!11!!!!!1!!
 
 
 
