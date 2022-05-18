@@ -133,10 +133,125 @@ function addHours (result) {
 // як тут поставити ліміт в 24 години? я пробував циклом, який би приймав години з об'єкта в ітератор, і ліміт би був 24, але чесно в мене не вийшло якось :(
 
 
-// максимум не осилив :D
+// Максимум
+// Об'єкт
+
+const fraction = {
+    leftFraction: {
+        // чому ВИВОДИТЬСЯ NaN АААААААААААААААААААААААААААААААААААААААААА
+        num: 1,
+        den: 10
+    },
+    rightFraction: {
+        num: 2,
+        den: 7
+    },
+    setValue: function (key, num, den) {
+        this[key].num = num,
+        this[key].den = den
+    },
+    multiply: function () {
+        const result = {
+            num: this.leftFraction.num * this.rightFraction.num,
+            den: this.leftFraction.den * this.rightFraction.den
+        }
+        return this.short(result);
+    },
+    divide: function () {
+        const result = {
+            num: this.leftFraction.num * this.rightFraction.den,
+            den: this.leftFraction.den * this.rightFraction.num
+        }
+        return this.short(result);
+    },
+    add: function () {
+        this.calcNum('+');
+        return this.short(result);
+    },
+    substract: function () {
+        this.calcNum('-');
+        return this.short(result);
+    },
+    short: function (rez) {
+        debugger
+        let bigDiv = 0;
+        for (let i = Math.min(rez.num, rez.den); i > 0; i--) {
+            if (rez.num % i === 0 && rez.den % i === 0) {
+                bigDiv = i;
+                break;
+            }
+        }
+        if (bigDiv !== 0) {
+            return {
+                num: rez.num / bigDiv,
+                den: rez.den / bigDiv
+            }
+        } else {
+            return rez;
+        }
+    },
+    calcNum: function (symbol) {
+        const calcLeft = this.leftFraction.num * this.rightFraction.num;
+        const calcDenom = this.leftFraction.den * this.rightFraction.den;
+        const calcRight = this.leftFraction.den * this.rightFraction.num;
+        let rez = 0;
+            calc = 0;
+        if (symbol === '+') calc = calcLeft + calcRight;
+        else calc = calcLeft - calcRight;
+        rez = {calc, calcDenom};
+    }
+};
+
+function getMeResult () {
+    debugger
+    let symbol = document.getElementById('action_symbol').value;
+    let rez;
+    if (symbol === '+') {
+        rez = fraction.add();
+    } else if (symbol === '-') {
+        rez = fraction.substract();
+    } else if (symbol === '*') {
+        rez = fraction.multiply();
+    } else if (symbol === '/') {
+        rez = fraction.divide();
+    } else {
+        rez = 'Введіть математичний знак'
+    }
+    document.getElementById('fraction_result').innerText = JSON.stringify(rez);
+}
+
+
+// calcFr: function(sym) {
+//     const resFr1Numer = this.fr1.numer * this.fr2.denom;
+//     const resFr1Denom = this.fr1.denom * this.fr2.denom;
+//     const resFr2Numer = this.fr2.numer * this.fr1.denom;
+
+//     let numer = 0;
+//     if(sym == '+') numer = resFr1Numer + resFr2Numer;
+//     else numer = resFr1Numer - resFr2Numer;
+
+//     return numer + '/' + resFr1Denom;
+// },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // практика з уроку
+
 
 // function myFunc (a = 0, b = 0) {
 //     const ra = a * 2;

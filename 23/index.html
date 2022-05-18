@@ -15,7 +15,7 @@
                 <h2 class="text-center">Мінімум</h2>
                 <div class="row justify-content-between">
                     <div class="col-4 d-flex flex-column align-items-center justify-content-center">
-                        <p class="p-4 text-center">Створи об'єкт, що описує автомобіль (виробник, модель, рік випуску, середня швидкість, обсяг паливного бака, середня витрата палива на 100 км., водії), і наступні функції для роботи з цим об'єктом</p>
+                        <p class="p-4 text-center">Створи об'єкт, що описує автомобіль (виробник, модель, рік випуску, середня швидкість, обсяг паливного бака, середня витрата палива на 100 км., водії), і наступні функції для роботи з цим об'єктом:</p>
                         <p class="p-2 text-center"><b>1. Висновок на екран з інформацією про автомобіль.</b></p>
                         <p class="p-2 text-center"><b>2. Додавання водія, який має право керувати автомобілем.</b></p>
                         <p class="p-2 text-center"><b>3. Заправка автомобіля.</b></p>
@@ -49,7 +49,7 @@
                 <h2 class="text-center">Норма</h2>
                 <div class="row justify-content-between">
                     <div class="col-4 d-flex flex-column align-items-center justify-content-center">
-                        <p class="p-4 text-center">Створити об'єкт, що описує час (години, хвилини, секунди), і такі функції для роботи з цим об'єктом</p>
+                        <p class="p-4 text-center">Створити об'єкт, що описує час (години, хвилини, секунди), і такі функції для роботи з цим об'єктом:</p>
                         <p class="p-2 text-center"><b>1. Для виведення часу на екран.</b></p>
                         <p class="p-2 text-center"><b>2. Зміни часу на передане кількість секунд.</b></p>
                         <p class="p-2 text-center"><b>3. Зміни часу на передане кількість хвилин.</b></p>
@@ -79,6 +79,46 @@
                 </div>
             </div>
         </div>
+
+        <!-- максимум -->
+
+        <div class="card mb-4">
+            <div class="card-body border border-2">
+                <h2 class="text-center">Максимум</h2>
+                <div class="row gap-3">
+                    <div class="col-4">
+                        <p class="p-4 text-center">Створи об'єкт, що описує звичайний дріб. Створи об'єкт, який має методи роботи з дробом:</p>
+                        <p class="p-2 text-center"><b>1. Складання 2-х об'єктів-дробів.</b></p>
+                        <p class="p-2 text-center"><b>2. Віднімання 2-х об'єктів-дробів.</b></p>
+                        <p class="p-2 text-center"><b>3. Множення 2-х об'єктів-дробів.</b></p>
+                        <p class="p-2 text-center"><b>4. Ділення 2-х об'єктів-дробів.</b></p>
+                        <p class="p-2 text-center"><b>5. Скорочення об'єкта-дробу.</b></p>
+                    </div>
+                    <div class="col-2 d-flex flex-column justify-content-center">
+                        <label for="left_up_fraction" class="p-4 text-center">Введіть чисельник</label>
+                        <input type="number" class="p-2 text-center" id="left_up_fraction">
+                        <label for="left_bottom_fraction" class="p-4 text-center">Введіть знаменник</label>
+                        <input type="number" class="p-2 text-center" id="left_bottom_fraction">
+                    </div>
+                    <div class="col-1 d-flex flex-column justify-content-center">
+                        <label for="action_symbol" class="p-4 text-center">Знак</label>
+                        <input type="text" class="p-2 text-center" id="action_symbol">
+                    </div>
+                    <div class="col-2 d-flex flex-column justify-content-center ">
+                        <label for="right_up_fraction" class="p-4 text-center">Введіть чисельник</label>
+                        <input type="number" class="p-2 text-center" id="right_up_fraction">
+                        <label for="right_bottom_fraction" class="p-4 text-center">Введіть знаменник</label>
+                        <input type="number" class="p-2 text-center" id="right_bottom_fraction">
+                    </div>
+                    <div class="col-2 d-flex flex-column justify-content-center gap-2">
+                        <button type="button" class="btn btn-success" onclick="getMeResult()">Результат</button>
+                        <p id="fraction_result"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
     <script src="js/main.js"></script>
 </body>

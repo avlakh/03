@@ -9,7 +9,9 @@ const topPanel = {
     },
     hide: function () {
         setTimeout(function(){
+            if (document.getElementById('top-panel') !== null) {
             document.getElementById('top-panel').remove();
+            }
         }, 3000)
     },
     error: function (text){
@@ -22,19 +24,6 @@ const topPanel = {
         this.show(text, 'panel-info');
     }
 }
-
-// topPanel.error('Lorem ipsum')
-
-
-/* 
-    {
-        name: '',
-        qty: 0,
-        isBuy: false,
-        price: 0.00,
-        total: 0.00
-    }
-*/
 
 const CART = [
     {
@@ -109,11 +98,29 @@ function viewCartTable () {
         html += `
             <tr>
                 <td>${product.name}</td>
+                <td>${product.isBuy ? '<span class="badge bg-success">Yes</span>' : '<span class="badge bg-danger">No</span>'}</td>
                 <td>${product.qty}</td>
                 <td>${product.price.toFixed(2)}</td>
                 <td>${product.total.toFixed(2)}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" onclick="askProductDelete('${product.name}')">&times;</button>
+                </td>
             </tr>
         `;
     })
     document.getElementById('cart-tbody').innerHTML = html;
+    document.getElementById('cart-total').innerText = sumTotal();
+}
+
+function sumTotal () {
+    return CART.reduce((acc, curr) => {return acc + curr.total;}, 0);
+}
+
+function askProductDelete (name) {
+    if (confirm('Delete '+name+'?')) {
+        let index = CART.findIndex((element) => element.name===name);
+        CART.splice(index, 1);
+        viewCartTable();
+        topPanel.info('Product sucessfully deleted');
+    } 
 }
