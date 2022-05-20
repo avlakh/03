@@ -43,6 +43,7 @@ const CART = [
 ];
 
 viewCartTable();
+setSorting();
 
 function addToCart (name, qty, price) {
     if (CART.find(el => el.name===name) === undefined) {
@@ -62,6 +63,7 @@ function addToCart (name, qty, price) {
         topPanel.success('Product quantity changed');
     }
     viewCartTable();
+    setSorting();
 }
 
 // addToCart ('Milk', 2, 23.45);
@@ -121,6 +123,40 @@ function viewCartTable () {
     document.getElementById('cart-total').innerText = sumTotal().toFixed(2);
 }
 
+
+function setSorting () {
+    const sorting = document.getElementById('sorting').value;
+    // фільтруємо
+    // CART.filter(elem => elem.isBuy === true);
+    // вибираємо кейс
+    switch (sorting) {
+        case 'az':
+            CART.sort((a, b) => a.name.localeCompare(b.name))
+            break;
+        case 'za':
+            CART.sort((a, b) => b.name.localeCompare(a.name));
+            break;
+        case 'desc':
+            CART.sort((a, b) => a.total - b.total);
+            break;
+        case 'asc':
+            CART.sort((a, b) => b.total - a.total);
+            break; 
+    }
+    // робимо хтмл
+    let html = '';
+    CART.forEach(product => {
+        html += `
+            <tr>
+                <td>${product.name}</td>
+                <td>${product.total.toFixed(2)}</td>
+            </tr>
+        `;
+    });
+    document.getElementById('receipt-tbody').innerHTML = html;
+    document.getElementById('receipt-total').innerText = sumTotal().toFixed(2);
+}
+
 function sumTotal () {
     return CART.reduce((acc, curr) => {return acc + curr.total;}, 0);
 }
@@ -130,6 +166,7 @@ function askProductDelete (name) {
         const index = CART.findIndex((element) => element.name===name);
         CART.splice(index, 1);
         viewCartTable();
+        setSorting();
         topPanel.info('Product sucessfully deleted');
     } 
 }
@@ -143,6 +180,7 @@ function changeProdStatus (name) {
     //     CART[index].isBuy = true;
     // }
     viewCartTable();
+    setSorting();
     topPanel.info('Product status changed');
 }
 
