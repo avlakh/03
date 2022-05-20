@@ -127,14 +127,14 @@ function viewCartTable () {
 function setSorting () {
     const sorting = document.getElementById('sorting').value;
     // фільтруємо
-    // CART.filter(elem => elem.isBuy === true);
+    filterResult = CART.filter(elem => elem.isBuy);
     // вибираємо кейс
     switch (sorting) {
         case 'az':
-            CART.sort((a, b) => a.name.localeCompare(b.name))
+            CART.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
             break;
         case 'za':
-            CART.sort((a, b) => b.name.localeCompare(a.name));
+            CART.sort((a, b) => b.name.toLowerCase().localeCompare(a.name.toLowerCase()));
             break;
         case 'desc':
             CART.sort((a, b) => a.total - b.total);
@@ -149,6 +149,8 @@ function setSorting () {
         html += `
             <tr>
                 <td>${product.name}</td>
+                <td>${product.qty}</td>
+                <td>${product.price.toFixed(2)}</td>
                 <td>${product.total.toFixed(2)}</td>
             </tr>
         `;
