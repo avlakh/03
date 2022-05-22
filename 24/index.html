@@ -49,10 +49,27 @@
                             </thead>
                             <tbody id="cart-tbody"></tbody>
                             <tfoot>
-                                <td colspan="5">TOTAL</td>
-                                <td id="cart-total"></td>
+                                <tr>
+                                    <td colspan="4">Subtotal</td>
+                                    <td id="cart-total"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">Discount</td>
+                                    <td id="discValue"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">TOTAL</td>
+                                    <td id="totalWithDisc"></td>
+                                </tr>
                             </tfoot>
                         </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Discount</div>
+                    <div class="card-body">
+                        <input type="text" class="form-control" id="discountField">
+                        <button type="button" class="btn btn-info mt-2" onclick="checkAndApplyDiscount()">Apply</button>
                     </div>
                 </div>
             </div>

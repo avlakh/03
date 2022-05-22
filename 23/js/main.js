@@ -161,14 +161,14 @@ const fraction = {
     },
     add: function () {
         const result = {
-                num: (this.leftFraction.num * this.rightFraction.num) + (this.leftFraction.den * this.rightFraction.num),
+                num: (this.leftFraction.num * this.rightFraction.den) + (this.leftFraction.den * this.rightFraction.num),
                 den: this.leftFraction.den * this.rightFraction.den
             };
         return this.short(result);
     },
     substract: function () {
         const result = {
-            num: (this.leftFraction.num * this.rightFraction.num) - (this.leftFraction.den * this.rightFraction.num),
+            num: (this.leftFraction.num * this.rightFraction.den) - (this.leftFraction.den * this.rightFraction.num),
             den: this.leftFraction.den * this.rightFraction.den
         };
         return this.short(result);
