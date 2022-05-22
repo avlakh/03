@@ -143,6 +143,7 @@ function changeProductQty(name, action) {
     CART[index].qty = newQty;
     CART[index].total = CART[index].price * newQty;
     viewCartTable();
+    setSorting ();
 }
 
 
