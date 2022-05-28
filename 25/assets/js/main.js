@@ -76,7 +76,6 @@ function showSongs () {
 playListButton.onclick = function () {
     olElem.innerHTML = showSongs();
 }
-// я не докумекав як при повторному кліку приховати список
 
 // структура
 playListDiv.prepend(playListButton);
