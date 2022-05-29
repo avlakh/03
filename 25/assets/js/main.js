@@ -129,13 +129,10 @@ const greenLight = document.querySelector('.green_light');
 const trafficArray = [redLight, yellowLight, greenLight];
 
 function toggleTraffic () {
-    for (let i = 0; i < trafficArray.length; i++) {
-        trafficArray[i].classList.toggle('traffic_opacity');
-    }
+    trafficArray.forEach((elem) => elem.classList.toggle('traffic_opacity'));
 }
 
 trafficButton.onclick = toggleTraffic;
-
 
 // не вдається повісити на циклі opacity так, щоб воно мінялось тільки по одному, наштовхнеш, будь ласка? воно перебрало і додало все, але я не знаю як зробити так, щоб воно як тільки додало наступний, то видалило попередній
 
