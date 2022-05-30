@@ -155,10 +155,10 @@ function setSorting () {
     // вибираємо кейс
     switch (sorting) {
         case 'az':
-            CART.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+            CART.sort((a, b) => b.name.toLowerCase().localeCompare(a.name.toLowerCase()));
             break;
         case 'za':
-            CART.sort((a, b) => b.name.toLowerCase().localeCompare(a.name.toLowerCase()));
+            CART.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
             break;
         case 'desc':
             CART.sort((a, b) => a.total - b.total);
