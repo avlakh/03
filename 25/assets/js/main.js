@@ -9,7 +9,7 @@ const style = {
         borderRadius: '20px'
     },
     ol: {
-        marginLeft: '20px',
+        margin: '20px 0 0 20px'
     },
     p: {
         textAlign: 'center',
@@ -57,89 +57,125 @@ const playList = [
 ];
 // вибрали дівчик
 const playListDiv = document.querySelector('.show_playlist');
-
-// зробили кнопочку
-const playListButton = document.createElement('button');
-playListButton.setAttribute('type', 'button');
-playListButton.innerText = 'Click to see songs';
-
 // списочок
 const olElem = document.createElement('ol');
-function showSongs () {
-    let list = '';
-    for (let elem in playList) {
-        list += `<li><strong>${playList[elem].author}</strong> - ${playList[elem].song}`
-    }
-    return list;
-}
-// дія кнопки
-playListButton.onclick = function () {
-    olElem.innerHTML = showSongs();
-}
-
+const liElem = document.createElement('li');
+const strong = document.createElement('strong');
+const em = document.createElement('em');
+liElem.append(strong);
+liElem.append(em)
+// цикл
+playList.forEach(item => {
+    const liClone = liElem.cloneNode(true);
+    liClone.children[0].innerText = item.author + ': ';
+    liClone.children[1].innerText = item.song;
+    olElem.append(liClone);
+})
 // структура
-playListDiv.prepend(playListButton);
 playListDiv.append(olElem);
 
 
 // Завдання 2
 // Створити HTML-сторінку з кнопкою "Відкрити" і модальним вікном. На модальном вікні повинен бути текст і кнопка "Закрити". Спочатку модальне вікно не відображається. При кліку на кнопку "Відкрити" з'являється модальне вікно, на кнопку "Закрити" — зникає.
 
-
 // вибрали дівчик
 const modalWindow = document.querySelector('.modal_window');
-
-// кнопочка
+// створили кнопку на відкриття модалки
 const modalButton = document.createElement('button');
 modalButton.setAttribute('type', 'button');
 modalButton.innerText = 'Click to see modal window';
+// створили бекграунд модалки
+const modalBg = document.createElement('div');
+modalBg.classList.add('modal_bg');
+// створили модалку
+const modalInner = document.createElement('div');
+modalInner.classList.add('modal_inner');
+// текст в модалці
+const modalText = document.createElement('p');
+modalText.classList.add('inner_text');
+modalText.innerText = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, consequuntur molestiae, facilis ea vero id laboriosam amet earum assumenda repellendus nam quasi pariatur aperiam consequatur deleniti. Soluta dolores nobis odio?'
+// кнопка в модалці
+const modalInnerBtn = document.createElement('button');
+modalInnerBtn.setAttribute('type', 'button');
+modalInnerBtn.classList.add('inner_button');
+modalInnerBtn.innerText = 'Close'
+// створили вкладеність
+modalWindow.prepend(modalButton);
+modalWindow.append(modalBg);
+modalBg.prepend(modalInner);
+modalInner.prepend(modalText);
+modalInner.append(modalInnerBtn);
 
 // функція на модалку 
 function toggleModalWindow () {
-    const modalBg = document.querySelector('.modal_bg');
-    const modalInner = document.querySelector('.modal_inner');
     modalBg.classList.toggle('visible');
     modalInner.classList.toggle('visible');
 }
 
-// внутрішній контент
-const innerModalButton = document.querySelector('.inner_button');
-const innerModalText = document.querySelector('.inner_text')
-
 // class toggle
-innerModalButton.onclick = toggleModalWindow;modalButton.onclick = toggleModalWindow;
-
-// структура
-modalWindow.prepend(modalButton);
-
+modalInnerBtn.onclick = toggleModalWindow;
+modalButton.onclick = toggleModalWindow;
 
 // Завдання 3
 // Створити HTML-сторінку зі світлофором і кнопкою, яка перемикає світлофор на наступний колір.
 
-// кнопочка
+// беремо дів
 const trafficLightDiv = document.querySelector('.traffic_light');
+// робимо бекграунд для світлофора
+const trafficLightBorder = document.createElement('div');
+trafficLightBorder.classList.add('traffic_light_border');
+// робимо світла для світлофора
+// червоне
+const redLight = document.createElement('div');
+redLight.classList.add('red_light')
+// жовте
+const yellowLight = document.createElement('div');
+yellowLight.classList.add('yellow_light');
+// зелене
+const greenLight = document.createElement('div');
+greenLight.classList.add('green_light');
+// структура
+trafficLightDiv.prepend(trafficLightBorder);
+trafficLightBorder.prepend(redLight)
+trafficLightBorder.append(yellowLight);
+trafficLightBorder.append(greenLight)
+// кнопочка
 const trafficButton = document.createElement('button')
 trafficButton.setAttribute('type', 'button');
 trafficButton.innerText = 'See the next light';
+trafficLightDiv.append(trafficButton);
 
-// зміна кольору
-const redLight = document.querySelector('.red_light');
-const yellowLight = document.querySelector('.yellow_light');
-const greenLight = document.querySelector('.green_light');
+function isOpacity(opacity) {
+    return opacity.classList.contains('traffic_opacity');
+}
+function addRemoveOpacity (firstLight, secondLight = 0) {
+    if (secondLight === 0) {
+        firstLight.classList.add('traffic_opacity');
+    } else {
+        firstLight.classList.remove('traffic_opacity');
+        secondLight.classList.add('traffic_opacity');
+    }
+}
+// масив
 const trafficArray = [redLight, yellowLight, greenLight];
-
 function toggleTraffic () {
-    trafficArray.forEach((elem) => elem.classList.toggle('traffic_opacity'));
+    const red = trafficArray[0],
+        yellow = trafficArray[1],
+        green = trafficArray[2];
+    if (!isOpacity(red) && !isOpacity(yellow) && !isOpacity(green)) {
+        addRemoveOpacity(red);
+    }  else if (isOpacity(red)) {
+        addRemoveOpacity(red, yellow);
+    } else if (isOpacity(yellow)) {
+        addRemoveOpacity(yellow, green);
+    } else {
+        addRemoveOpacity (green, red)
+    }
 }
 
 trafficButton.onclick = toggleTraffic;
 
-// не вдається повісити на циклі opacity так, щоб воно мінялось тільки по одному, наштовхнеш, будь ласка? воно перебрало і додало все, але я не знаю як зробити так, щоб воно як тільки додало наступний, то видалило попередній
-
-
-// структура
-trafficLightDiv.append(trafficButton)
-
+// наполовину рішення взяв з інтернету, сам до такої логіки, на жаль, не дійшов, признаюсь чесно :D
 
 // додаємо стилі
 function applyStyle (style, elem) {
@@ -148,10 +184,13 @@ function applyStyle (style, elem) {
     }
 }
 
+// стилі
+// таск 1
 applyStyle(style.body, document.body);
-applyStyle(style.button, playListButton);
-applyStyle(style.button, modalButton);
 applyStyle(style.ol, olElem);
-applyStyle(style.button, innerModalButton)
-applyStyle(style.p, innerModalText)
+// таск 2
+applyStyle(style.button, modalButton);
+applyStyle(style.button, modalInnerBtn)
+applyStyle(style.p, modalText)
+// таск 3
 applyStyle(style.button, trafficButton)
