@@ -175,8 +175,6 @@ function toggleTraffic () {
 
 trafficButton.onclick = toggleTraffic;
 
-// наполовину рішення взяв з інтернету, сам до такої логіки, на жаль, не дійшов, признаюсь чесно :D
-
 // додаємо стилі
 function applyStyle (style, elem) {
     for (let prop in style) {
