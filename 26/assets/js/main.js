@@ -20,7 +20,6 @@ window.addEventListener('keydown', event => {
 
 // Створити HTML-сторінку з великою таблицею. При кліку на заголовок стовпця, необхідно відсортувати дані цього стовпця. Врахуй, що числові значення повинні сортуватися як числа, а не як рядки.
 
-// ще працюю над цим
 // масив
 const BEATLES = [
     {
@@ -49,85 +48,79 @@ const BEATLES = [
     }
 ]
 
-// беремо 
-const nameSort = document.getElementById('name_sort');
-const ageSort = document.getElementById('age_sort');
-const roleSort = document.getElementById('role_sort');
-const instrSort = document.getElementById('instr_sort');
-
-// сортуємо числа
-function intSort () {
-    BEATLES.sort((a, b) => a.age - b.age)
-}
-
-// сортуємо рядки
-function strSort (str) {
-    let rez = ''
-    switch (str) {
-        case nameSort: 
-            rez = BEATLES.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase));
-        case roleSort: 
-            rez = BEATLES.sort((a, b) => a.role.toLowerCase().localeCompare(b.role.toLowerCase));
-        case instrSort:
-            rez = BEATLES.sort((a, b) => a.instrument.toLowerCase().localeCompare(b.instrument.toLowerCase));
-    }
-    return rez
-}
-
-// сортуємо таблицю
-function sortTable () {
-    debugger
-    let rez = '';
-    if (nameSort.click) {
-        rez = strSort(nameSort)
-    } else if (roleSort.click) {
-        rez = strSort(roleSort)
-    } else if (instrSort.onclick) {
-        rez = strSort(instrSort)
-    }
-    return rez
-}
-
-// будуємо результат
+// будуємо таблицю
 function buildTable () {
-    debugger
-    let sortedBeatles = sortTable();
     let html = '';
-    sortedBeatles.forEach(elem => {
+    BEATLES.forEach(elem => {
         html += `
             <tr>
                 <td>${elem.name}</td>
                 <td>${elem.age}</td>
-                <td>${elem.role}<td>
-                <td>${elem.instrument}<td>
+                <td>${elem.role}</td>
+                <td>${elem.instrument}</td>
             </tr>
         `;
     })
-    document.querySelector('.beatles_array').innerHTML = html;
+    document.getElementById('beatles_table').innerHTML = html;
 }
-
-const sort = document.querySelector('.sort_table');
-sort.addEventListener('click', event => {
-    if (nameSort.click) {
-        buildTable
-    }
-})
-
 buildTable();
 
-/* 
 
-масив даних
+// сортування
+function sortTable(n) {
+let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+table = document.getElementById("beatles_table");
+switching = true;
+dir = "asc";
+    while (switching) {
+        switching = false;
+        rows = table.rows;
+    //   перебираємо рядки один по одному, йдемо по стовпчику
+        for (i = 0; i < (rows.length - 1); i++) {
+        // початково ставимо шуд світч у фолс, щоб потім змінити на тру
+        shouldSwitch = false;
+        // значення першого рядку через елемент, де н - номер стовпчика
+        x = rows[i].getElementsByTagName("TD")[n];
+        // значення другого (наступного) рядку 
+        y = rows[i + 1].getElementsByTagName("TD")[n];
+        if (dir == "asc") {
+            // проста зміна - з умовою асцендінг "більше" значення йде вгору
+            if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+            }
+        } else if (dir == "desc") {
+            // тут навпаки - якщо значення другого рядку більше, то йде вниз
+            if (x.innerText.toLowerCase() < y.innerText.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+            }
+        }
+        }
+        if (shouldSwitch) {
+        // робимо світч і даємо перед нодою
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        // поки світчінг тру, то вайл виконується
+        switching = true;
+        switchcount ++;
+        } else {
+            // якщо не було світчу, а напрямок асцендінг, то змінюємо напрямок на десендінг і знову крутимо цикл
+        if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+        }
+        }
+    }
+}
 
-вивід таблиці
-
-сортування масиву по 
--імені
--віку
-
-виведення результату
-
-*/
+// клік івент без зміни ХТМЛ
+const headerArr = document.querySelectorAll('th');
+// повертає масив - на клік на конкретний індекс відбувається сортування того індексу (th)
+headerArr.forEach((elem, index) => {
+    elem.addEventListener('click', function () {
+        sortTable(index);
+    })
+});
 
 // Створити HTML-сторінку з блоком тексту в рамці. Реалізувати можливість змінювати розмір блоку, якщо затиснути мишку в правому нижньому кутку і тягнути її далі.
 
@@ -135,16 +128,17 @@ buildTable();
 const resizeTable = document.querySelector('.resize_div');
 const resizer = document.querySelector('.resizer');
 
+// функція, де ширина і висота діву змінюється відносно позиції мишки у віндов мінус позиції елемент у вьюпорті
 function resize(event) {
     resizeTable.style.width = event.clientX - resizeTable.getBoundingClientRect().left + 'px'
     resizeTable.style.height = event.clientY - resizeTable.getBoundingClientRect().top + 'px'
 }
 
+// додаємо виконання функції на клік вниз (натискання) на дів ресайзер - поки мишка рухається - функція виконується
 resizer.addEventListener('mousedown', ()=> {
     document.addEventListener('mousemove', resize);
-    
 });
-
+// виключаємо виконання функції рісайз на клік вверх (відпустили кнопку)
 document.addEventListener('mouseup', () => {
     document.removeEventListener('mousemove', resize)
 });
