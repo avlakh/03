@@ -1,0 +1,54 @@
+/* lato-regular - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/lato-v23-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?94z6gf');
+    src:  url('../fonts/icomoon.eot?94z6gf#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?94z6gf') format('truetype'),
+      url('../fonts/icomoon.woff?94z6gf') format('woff'),
+      url('../fonts/icomoon.svg?94z6gf#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-bag-icon:before {
+    content: "\e900";
+    color: #8d91a3;
+  }
+  .icon-info-icon:before {
+    content: "\e901";
+    color: #8d91a3;
+  }
+  .icon-spades-icon:before {
+    content: "\e902";
+    color: #8d91a3;
+  }
+  .icon-star-icon:before {
+    content: "\e903";
+    color: #8d91a3;
+  }
+  

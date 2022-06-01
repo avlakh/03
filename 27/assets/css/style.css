@@ -1,0 +1,199 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #2B3040;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+a, button {
+  transition: all 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  transform: scale(1.1);
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 82px 220px;
+}
+.wrap .outer_bg {
+  background-image: url(../images/photo.jpg);
+}
+.wrap .outer_bg_overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 45, 62, 0.8);
+  padding: 154px 200px;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+}
+
+.card_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 78px;
+  padding: 30px 52px;
+  background-color: #2B3040;
+}
+.card_header .card_header_tab {
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+.card_header .card_header_tab:hover ::before {
+  color: #fff;
+}
+.card_header .card_header_tab:hover h3 {
+  color: #fff;
+}
+.card_header .card_header_tab i {
+  font-size: 20px;
+}
+.card_header .card_header_tab h3 {
+  font-weight: 400;
+  font-size: 16px;
+  color: #8D91A3;
+  margin-top: 12px;
+}
+
+.card_body {
+  background-color: #212534;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 41px;
+}
+
+.card_body_rating {
+  padding-top: 18px;
+}
+.card_body_rating .card_body_image {
+  margin-bottom: 16px;
+}
+.card_body_rating ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.card_body_rating ul i {
+  font-size: 20px;
+}
+
+.game-rating {
+  margin-left: 7px;
+  display: flex;
+  gap: 5px;
+}
+
+.descr_header {
+  display: flex;
+  gap: 82px;
+}
+.descr_header .game_name {
+  padding-top: 12px;
+  margin-bottom: 36px;
+}
+.descr_header .game_name h3 {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+  margin-bottom: 15px;
+}
+.descr_header .game_name h5 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+.descr_header .pie-title-center {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+.descr_header .pie-value {
+  font-weight: 400;
+  display: block;
+  position: absolute;
+  font-size: 20px;
+  line-height: 22px;
+  height: 40px;
+  top: 23%;
+  left: 0;
+  right: 0%;
+  color: #B7BACD;
+}
+
+.descr_content {
+  margin-bottom: 50px;
+}
+.descr_content p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #B7BACD;
+  margin-right: 23px;
+}
+
+.descr_footer {
+  display: flex;
+  justify-content: space-between;
+}
+.descr_footer .descr_price h4 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #FFDD3F;
+  margin-bottom: 4px;
+}
+.descr_footer .descr_price h2 {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+}
+.descr_footer a {
+  padding: 20px 30px;
+  background-color: #13E28D;
+  border-radius: 2px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-right: 13px;
+}
+
+.active {
+  display: block;
+}

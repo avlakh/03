@@ -5,20 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript: jQuery</title>
+    <link rel="stylesheet" href="assets/css/fonts.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/star-rating-svg.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body>
-    <div>
-        <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laboriosam asperiores nisi, eum provident, ipsa odit nihil saepe velit et itaque aut fugit nemo! Ducimus tenetur libero laudantium error quo!</p>
+    <div class="wrap">
+        <div class="outer_bg">
+            <div class="outer_bg_overlay">
+                <div class="card">
+                    <div class="card_header">
+                        <div class="tab active card_header_tab">
+                            <i class="icon icon-info-icon"></i>
+                            <h3>Information</h3>
+                        </div>
+                        <div class="tab card_header_tab">
+                            <i class="icon icon-spades-icon"></i>
+                            <h3>Ratings Info</h3>
+                        </div>
+                        <div class="tab card_header_tab">
+                            <i class="icon icon-bag-icon"></i>
+                            <h3>where to buy</h3>
+                        </div>
+                    </div>
+                    <div class="card_body">
+                        <div class="card_body_rating">
+                            <div class="card_body_image">
+                                <img src="assets/images/farcry.jpg" alt="far_cry_6_video_game">
+                            </div>
+                            <div class="game-rating"></div>
+                        </div>
+                        <div class="card_body_descr">
+                            <div class="descr_header">
+                                <div class="game_name">
+                                    <h3>FarCry 6</h3>
+                                    <h5>First Released Oct 6, 2021</h5>
+                                </div>
+                                <div id="example"  class="pie-title-center" data-percent="87">
+                                    <span class="pie-value">8.7</span>
+                                </div>
+                            </div>
+                            <div class="descr_content">
+                                <p>Far Cry 6 is a 2021 action-adventure first-person shooter game developed by Ubisoft Toronto. It is the sixth main installment in the Far Cry series and the successor Far Cry 5.
+                                </p>
+                            </div>
+                            <div class="descr_footer">
+                                <div class="descr_price">
+                                    <h4>20% OFF!</h4>
+                                    <h2>$59.96</h2>
+                                </div>
+                                <a href="#">Buy it now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ratings_info">
+
+                    </div>
+                    <div class="where_to_buy">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <ol data-foo="bar">
-        <li>Lorem, ipsum <span>dolor</span> sit amet consectetur adipisicing elit. Rerum iste saepe, enim eveniet accusantium voluptas veniam eum et quasi ut neque accusamus eaque? Quaerat molestias aliquam nisi culpa quo enim.</li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ol>
+    
     <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jquery.star-rating-svg.js"></script>
+    <script src="assets/js/pie-chart.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        
+
+        $(".game-rating").starRating({
+            starSize: 25
+        });
+        $('#example').pieChart();
+        
+    </script>
 </body>
 </html>

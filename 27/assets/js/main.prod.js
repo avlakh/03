@@ -1,1 +1,1 @@
-"use strict";$(function(){$("ol").attr("data-foo","hello");var l=$("ol li:first-child").text("hello");console.log(l)});
+"use strict";
