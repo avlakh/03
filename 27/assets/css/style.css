@@ -17,12 +17,6 @@ body {
   line-height: 1.5rem;
 }
 
-.container {
-  width: 90%;
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
 a, button {
   transition: all 0.2s ease;
 }
@@ -58,6 +52,18 @@ ol, ul {
 .card {
   width: 100%;
   max-width: 600px;
+}
+
+.ratings_info {
+  display: none;
+}
+
+.where_to_buy {
+  display: none;
+}
+
+.active {
+  display: block;
 }
 
 .card_header {
@@ -192,8 +198,4 @@ ol, ul {
   line-height: 20px;
   text-transform: uppercase;
   margin-right: 13px;
-}
-
-.active {
-  display: block;
 }
