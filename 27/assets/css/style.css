@@ -103,19 +103,19 @@ ol, ul {
   gap: 41px;
 }
 
-.card_body_rating {
+.info_rating {
   padding-top: 18px;
 }
-.card_body_rating .card_body_image {
+.info_rating .info_image {
   margin-bottom: 16px;
 }
-.card_body_rating ul {
+.info_rating ul {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.card_body_rating ul i {
+.info_rating ul i {
   font-size: 20px;
 }
 

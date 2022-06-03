@@ -1,1 +1,1 @@
-"use strict";$(function(){$(".card").each(function(){var i=$(this);i.find(".card").not(":first").hide(),i.find(".tab").click(function(){i.find(".tab").removeClass("active").eq($(this).index()).addClass("active"),i.find(".card_tab").hide().eq($(this).index()).fadeIn()}).eq(0).addClass("active")}),$(".game-rating").starRating({starSize:25}),$(".pie_chart").pieChart()});
+"use strict";$(function(){$(".game-rating").starRating({starSize:25}),$(".pie_chart").pieChart()});
