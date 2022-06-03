@@ -1,14 +1,13 @@
 $(function() {
-    // $('.card').each(function () {
-    //     let ths = $(this);
-    //     ths.find('.card').not(':first').hide();
-    //     ths.find('.tab').click(function () {
-    //         ths.find('.tab').removeClass('active').eq($(this).index()).addClass('active');
-    //         ths.find('.card_tab').hide().eq($(this).index()).fadeIn()
-    //     }).eq(0).addClass('active');
-    // });
-    
-    // мені допомогла Марія з табами
+    $('.card_header div').on('click', function(){
+        if (!$(this).hasClass('active')) {
+            $('.card_header div.active').removeClass('active');
+            $(this).addClass('active');
+            $('.tab_block div.active').removeClass('active');
+            $(".tab_block div[data-id='"+$(this).attr("id")+"']").addClass('active')
+        }
+    })
+    // ЩЕ РАЗ ДЯКУЮ ВСЕ ПРАЦЮЄ ОМГ
     $(".game-rating").starRating({
     starSize: 25
     });

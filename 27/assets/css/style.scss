@@ -56,6 +56,10 @@ ol, ul {
     max-width: 600px;
 }
 
+.info {
+    display: none;
+}
+
 .ratings_info {
     display: none;
 }
@@ -125,7 +129,7 @@ ol, ul {
     margin-left: 7px;
     display: flex;
     gap: 5px;
-  }
+}
 
 .descr_header {
     display: flex;

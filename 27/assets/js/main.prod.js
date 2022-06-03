@@ -1,1 +1,1 @@
-"use strict";$(function(){$(".game-rating").starRating({starSize:25}),$(".pie_chart").pieChart()});
+"use strict";$(function(){$(".card_header div").on("click",function(){$(this).hasClass("active")||($(".card_header div.active").removeClass("active"),$(this).addClass("active"),$(".tab_block div.active").removeClass("active"),$(".tab_block div[data-id='"+$(this).attr("id")+"']").addClass("active"))}),$(".game-rating").starRating({starSize:25}),$(".pie_chart").pieChart()});
