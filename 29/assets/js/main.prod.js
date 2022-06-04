@@ -1,0 +1,1 @@
+"use strict";function loadPage(a){$.get("pages/"+a+".html",function(a){$("#page_content").html(a)})}loadPage("main"),$(function(){$(".nav-masthead a").on("click",function(a){a.preventDefault(),loadPage($(this).attr("href")),$(".nav-link.active").removeClass("active"),$(this).addClass("active")})});

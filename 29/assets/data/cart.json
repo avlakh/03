@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Milk",
+        "qty": 2,
+        "price": 12.34,
+        "isBuy": false
+    },
+    {
+        "name": "Water",
+        "qty": 3,
+        "price": 10.34,
+        "isBuy": false
+    },
+    {
+        "name": "Bread",
+        "qty": 1,
+        "price": 17.34,
+        "isBuy": false
+    }
+]
+

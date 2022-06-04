@@ -64,7 +64,8 @@ ol, ul {
 
 header {
     height: 80px;
-    position: sticky;
+    width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
@@ -119,18 +120,25 @@ header {
 // main
 // slider
 
+.main_slider {
+    padding-top: 80px;
+}
+
 .main_slider_content {
     padding-bottom: 243px;
 }
 
 .main_slider_1 {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0)), url(../images/main_slider/guitar1.jpg) no-repeat;
+    overflow: hidden;  
 }
 .main_slider_2 {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0)), url(../images/main_slider/guitar2.jpg) no-repeat;
+    overflow: hidden;
 }
 .main_slider_3 {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0)), url(../images/main_slider/guitar3.jpg) no-repeat;
+    overflow: hidden;
 }
 
 .main_slider_cta {
@@ -208,22 +216,28 @@ header {
 
 .slick-prev {
     left: -67px;
-}
-
-.slick-prev:before {
-    content: url(../images/guitars/prev_arr_slider.svg);
-    font-size: 70px;
+    &:before {
+        content: url(../images/guitars/prev_arr_slider.svg);
+        font-size: 70px;
+    }
+    &:hover::before {
+        content: url(../images/guitars/prev_arr_slider_hover.svg)
+    }
 }
 
 .slick-next {
     right: -74px;
+    &:before {
+        content: url(../images/guitars/next_arr_slider.svg);
+        background: no-repeat;
+        font-size: 70px;
+    }
+    &:hover::before {
+        content: url(../images/guitars/next_arr_slider_hover.svg)
+    }
 }
 
-.slick-next:before {
-    content: url(../images/guitars/next_arr_slider.svg);
-    background: no-repeat;
-    font-size: 70px;
-}
+
 
 // arrow hover TO DO
 
@@ -359,15 +373,22 @@ footer {
 
 .footer_contacts {
     margin-right: 22px;
-    h4 {
+    .contact_link {
+        display: block;
         font-weight: 500;
         font-size: 26px;
         line-height: 32px;
         color: $brown-light;
         margin-bottom: 53px;
-        &:last-of-type {
-            margin-bottom: 0px;
+        &:hover {
+            color: $tomato-light;
         }
+    }
+    h4 {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32px;
+        color: $brown-light;
     }
     .footer_soc {
         display: flex;
@@ -491,7 +512,7 @@ h6 {
         max-width: none;
     }
     .guitar_main .guitar_name {
-        margin-bottom: 20px;
+        margin-bottom: 25px;
     }
 }
 
@@ -504,9 +525,19 @@ h6 {
         top: -178px;
     }
     .new_arrivals {
-        padding-top: 30px;
+        padding-top: 0px;
+    }
+    .guitar_main .guitar_name {
+        margin-bottom: 50px;
     }
     .footer_contacts .footer_soc {
         gap: 20px;
+    }
+}
+
+@media screen and (max-width:370px) {
+    .main_slider_cta .button {
+        padding: 15px 25px;
+        margin-right: 0px;
     }
 }
