@@ -72,6 +72,7 @@ ol, ul {
     display: block;
 }
 
+
 .card_header {
     display: flex;
     justify-content: center;
@@ -99,6 +100,10 @@ ol, ul {
             margin-top: 12px;
         }
     }
+}
+
+.card_header_tab.active ::before, .card_header_tab.active h3 {
+    color: #fff;
 }
 
 .card_body {

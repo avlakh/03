@@ -10,7 +10,7 @@ window.addEventListener('keydown', event => {
         result.classList.add('hide');
         edit.innerText = result.innerText;
     }
-    if (event.code === 'Equal' && (event.ctrlKey || event.metaKey)) {
+    if (event.code === 'KeyS' && (event.ctrlKey || event.metaKey)) {
         event.preventDefault();
         edit.classList.add('hide');
         result.classList.remove('hide');

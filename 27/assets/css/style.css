@@ -99,6 +99,10 @@ ol, ul {
   margin-top: 12px;
 }
 
+.card_header_tab.active ::before, .card_header_tab.active h3 {
+  color: #fff;
+}
+
 .card_body {
   background-color: #212534;
   padding: 60px 40px;
