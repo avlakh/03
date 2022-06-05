@@ -347,22 +347,22 @@ footer {
 .footer_contacts {
   margin-right: 22px;
 }
-.footer_contacts .contact_link {
-  display: block;
+.footer_contacts h4 {
   font-weight: 500;
   font-size: 26px;
   line-height: 32px;
   color: #F8F1EA;
   margin-bottom: 53px;
 }
-.footer_contacts .contact_link:hover {
-  color: #F16A50;
-}
-.footer_contacts h4 {
+.footer_contacts .contact_tel {
+  display: block;
   font-weight: 500;
   font-size: 26px;
   line-height: 32px;
   color: #F8F1EA;
+}
+.footer_contacts .contact_tel:hover {
+  color: #F16A50;
 }
 .footer_contacts .footer_soc {
   display: flex;

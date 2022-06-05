@@ -373,22 +373,23 @@ footer {
 
 .footer_contacts {
     margin-right: 22px;
-    .contact_link {
-        display: block;
-        font-weight: 500;
-        font-size: 26px;
-        line-height: 32px;
-        color: $brown-light;
-        margin-bottom: 53px;
-        &:hover {
-            color: $tomato-light;
-        }
-    }
     h4 {
         font-weight: 500;
         font-size: 26px;
         line-height: 32px;
         color: $brown-light;
+        margin-bottom: 53px;
+    }
+    .contact_tel {
+        display: block;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32px;
+        color: $brown-light;
+        
+        &:hover {
+            color: $tomato-light;
+        }
     }
     .footer_soc {
         display: flex;
