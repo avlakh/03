@@ -1,12 +1,10 @@
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
+      <div class="col-10">
+        <input type="search" id="search" class="form-control">
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-info" id="search_btn">Search</button>
       </div>
     </div>
   </section>
@@ -17,23 +15,66 @@
     </div>
   </div>
   <script>
-      const API_KEY = '294b52ec'
-      $(function(){
-        $.ajax({
-            url: `https://www.omdbapi.com/`,
-            data: `apikey=${API_KEY}&s=Batman`,
-            // data: {
-            //     apikey: API_KEY,
-            //     s: 'Batman'
-            // }
-            type: 'get',
-            dataType: 'json',
-            success: function(json){
-                console.log(json);
-                showMovies(json.Search)
-            }
+  const API_KEY = '294b52ec'
+  $(function(){
+    $("#search_btn").on('click', function(){
+      const search = $("#search").val();
+      if (search !== ''){
+        searchMovies(search).then((response) =>{
+          showMovies(response.Search);
         })
-      })
+      };
+  })
+  $('body').on('click', '.btn-detail', function(){
+    // const id = $(this).attr('data-id')
+    // data для дата атрибутів, можна було attr('data-id'), в аттр завжди рядок, в дата приведе до value type
+    const id = $(this).data('id')
+    getMovie(id).then(resp=>{
+      console.log(resp);
+    })
+  })
+})
+
+async function getMovie(id) {
+  return fetch (`https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`)
+    .then (resp=> {
+      return resp.json();
+    })
+    .then (resp=> {
+      return resp;
+    })
+}
+
+async function searchMovies(search) {
+  return fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`)
+    .then (resp=> {
+        return resp.json();
+        // we got an object, we could check the status
+    })
+    .then (resp=>{
+        // we're working with an object 
+        return resp;
+    });
+}
+
+
+async function filterMovies () {
+  const movieList = await searchMovies('titanic');
+  console.log(movieList);
+  // можна додати showMovies і тоді виконається showMovies на запит titanic
+}
+
+filterMovies();
+
+// робочий варіант
+// async function searchMovies (search) {
+//   return $.ajax({
+//     url: `https://www.omdbapi.com/`,
+//     data: `apikey=${API_KEY}&s=${search}`,
+//     type: 'get',
+//     dataType: 'json'
+//   })
+// }
 
       function showMovies (movies) {
             let html = ''
@@ -43,7 +84,7 @@
                     <div class="card-body">
                         <h5 class="card-title">${item.Title}</h5>
                         <p class="card-text">${item.Year}</p>
-                        <a href="#" class="btn btn-primary" data-id="${item.imdbID}">Detail</a>
+                        <button class="btn btn-primary btn-detail" data-id="${item.imdbID}">Detail</button>
                     </div>
                     </div>`
             })
