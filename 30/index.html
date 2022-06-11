@@ -59,7 +59,6 @@
         }).addTo(map);
         const markers = L.markerClusterGroup();
         for (let i = 0; i < locations.length; i++) {
-            debugger
             const marker = L.marker([locations[i][1], locations[i][2]], {icon: customMarker})
             marker.bindPopup(locations[i][0])
             markers.addLayers(marker);
