@@ -125,6 +125,8 @@ header {
     height: 100%;
     width: 100%;
     padding: 330px 0;
+    background-position: center;
+    background-size: cover;
 }
 
 .slide_text {
@@ -147,43 +149,6 @@ header {
         letter-spacing: 0.3em;
         color: #FFFFFF;
     }
-}
-
-// slide background images
-.slide_bg_1 {
-    background: linear-gradient(243.43deg, rgba(126, 90, 255, 0.9) 16.9%, rgba(85, 183, 255, 0.9) 83.27%), url(../images/main_slider/main_slider_1.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-.slide_bg_2 {
-    background: linear-gradient(243.43deg, rgba(126, 90, 255, 0.9) 16.9%, rgba(85, 183, 255, 0.9) 83.27%), url(../images/main_slider/main_slider_2.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-.slide_bg_3 {
-    background: linear-gradient(243.43deg, rgba(126, 90, 255, 0.9) 16.9%, rgba(85, 183, 255, 0.9) 83.27%), url(../images/main_slider/main_slider_3.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-.slide_bg_4 {
-    background: linear-gradient(243.43deg, rgba(126, 90, 255, 0.9) 16.9%, rgba(85, 183, 255, 0.9) 83.27%), url(../images/main_slider/main_slider_4.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-.slide_bg_5 {
-    background: linear-gradient(243.43deg, rgba(126, 90, 255, 0.9) 16.9%, rgba(85, 183, 255, 0.9) 83.27%), url(../images/main_slider/main_slider_5.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-.slide_bg_6 {
-    background: linear-gradient(243.43deg, rgba(126, 90, 255, 0.9) 16.9%, rgba(85, 183, 255, 0.9) 83.27%), url(../images/main_slider/main_slider_1.jpg);
-    background-position: center;
-    background-size: cover;
 }
 
 .down_arrow {
@@ -375,7 +340,6 @@ header {
 
 .news {
     padding-bottom: 212px;
-    background-image: url(../images/news/news_bg.jpg);
     background-position: center;
     background-size: cover;
     padding-top: 165px;
@@ -603,14 +567,12 @@ header {
 // footer 
 
 footer {
-    background-image: url(../images/footer/footer_bg.jpg);
     background-position: center;
     background-size: cover;
     height: 524px;
 }
 
 .footer_form {
-    background-image: url(../images/footer/footer_form_bg.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;

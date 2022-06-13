@@ -55,12 +55,21 @@ $(function (){
             $('.news_slider').slick({
                 slidesToShow: 3,
                 dots: true,
+                lazyLoad: 'ondemand'
             });
         },
         error: function (err){
             err = alert("Can't load news");
         }
     })
+    // light gallery init 
+    function galleryInit () {
+        lightGallery(document.getElementById('light_gallery'), {
+            plugins: [lgZoom, lgThumbnail],
+            speed: 300
+        });
+    };
+    galleryInit();
     // map initialization
     function initMap () {
     const map = L.map('map').setView([40.68419106516337, -73.89912170274958], 15);
@@ -77,7 +86,7 @@ $(function (){
         .bindPopup('Monticello')
     };
     $('#map_cover').on('click', function(){
-        $('map_cover').html()
+        $('#map_cover').remove()
         initMap();
     });
 })

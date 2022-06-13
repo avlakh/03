@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monticello | International Group</title>
     <link rel="stylesheet" href="assets/css/fonts.min.css">
-    <link rel="stylesheet" href="assets/css/slick.min.css">
-    <link rel="stylesheet" href="assets/css/slick-theme.min.css">
+    <link rel="stylesheet" href="assets/plugins/slick/slick.min.css">
+    <link rel="stylesheet" href="assets/plugins/slick/slick-theme.min.css">
+    <link rel="stylesheet" href="assets/plugins/lightgallery/css/lightgallery-bundle.min.css">
     <link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
@@ -43,37 +44,37 @@
             </div>
         </div>
         <div id="home_slider">
-            <div class="home_slide slide_bg_1">
+            <div class="home_slide slide_bg_1 lazy-bg" data-src="assets/images/main_slider/main_slider_1.jpg">
                 <div class="slide_text">
                     <h2>SIMPLE & MODERN</h2>
                     <h3>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
                 </div>
             </div>
-            <div class="home_slide slide_bg_2">
+            <div class="home_slide slide_bg_2 lazy-bg" data-src="assets/images/main_slider/main_slider_2.jpg">
                 <div class="slide_text">
                     <h2>FRESH & UNIQUE</h2>
                     <h3>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
                 </div>
             </div>
-            <div class="home_slide slide_bg_3">
+            <div class="home_slide slide_bg_3 lazy-bg" data-src="assets/images/main_slider/main_slider_3.jpg">
                 <div class="slide_text">
                     <h2>SIMPLE & MODERN</h2>
                     <h3>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
                 </div>
             </div>
-            <div class="home_slide slide_bg_4">
+            <div class="home_slide slide_bg_4 lazy-bg" data-src="assets/images/main_slider/main_slider_4.jpg">
                 <div class="slide_text">
                     <h2>FRESH & UNIQUE</h2>
                     <h3>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
                 </div>
             </div>
-            <div class="home_slide slide_bg_5">
+            <div class="home_slide slide_bg_5 lazy-bg" data-src="assets/images/main_slider/main_slider_5.jpg">
                 <div class="slide_text">
                     <h2>SIMPLE & MODERN</h2>
                     <h3>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
                 </div>
             </div>
-            <div class="home_slide slide_bg_6">
+            <div class="home_slide slide_bg_6 lazy-bg" data-src="assets/images/main_slider/main_slider_1.jpg">
                 <div class="slide_text">
                     <h2>FRESH & UNIQUE</h2>
                     <h3>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
@@ -88,7 +89,7 @@
                 <h3 class="style_h3">WHAT WE DO</h3>
                 <div class="project_example top_project">
                     <div class="project_img">
-                        <img src="assets/images/projects/trade_center.jpg" alt="one_world_trade_center">
+                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/projects/trade_center.jpg" alt="one_world_trade_center">
                     </div>
                     <div class="project_text">
                         <h4>ONE WORLD</h4>
@@ -117,12 +118,12 @@
                         </div>
                     </div>
                     <div class="project_img">
-                        <img src="assets/images/projects/commerce_center.jpg" alt="international_commerce_center">
+                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/projects/commerce_center.jpg" alt="international_commerce_center">
                     </div>
                 </div>
             </div>
         </section>
-        <section id="news_anchor" class="news">
+        <section id="news_anchor" class="news lazy-bg" data-src="assets/images/news/news_bg.jpg">
             <div class="container">
                 <h3 class="style_h3">LATEST NEWS</h3>
                 <div class="news_cards news_slider">
@@ -133,21 +134,21 @@
         <section class="gallery">
             <div class="container">
                 <h3 class="style_h3">GALLERY</h3>
-                <div class="gallery_grid">
-                    <a href="#" class="gallery_img">
-                        <img src="assets/images/gallery/gallery_bigger_img.jpg" alt="monticello_gallery_1">
+                <div class="gallery_grid" id="light_gallery">
+                    <a href="assets/images/gallery/gallery_bigger_img.jpg" class="gallery_img">
+                        <img src="assets/images/gallery/gallery_bigger_img.jpg" alt="Monticello - Project 1">
                     </a>
-                    <a href="#" class="gallery_img">
-                        <img src="assets/images/gallery/gallery_smaller_img1.jpg" alt="monticello_gallery_2">
+                    <a href="assets/images/gallery/gallery_smaller_img1.jpg" class="gallery_img">
+                        <img src="assets/images/gallery/gallery_smaller_img1.jpg" alt="Monticello - Project 2">
                     </a>
-                    <a href="#" class="gallery_img">
-                        <img src="assets/images/gallery/gallery_smaller_img2.jpg" alt="monticello_gallery_3">
+                    <a href="assets/images/gallery/gallery_smaller_img2.jpg" class="gallery_img">
+                        <img src="assets/images/gallery/gallery_smaller_img2.jpg" alt="Monticello - Project 3">
                     </a>
-                    <a href="#" class="gallery_img">
-                        <img src="assets/images/gallery/gallery_smaller_img3.jpg" alt="monticello_gallery_4">
+                    <a href="assets/images/gallery/gallery_smaller_img3.jpg" class="gallery_img">
+                        <img src="assets/images/gallery/gallery_smaller_img3.jpg" alt="Monticello - Project 4">
                     </a>
-                    <a href="#" class="gallery_img">
-                        <img src="assets/images/gallery/gallery_smaller_img4.jpg" alt="monticello_gallery_5">
+                    <a href="assets/images/gallery/gallery_smaller_img4.jpg" class="gallery_img">
+                        <img src="assets/images/gallery/gallery_smaller_img4.jpg" alt="Monticello - Project 5">
                     </a>
                 </div>
                 <a href="#" class="btn">SEE MORE</a>
@@ -155,12 +156,12 @@
         </section>
         <section id="map">
             <a href="javascript:void(0)" id="map_cover">
-                <img src="assets/images/map/map_cover.jpg" alt="map_cover_dummy_image">
+                <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/map/map_cover.jpg" alt="map_cover_dummy_image">
             </a>
         </section>
     </main>
-    <footer>
-        <div class="footer_form container" id="contacts_anchor">
+    <footer class="lazy-bg" data-src="assets/images/footer/footer_bg.jpg">
+        <div class="footer_form container lazy-bg" id="contacts_anchor" data-src="assets/images/footer/footer_form_bg.jpg">
             <h3 class="style_h3">GET IN TOUCH</h3>
             <div class="footer_form_flex">
                 <ul class="footer_form_contacts">
@@ -212,7 +213,11 @@
         </div>
     </footer>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/plugins/lazyload/lazyload.prod.js"></script>
+    <script src="assets/plugins/slick/slick.min.js"></script>
+    <script src="assets/plugins/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/plugins/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="assets/plugins/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
     <script src="assets/plugins/leaflet/leaflet.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
