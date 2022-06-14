@@ -1,9 +1,27 @@
 $(function (){
+    // hamburger
+    function toggleMenu () {
+        $('.hamburger').toggleClass('is-active');
+        $('#side_block, #page_overlay').toggleClass('open');
+        $('body').toggleClass('lock');
+    }
+    $('.hamburger, #page_overlay, .mobile_menu_list a').on('click', function() {
+        toggleMenu();
+    })
     // home slider init
     $('#home_slider').slick({
+        // autoplay: true,
         dots: true,
         arrows: false,
-        vertical: true
+        vertical: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    dots: false
+                }
+            }
+        ]
     });
     // header class change
     $(window).on('scroll', function(){
@@ -62,14 +80,11 @@ $(function (){
             err = alert("Can't load news");
         }
     })
-    // light gallery init 
-    function galleryInit () {
-        lightGallery(document.getElementById('light_gallery'), {
+    // light gallery init
+    lightGallery(document.getElementById('light_gallery'), {
             plugins: [lgZoom, lgThumbnail],
             speed: 300
-        });
-    };
-    galleryInit();
+    });
     // map initialization
     function initMap () {
     const map = L.map('map').setView([40.68419106516337, -73.89912170274958], 15);
