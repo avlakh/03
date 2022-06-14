@@ -1,4 +1,6 @@
 $(function (){
+    // wow animation
+    new WOW().init();
     // hamburger
     function toggleMenu () {
         $('.hamburger').toggleClass('is-active');
