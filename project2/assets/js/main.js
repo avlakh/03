@@ -73,7 +73,29 @@ $(function (){
             $('.news_slider').slick({
                 slidesToShow: 3,
                 dots: true,
-                lazyLoad: 'ondemand'
+                lazyLoad: 'ondemand',
+                responsive: [
+                    {
+                        breakpoint: 1300,
+                        settings: {
+                            slidesToShow: 2,
+                            arrows: false
+                        }
+                    },
+                    {
+                        breakpoint: 860,
+                        settings: {
+                            slidesToShow: 1,
+                            arrows: false
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,slidesToShow: 1
+                        }
+                    },
+                ]
             });
         },
         error: function (err){
