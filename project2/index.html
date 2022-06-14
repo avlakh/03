@@ -4,12 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title <> Description -->
+
     <title>Monticello | International Group</title>
+    <meta name="description" content="Monticello - a project done on Beetroot Course">
+
+    <!-- Robots -->
+
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="1 days" />
+
+    <!-- Favicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- OpenGraph -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Monticello | International Group" />
+    <meta property="og:description" content="Monticello - a project done on Beetroot Course">
+    <meta property="og:site_name" content="Monticello">
+    <meta property="og:url" content="https://avlakh.github.io/my_homework/project2/index.html" />
+    <meta property="og:image" content="https://avlakh.github.io/my_homework/project2/assets/images/logos/main-logo.png" />
+
+    <!-- Twitter -->
+
+    <meta name="twitter:title" content="Monticello | International Group">
+    <meta name="twitter:description" content="Monticello - a project done on Beetroot Course">
+    <meta name="twitter:image" content="https://avlakh.github.io/my_homework/project2/assets/images/logos/main-logo.png">
+
+    <!-- Schema.org -->
+
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "Bhromaon",
+          "url": "https://avlakh.github.io/my_homework/project2/index.html",
+          "logo": "https://avlakh.github.io/my_homework/project2/assets/images/logos/main-logo.png",
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "telephone": "(888) 888-88-88",
+            "contactType": "Customer service",
+            "areaServed": "EN"
+          }]
+        }
+    </script>
+
+
+    <!-- Style links -->
+
     <link rel="stylesheet" href="assets/css/fonts.min.css">
     <link rel="stylesheet" href="assets/plugins/slick/slick.min.css">
     <link rel="stylesheet" href="assets/plugins/slick/slick-theme.min.css">
     <link rel="stylesheet" href="assets/plugins/lightgallery/css/lightgallery-bundle.min.css">
-    <link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css">
+    <link rel="stylesheet" href="assets/plugins/leaflet/leaflet.min.css">
     <link rel="stylesheet" href="assets/css/hamburger.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
@@ -19,11 +75,11 @@
             <div class="wrapper">
                 <nav id="mobile_menu_container">
                     <a href="#"><img src="assets/images/logos/main-logo.png" alt="monticello_international_group"></a>
-                    <ul class="mobile_menu_list">
-                        <li><a href="#about_anchor">ABOUT US</a></li>
-                        <li><a href="#projects_anchor">PROJECTS</a></li>
-                        <li><a href="#news_anchor">NEWS</a></li>
-                        <li><a href="#contacts_anchor">CONTACT</a></li>
+                    <ul class="mobile_menu_list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        <li><a itemprop="url" href="#about_anchor"><span itemprop="name">ABOUT US</span></a></li>
+                        <li><a itemprop="url" href="#projects_anchor"><span itemprop="name">PROJECTS</span></a></li>
+                        <li><a itemprop="url" href="#news_anchor"><span itemprop="name">NEWS</span></a></li>
+                        <li><a itemprop="url" href="#contacts_anchor"><span itemprop="name">CONTACT</span></a></li>
                     </ul>
                     <ul class="list_sm">
                         <li><a href="https://www.facebook.com/" target="_blank" rel="nofollow noreferrer"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,11 +113,11 @@
                 <div class="header_flex">
                     <a href="#"><img src="assets/images/logos/main-logo.png" alt="monticello_international_group"></a>
                     <nav id="main_menu">
-                        <ul>
-                            <li><a href="#about_anchor">ABOUT US</a></li>
-                            <li><a href="#projects_anchor">PROJECTS</a></li>
-                            <li><a href="#news_anchor">NEWS</a></li>
-                            <li><a href="#contacts_anchor">CONTACT</a></li>
+                        <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+                            <li><a itemprop="url" href="#about_anchor"><span itemprop="name">ABOUT US</span></a></li>
+                            <li><a itemprop="url" href="#projects_anchor"><span itemprop="name">PROJECTS</span></a></li>
+                            <li><a itemprop="url" href="#news_anchor"><span itemprop="name">NEWS</span></a></li>
+                            <li><a itemprop="url" href="#contacts_anchor"><span itemprop="name">CONTACT</span></a></li>
                         </ul>
                     </nav>
                     <ul class="list_sm">
@@ -172,7 +228,7 @@
             <div class="container">
                 <h3 class="style_h3">LATEST NEWS</h3>
                 <div class="news_cards news_slider">
-                    
+
                 </div>
             </div>
         </section>
@@ -229,8 +285,8 @@
                 </ul>
                 <div class="footer_form_input">
                     <form method="post" action="#" enctype="multipart/form-data" class="form_flex">
-                        <input type="text" name="full_name" id="footer_form_name" class="form_input" placeholder="Your name">
-                        <input type="email" name="email" id="footer_form_email" class="form_input" placeholder="Your mail">
+                        <input type="text" name="full_name" id="footer_form_name" class="form_input" placeholder="Your name" required>
+                        <input type="email" name="email" id="footer_form_email" class="form_input" placeholder="Your mail" required>
                         <button type="submit" class="btn">SUBMIT</button>
                     </form>
                 </div>
@@ -268,38 +324,36 @@
 </body>
 </html>
 
-<!-- чекнути чи нормально вставлені стилі текстів -->
 <!-- seo -->
 <!-- прогнати автопрефіксер в самому кінці -->
-<!-- перепідключити мін джіес -->
 
 <!--
     
 1. Семантичний HTML DONE
 2. Валідний HTML W3.validator
-3. RWD - без горизонтального скролу (min 320)
-4. Наявність favicon
+3. RWD - без горизонтального скролу (min 320) DONE
+4. Наявність favicon DONE
 5. Локальне підключення файлів (без CDN) DONE
-6. Мінімізовані ccs та js 
+6. Мінімізовані ccs та js DONE
 7. Зображення
     - Imagecompressor (для растрових) DONE
     - LazyLoad DONE
 8. SEO штучки
-    - Title - назва сторінки
-    - Meta description - опис сторінки 140-160 символів max
-    - Meta-теги для пошукового робота
+    - Title - назва сторінки DONE
+    - Meta description - опис сторінки 140-160 символів max DONE
+    - Meta-теги для пошукового робота DONE
         <meta name="robots" content="all" />
         <meta name="revisit-after" content="1 days" />
-    - OpenGraph meta-теги + twitter
-    - Файл robots.txt у корені сайта
-    - Карта сайта sitemap.xml
-    - Schema.org - мікророзмітка
+    - OpenGraph meta-теги + twitter DONE
+    - Файл robots.txt у корені сайта DONE
+    - Карта сайта sitemap.xml 
+    - Schema.org - мікророзмітка DONE
 9. Autoprefixer
-10. Усі інтерактивні елементи повинні мати стилі :hover, :focus
+10. Усі інтерактивні елементи повинні мати стилі :hover, :focus DONE
 11. Форми
-    - атрибути method, action
-    - атрибут name у елементів
-    - первинна валідація (required)
+    - атрибути method, action DONE
+    - атрибут name у елементів DONE
+    - первинна валідація (required) DONE
 ==================
 12. Доступність (базова)
     - tabindex

@@ -741,7 +741,6 @@ footer {
     }
 }
 
-
 // RESPONSIVE
 
 @media screen and (max-width:1700px) {
@@ -913,6 +912,9 @@ footer {
 }
 
 @media screen and (max-width: 500px) {
+    .down_arrow {
+        left: 42%;
+    }
     .slide_text h2 {
         font-size: 30px;
         line-height: 45px;
@@ -940,29 +942,3 @@ footer {
         gap: 15px;
     }
 }
-
-@media screen and (max-width: 1200px) {
-    
-}
-
-
-
-
-
-// header
-.header_flex {
-
-}
-
-// main
-// projects
-
-
-
-// news
-
-// gallery
-
-// map
-
-// footer

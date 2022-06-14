@@ -10,7 +10,7 @@ $(function (){
     })
     // home slider init
     $('#home_slider').slick({
-        // autoplay: true,
+        autoplay: true,
         dots: true,
         arrows: false,
         vertical: true,

@@ -911,6 +911,10 @@ footer {
   }
 }
 @media screen and (max-width: 500px) {
+  .down_arrow {
+    left: 42%;
+  }
+
   .slide_text h2 {
     font-size: 30px;
     line-height: 45px;
