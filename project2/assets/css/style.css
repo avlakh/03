@@ -302,8 +302,6 @@ header {
 .project_img img {
   position: relative;
   z-index: 10;
-  width: 100%;
-  height: 100%;
 }
 .project_img::after {
   content: "";
@@ -312,7 +310,7 @@ header {
   width: 100%;
   height: 100%;
   top: -60px;
-  left: -34%;
+  left: -41%;
   z-index: 2;
 }
 
@@ -374,7 +372,7 @@ header {
   gap: 64px;
 }
 .bottom_project .project_img::after {
-  top: -58px;
+  top: -61px;
   left: 41%;
   background-color: #7E5AFF;
 }
@@ -720,13 +718,13 @@ footer {
   display: block;
 }
 
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1700px) {
   .top_project .project_img::after {
-    right: -10%;
+    left: -15%;
   }
 
   .bottom_project .project_img::after {
-    left: 25%;
+    left: 15%;
   }
 }
 @media screen and (max-width: 1400px) {
