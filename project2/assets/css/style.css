@@ -944,6 +944,10 @@ footer {
     right: -10%;
   }
 
+  .slide_text {
+    padding: 0px 30px;
+  }
+
   .slide_text h2 {
     font-size: 40px;
     line-height: 55px;
