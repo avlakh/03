@@ -213,7 +213,7 @@ ol, ul {
 }
 
 .home_wrapper {
-    height: auto;
+    height: 100%;
 }
 
 .home_slide {
@@ -248,6 +248,7 @@ ol, ul {
         padding-top: 330px;
         color: #FFFFFF;
         padding-bottom: 20px;
+        text-align: center;
     }
     h3 {
         font-weight: 400;
@@ -256,6 +257,7 @@ ol, ul {
         letter-spacing: 0.3em;
         color: #FFFFFF;
         padding-bottom: 330px;
+        text-align: center;
     }
 }
 
@@ -859,7 +861,7 @@ footer {
         }
     }
     .slide_text h2 {
-        font-size: 60px;
+        font-size: 62px;
         line-height: 70px;
     }
     .projects .style_h3 {
@@ -951,9 +953,9 @@ footer {
     #home_slider .slick-dots {
         right: -10%;
     }
-    .slide_text h2,
-    .slide_text h3 {
-        text-align: center;
+    .slide_text h2 {
+        font-size: 40px;
+        line-height: 55px;
     }
 }
 

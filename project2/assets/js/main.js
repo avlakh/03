@@ -28,15 +28,14 @@ $(function (){
     });
     // home slider init
     $('#home_slider').slick({
-        autoplay: true,
+        // autoplay: true,
         dots: true,
         arrows: false,
         vertical: true,
         verticalSwiping: true,
-        lazyLoad: "ondemand",
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 800,
                 settings: {
                     dots: false
                 }
