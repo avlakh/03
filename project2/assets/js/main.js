@@ -32,6 +32,8 @@ $(function (){
         dots: true,
         arrows: false,
         vertical: true,
+        verticalSwiping: true,
+        lazyLoad: "ondemand",
         responsive: [
             {
                 breakpoint: 768,

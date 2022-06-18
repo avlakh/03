@@ -206,19 +206,20 @@ ol, ul {
     position: relative;
 }
 
-// home slider
-
 #home_slider {
     height: 100%;
     width: 100%;
     position: relative;
 }
 
+.home_wrapper {
+    height: auto;
+}
+
 .home_slide {
     height: 100%;
     width: 100%;
     display: flex;
-    padding: 330px 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -244,8 +245,9 @@ ol, ul {
         font-size: 80px;
         line-height: 98px;
         letter-spacing: 0.1em;
+        padding-top: 330px;
         color: #FFFFFF;
-        margin-bottom: 20px;
+        padding-bottom: 20px;
     }
     h3 {
         font-weight: 400;
@@ -253,6 +255,7 @@ ol, ul {
         line-height: 22px;
         letter-spacing: 0.3em;
         color: #FFFFFF;
+        padding-bottom: 330px;
     }
 }
 
