@@ -48,6 +48,8 @@ ol, ul {
     list-style: none;
 }
 
+// general custom styles
+
 h1 {
     font-weight: 600;
     font-size: 54px;
@@ -84,6 +86,7 @@ h6 {
     line-height: 36px;
 }
 
+
 // custom style
 // header
 
@@ -114,13 +117,16 @@ header {
     gap: 32px;
     li {
         transition: all .2s ease;
-        &:hover {
-            transform: scale(1.1);
-        }
         a {
+            display: block;
             font-weight: 500;
             line-height: 28px;
             color: white;
+            position: relative;
+            padding: 10px;
+            &:hover {
+                color: $yellow;
+            }
         }
     }
 }
@@ -135,6 +141,40 @@ header {
     border-radius: 41px;
     &:hover {
         background-color: rgba(244, 246, 252, 0.2);
+    }
+}
+
+#arrow_btn {
+    display: block;
+    position: relative;
+    font-weight: 500;
+    line-height: 28px;
+    color: white;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 13px;
+        right: -41px;
+        width: 24px;
+        border-top: 2px solid #F4F6FC;
+    }
+    &:after {
+        content: '';
+        height: 7px;
+        width: 7px;
+        transform: rotate(-135deg);
+        position: absolute;
+        top: 11px;
+        right: -41px;
+        border-bottom: 2px solid #F4F6FC;
+        border-left: 2px solid #F4F6FC;
+    }
+    &:hover {
+        color: $yellow;
+    }
+    &:hover::before,
+    &:hover::after {
+        border-color: $yellow;
     }
 }
 
@@ -181,35 +221,6 @@ header {
         color: #1B1C2B;
         &:hover {
             background-color: #FDE4A6;
-        }
-    }
-    #arrow_btn {
-        display: block;
-        position: relative;
-        font-weight: 500;
-        line-height: 28px;
-        color: white;
-        &::before {
-            content: '';
-            position: absolute;
-            top: 13px;
-            right: -41px;
-            width: 24px;
-            border-top: 2px solid #F4F6FC;
-        }
-        &:after {
-            content: '';
-            height: 7px;
-            width: 7px;
-            transform: rotate(-135deg);
-            position: absolute;
-            top: 11px;
-            right: -41px;
-            border-bottom: 2px solid #F4F6FC;
-            border-left: 2px solid #F4F6FC;
-        }
-        &:hover {
-            transform: scale(1.1);
         }
     }
 }
@@ -480,7 +491,7 @@ header {
 
 .features {
     background-color: $grey;
-    padding-top: 120px;
+    padding: 120px 0 128px;
 }
 
 .features_text {
@@ -500,7 +511,7 @@ header {
 
 .features_grid {
     display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
     gap: 23px 32px;
     .features_card {
         background-color: #fff;
@@ -523,7 +534,175 @@ header {
 
 // our clients' opinion
 
-.our_clients {
-    height: 506px;
+.clients {
+    padding: 116px 0 128px;
     background-color: rgba(244, 246, 252, 0.5);
 }
+
+.clients_flex {
+    display: flex;
+    gap: 110px;
+    width: 100%;
+}
+
+.clients_flex_descr {
+    h3 {
+        color: $dark-blue;
+        margin-bottom: 16px;
+    }
+    p {
+        line-height: 28px;
+        color: $dark-blue;
+        opacity: 0.7;
+    }
+}
+
+.clients_flex_slider {
+    min-width: 0;
+    flex-basis: 115%;
+    position: relative;
+    .slick-prev {
+        position: absolute;
+        z-index: 10;
+        height: 48px;
+        width: 48px;
+        top: auto;
+        left: auto;
+        bottom: -28px;
+        right: 57px;
+        &::before {
+            content: url(../images/home/clients/prev_arrow.svg);
+            opacity: 1;
+            width: 48px;
+            height: 48px;
+        }
+        &:hover::before {
+            content: url(../images/home/clients/prev_arrow_hover.svg);
+        }
+        &:hover::after {
+            content: '';
+            position: absolute;
+            z-index: -5;
+            top: 0;
+            left: 0;
+            width: 48px;
+            height: 48px;
+            background-color: #5239FA;
+            border-radius: 50%;
+        }
+    }
+    .slick-next {
+        position: absolute;
+        z-index: 10;
+        height: 48px;
+        width: 48px;
+        top: auto;
+        left: auto;
+        bottom: -28px;
+        right: 0;
+        &::before {
+            content: url(../images/home/clients/next_arrow.svg);
+            opacity: 1;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 28%;
+            left: 4%;
+        }
+        &:hover::before {
+            content: url(../images/home/clients/next_arrow_hover.svg);
+        }
+        &:hover::after {
+            content: '';
+            position: absolute;
+            z-index: -5;
+            top: 0;
+            left: 0;
+            width: 48px;
+            height: 48px;
+            background-color: #5239FA;
+            border-radius: 50%;
+        }
+    }
+}
+
+.slide {
+    .clients_quote {
+        margin-bottom: 48px;
+    }
+}
+
+.slide_author {
+    display: flex;
+    gap: 16px;
+    .slide_author_descr {
+        h5 {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 32px;
+            color: $dark-blue;
+        }
+        h6 {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            color: $dark-blue;
+        }
+    }
+}
+
+// faqs
+
+.faqs {
+    height: 797px;
+    padding: 128px 0;
+}
+
+// contact form
+
+.contact {
+    background-color: #1C1E53;
+    display: flex;
+    height: 691px;
+    margin-bottom: 300px;
+}
+
+.form_bg {
+    background: linear-gradient(180deg, rgba(28, 30, 83, 0.5), rgba(28, 30, 83, 0.5)), url(../images/home/contact/form_bg.jpg);
+    width: 50%;
+    padding: 96px 96px 0 96px;
+    h2 {
+        font-size: 54px;
+        line-height: 74px;
+        color: #FFFFFF;
+        margin-bottom: 28px;
+    }
+    p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: #FFFFFF;
+    }
+}
+
+.form_input {
+    width: 50%;   
+}
+
+.form_input_wrap {
+    padding: 96px 96px 0 110px;
+    h5 {
+        color: #FFFFFF;
+        margin-bottom: 16px;
+    }
+    p {
+        font-weight: 500;
+        line-height: 28px;
+        color: $grey;
+    }
+}
+
+.our_blog {
+    height: 1000px;
+}
+

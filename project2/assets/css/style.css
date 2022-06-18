@@ -353,6 +353,7 @@ header {
 .project_img img {
   position: relative;
   z-index: 10;
+  width: 100%;
 }
 .project_img::after {
   content: "";
