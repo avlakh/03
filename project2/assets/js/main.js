@@ -10,6 +10,22 @@ $(function (){
     $('.hamburger, #page_overlay, .mobile_menu_list a').on('click', function() {
         toggleMenu();
     })
+    // header class change
+    $(window).on('scroll', function(){
+        if ($(this).scrollTop() > 30) {
+            $('.header_top').addClass('scroll')
+            
+        } else {
+            $('.header_top').removeClass('scroll')
+        }
+    })
+    // anchor animation
+    $(document).on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+    });
     // home slider init
     $('#home_slider').slick({
         autoplay: true,
@@ -24,23 +40,6 @@ $(function (){
                 }
             }
         ]
-    });
-    // header class change
-    $(window).on('scroll', function(){
-        if ($(this).scrollTop() > 30) {
-            $('.header_top').addClass('scroll')
-            
-        } else {
-            $('.header_top').removeClass('scroll')
-        }
-    })
-    // anchor animation
-    $(document).on('click', 'a[href^="#"]', function (event) {
-        event.preventDefault();
-
-        $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
     });
     // ajax news
     $.ajax({
@@ -90,13 +89,7 @@ $(function (){
                             slidesToShow: 1,
                             arrows: false
                         }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            arrows: false,slidesToShow: 1
-                        }
-                    },
+                    }
                 ]
             });
         },
@@ -105,10 +98,14 @@ $(function (){
         }
     })
     // light gallery init
-    lightGallery(document.getElementById('light_gallery'), {
-            plugins: [lgZoom, lgThumbnail],
-            speed: 300
-    });
+    lightGallery($('#light_gallery')[0], {
+        plugins: [lgZoom, lgThumbnail],
+        speed: 300
+    })
+    // lightGallery(document.getElementById('light_gallery'), {
+    //         plugins: [lgZoom, lgThumbnail],
+    //         speed: 300
+    // });
     // map initialization
     function initMap () {
     const map = L.map('map').setView([40.68419106516337, -73.89912170274958], 15);

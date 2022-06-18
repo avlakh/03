@@ -10,7 +10,6 @@
 html, body {
     width: 100%;
     height: 100%;
-    // overflow-x: hidden;
 }
 
 body {
@@ -47,10 +46,6 @@ ol, ul {
 
 // custom
 // header 
-
-header {
-    position: relative;
-}
 
 .header_top {
     height: 160px;
@@ -203,6 +198,14 @@ header {
     }
 }
 
+
+// main
+// main slider
+
+.main_slider {
+    position: relative;
+}
+
 // home slider
 
 #home_slider {
@@ -214,8 +217,11 @@ header {
 .home_slide {
     height: 100%;
     width: 100%;
+    display: flex;
     padding: 330px 0;
-    background-position: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
 }
 
@@ -253,7 +259,8 @@ header {
 .down_arrow {
     position: absolute;
     bottom: 52px;
-    left: 49%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 40px;
     height: 40px;
     border: 1px solid white;
@@ -317,8 +324,6 @@ header {
     margin-bottom: 0;
 }
 
-
-// main
 // projects section
 
 .projects {
@@ -337,7 +342,8 @@ header {
         content: '';
         position: absolute;
         top: -33px;
-        left: 46%;
+        left: 50%; 
+        transform: translateX(-50%);
         width: 100px;
         border-bottom: 1px solid #2C4058;
     }
@@ -366,16 +372,8 @@ header {
         position: relative;
         z-index: 10;
         width: 100%;
-    }
-    &::after {
-        content: '';
-        position: absolute;
-        background-color: #55B7FF;
-        width: 100%;
-        height: 100%;
-        top: -60px;
-        left: -41%;
-        z-index: 2;
+        vertical-align: top;
+        box-shadow: -260px -57px #55b7ff;
     }
 }
 
@@ -435,10 +433,8 @@ header {
 
 .bottom_project {
     gap: 64px;
-    .project_img::after {
-        top: -61px;
-        left: 41%;
-        background-color: #7E5AFF;
+    .project_img img {
+        box-shadow: 260px -57px #7e5aff;
     }
 }
 
@@ -714,7 +710,8 @@ footer {
     .style_h3 {
         margin-bottom: 42px;
         &::before {
-            left: 44%;
+            left: 50%; 
+            transform: translateX(-50%)
         }
     }
 }
@@ -829,22 +826,8 @@ footer {
 
 // RESPONSIVE
 
-@media screen and (max-width:1700px) {
-    .top_project .project_img::after {
-        left: -15%;
-    }
-    .bottom_project .project_img::after {
-        left: 15%;
-    }
-}
 
 @media screen and (max-width:1400px) {
-    .top_project .project_img::after {
-        content: none;
-    }
-    .bottom_project .project_img::after {
-        content: none;
-    }
     .slick-prev {
         left: -50px;
     }
@@ -879,6 +862,12 @@ footer {
     .projects .style_h3 {
         margin-bottom: 80px;
     }
+    .project_img img {
+        box-shadow: -100px -57px #55b7ff;
+    }
+    .bottom_project .project_img img {
+        box-shadow: 100px -57px #7e5aff;
+    }
     .project_text {
         padding-top: 0px;
     }
@@ -903,7 +892,8 @@ footer {
 }
 
 @media screen and (max-width: 900px) {
-    .header_top .list_sm {
+    .header_top .list_sm,
+    #main_menu {
         display: none;
     }
     .header_top .hamburger_menu {
@@ -914,9 +904,6 @@ footer {
     }
     .project_example {
         gap: 25px;
-    }
-    .projects .style_h3 {
-        margin-bottom: 40px;
     }
     .project_example {
         -webkit-box-orient: vertical;
@@ -929,7 +916,7 @@ footer {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
     }
     .bottom_project .project_text {
         -webkit-box-ordinal-group: 3;
@@ -939,16 +926,10 @@ footer {
     .project_text .btn {
         margin-bottom: 20px;
     }
-    .project_img {
-        text-align: center;
-    }
     .bottom_project .project_img {
         -webkit-box-ordinal-group: 2;
             -ms-flex-order: 1;
                 order: 1;
-    }
-    .project_img img {
-        width: 75%;
     }
     .project_text {
         text-align: center;
@@ -1033,15 +1014,9 @@ footer {
 }
 
 @media screen and (max-width: 500px) {
-    .down_arrow {
-        left: 42%;
-    }
     .slide_text h2 {
         font-size: 30px;
         line-height: 45px;
-    }
-    .style_h3::before {
-        left: 35%;
     }
     .news .style_h3 {
         margin-bottom: 40px;
@@ -1049,9 +1024,6 @@ footer {
     .footer_form_contacts li {
         margin-bottom: 14px;
         text-align: center;
-    }
-    .footer_form .style_h3::before {
-        left: 35%;
     }
     .footer_form_input .form_input {
         width: 100%;
