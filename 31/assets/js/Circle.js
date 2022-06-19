@@ -1,6 +1,11 @@
 class Circle {
-    constructor(radius) {
-        this.radius = radius;
+    constructor(width, height, color, left, top, borderRadius) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.left = left;
+        this.top = top;
+        this.borderRadius = borderRadius;
     }
     get getRadius () {
         return this._radius
@@ -21,11 +26,7 @@ class Circle {
         return 2 * Math.PI * this.radius;
     }
     showCircle () {
-        document.body.insertAdjacentHTML('beforeend', `
-            <div class="circle" `)
+        document.getElementById('circle_to_go').insertAdjacentHTML('beforeend', `
+            <div class="circle" style="width: ${this.width}px;height: ${this.height}px; background-color: ${this.color}; left: ${this.left}px; top: ${this.top}px; position: absolute; border-radius: ${this.borderRadius}%"</div>`)
     }
 }
-
-const myCircle = new Circle(10);
-console.log(myCircle);
-

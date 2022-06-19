@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/fonts.min.css">
     <link rel="stylesheet" href="assets/plugins/slick/slick.css">
     <link rel="stylesheet" href="assets/plugins/slick/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body>
@@ -40,8 +41,8 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                     </div>
                     <div class="hero_btn">
-                        <a href="#" id="round_btn">View our work</a>
-                        <a href="#" id="arrow_btn">View Pricing</a>
+                        <a href="#" class="round_btn">View our work</a>
+                        <a href="#" class="arrow_btn">View Pricing</a>
                     </div>
                 </div>
                 <div class="hero_img">
@@ -54,7 +55,7 @@
                 <div class="we_work_text">
                     <h2>How we work</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <a href="#" id="we_work_arrow_btn">Get in touch with us</a>
+                    <a href="#" class="arrow_btn">Get in touch with us</a>
                 </div>
                 <div class="we_work_grid">
                     <div class="we_work_card">
@@ -85,7 +86,7 @@
             <div class="container">
                 <div class="our_projects_text">
                     <h2>View our projects</h2>
-                    <a href="#" id="our_projects_arrow_btn">View More</a>
+                    <a href="#" class="arrow_btn">View More</a>
                 </div>
                 <div class="our_projects_grid">
                     <div class="our_projects_big_card">
@@ -116,7 +117,6 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -211,8 +211,16 @@
         <section class="faqs">
             <div class="container">
                 <div class="faqs_flex">
-                    <h3>Frequently asked questions</h3>
-                    <a href="#">Contact us for more info</a>
+                    <div class="faqs_descr">
+                        <h3>Frequently asked questions</h3>
+                        <a href="#">Contact us for more info</a>
+                    </div>
+                    <div class="faqs_accord">
+                        <h3><span class="faqs_number">01</span>How much time does it take?</h3>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -225,24 +233,110 @@
                 <div class="form_input_wrap">
                     <h5>Send inquiry</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                    <form action="">
-                        <input type="text" placeholder="Your Name">
-                        <input type="email" placeholder="Email">
-                        <input type="file" placeholder="Paste your Figma design URL">
-                        <button type="submit">Send an Inquiry</button>
+                    <form action="#" enctype="multipart/form-data" method="post" class="form_flex"> 
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Paste your comment" required>
+                        <button type="submit" class="round_btn">Send an Inquiry</button>
                     </form>
-                    <a href="">Get in touch with us</a>
+                    <div class="arrow_wrap">
+                        <a href="#" class="arrow_btn">Get in touch with us</a>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="our_blog">
-            <!-- ajax request -->
+            <div class="container">
+                <h2>Our blog</h2>
+                <div class="blog_card_wrap">
+                    <div class="blog_card">
+                        <div class="blog_card_img">
+                            <img src="assets/images/home/blog/blog_card_1.jpg" alt="arab_businessman">
+                        </div>
+                        <h6>19 Jan 2022</h6>
+                        <h5>How one Webflow user grew his single person consultancy from $0-100K in 14 months</h5>
+                        <p>See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract</p>
+                        <a href="#" class="arrow_btn">Read More</a>
+                    </div>
+                    <div class="blog_card">
+                        <div class="blog_card_img">
+                            <img src="assets/images/home/blog/blog_card_2.jpg" alt="arab_businessman">
+                        </div>
+                        <h6>19 Jan 2022</h6>
+                        <h5>How one Webflow user grew his single person consultancy from $0-100K in 14 months</h5>
+                        <p>See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract</p>
+                        <a href="#" class="arrow_btn">Read More</a>
+                    </div>
+                    <div class="blog_card">
+                        <div class="blog_card_img">
+                            <img src="assets/images/home/blog/blog_card_3.jpg" alt="arab_businessman">
+                        </div>
+                        <h6>19 Jan 2022</h6>
+                        <h5>How one Webflow user grew his single person consultancy from $0-100K in 14 months</h5>
+                        <p>See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract</p>
+                        <a href="#" class="arrow_btn">Read More</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-
+        <div class="footer_top">
+            <div class="container">
+                <div class="footer_top_flex">
+                    <div class="footer_top_us">
+                        <div class="footer_top_info">
+                            <div class="footer_top_logo">
+                                <a href=""><img src="assets/images/home/footer_logo.svg" alt="finsweet_main_logo"></a>
+                            </div>
+                            <p>We are always open to discuss your project and improve your online presence.</p>
+                        </div>
+                        <div class="footer_top_contact">
+                            <div class="footer_top_email">
+                                <h6>Email me at</h6>
+                                <a href="mailto:contact@website.com">contact@website.com</a>
+                            </div>
+                            <div class="footer_top_phone">
+                                <h6>Call us</h6>
+                                <a href="tel:0927 6277 28525">0927 6277 28525</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_top_descr">
+                        <h2>Lets Talk!</h2>
+                        <p>We are always open to discuss your project, improve your online presence and help with your UX/UI design challenges.</p>
+                        <ul class="sm_list">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="icon icon-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="icon icon-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="icon icon-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="icon icon-linkedin-square"></i></a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="footer_bottom_flex">
+                    <div class="footer_bottom_copy">
+                        <h6>Copyright 2022, Finsweet.com</h6>
+                    </div>
+                    <nav>
+                        <ul class="footer_bottom_menu">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About us</a></li>
+                            <li><a href="">Features</a></li>
+                            <li><a href="">Pricing</a></li>
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/plugins/slick/slick.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
