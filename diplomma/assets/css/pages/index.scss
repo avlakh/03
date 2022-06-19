@@ -1,3 +1,6 @@
+@use '../header';
+@use '../footer';
+
 // color vars
 
 $royal-blue: #2405F2;
@@ -90,93 +93,7 @@ h6 {
 // custom style
 // header
 
-header {
-    position: fixed;
-    width: 100%;
-    height: 92px;
-    background-color: $tint-blue;
-    z-index: 100;
-}
 
-.header_flex {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main_menu_wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 35px;
-}
-
-#main_menu ul {
-    display: flex;
-    gap: 12px;
-    li {
-        transition: all .2s ease;
-        a {
-            display: block;
-            font-weight: 500;
-            line-height: 28px;
-            color: white;
-            position: relative;
-            padding: 10px;
-            &:hover {
-                color: $yellow;
-            }
-        }
-    }
-}
-
-#header_contact_btn {
-    display: block;
-    font-weight: 500;
-    line-height: 28px;
-    color: white;
-    padding: 16px 48px;
-    border: 2px solid rgba(244, 246, 252, 0.2);
-    border-radius: 41px;
-    &:hover {
-        background-color: rgba(244, 246, 252, 0.2);
-    }
-}
-
-.arrow_btn {
-    display: block;
-    position: relative;
-    font-weight: 500;
-    line-height: 28px;
-    color: white;
-    &::before {
-        content: '';
-        position: absolute;
-        top: 13px;
-        right: -41px;
-        width: 24px;
-        border-top: 2px solid #F4F6FC;
-    }
-    &:after {
-        content: '';
-        height: 7px;
-        width: 7px;
-        transform: rotate(-135deg);
-        position: absolute;
-        top: 11px;
-        right: -41px;
-        border-bottom: 2px solid #F4F6FC;
-        border-left: 2px solid #F4F6FC;
-    }
-    &:hover {
-        color: $yellow;
-    }
-    &:hover::before,
-    &:hover::after {
-        border-color: $yellow;
-    }
-}
 
 // main
 // hero section
@@ -626,6 +543,22 @@ header {
 
 .faqs_flex {
     display: flex;
+    gap: 95px;
+}
+
+.faqs_descr {
+    h3 {
+        color: $dark-blue;
+        margin-bottom: 16px;
+    }
+    a {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+        text-align: center;
+        color: $royal-blue;
+        opacity: 0.8;
+    }
 }
 
 .faqs_number {
@@ -634,6 +567,30 @@ header {
 
 .faqs_text {
     padding-left: 59px;
+}
+
+.faqs_accord {
+
+    .faqs_heading {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        color: $dark-blue;
+    }
+    .faqs_number {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        color: $royal-blue;
+    }
+    p {
+        padding-left: 63px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+        color: $dark-blue;
+        opacity: 0.8;
+    }
 }
 
 // contact form
@@ -773,100 +730,4 @@ header {
 }
 
 // footer 
-// footer top 
 
-.footer_top {
-    background-color: $tint-blue;
-}
-
-.footer_top_flex {
-    padding-top: 99px;
-    display: flex;
-    color: white;
-    gap: 44px;
-}
-
-.footer_top_us {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 86px;
-    width: 50%;
-    padding-right: 97px;
-}
-
-.footer_top_info {
-    padding-right: 61px;
-    p {
-        font-weight: 500;
-        line-height: 28px;
-        color: #FFFFFF;
-        opacity: 0.8;
-    }
-}
-
-.footer_top_logo {
-    padding-bottom: 16px;
-}
-
-.footer_top_contact {
-    display: flex;
-    padding: 17px 0 16px 37px;
-    background-color: $yellow;
-    gap: 30px;
-    h6 {
-        font-size: 18px;
-        line-height: 32px;
-        color: $dark-blue;
-    }
-    a {
-        font-weight: 400;
-        line-height: 28px;
-        color: $dark-blue;
-        opacity: 0.8;
-    }
-}
-
-.footer_top_descr {
-    width: 50%;
-    padding-right: 220px;
-    h2 {
-        margin-bottom: 12px;
-    }
-    p {
-        line-height: 28px;
-        color: $grey;
-        opacity: 0.8;
-        margin-bottom: 24px;
-    }
-}
-
-.sm_list {
-    display: flex;
-    gap: 27px;
-    li:hover {
-        color: $yellow;
-    }
-    i {
-        font-size: 20px;
-    }
-}
-
-// footer bottom
-
-.footer_bottom_flex {
-    padding: 32px 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer_bottom_copy h6 {
-    font-size: 16px;
-    line-height: 28px;
-    color: $dark-blue;
-}
-
-.footer_bottom_menu {
-    display: flex;
-    gap: 32px;
-}
