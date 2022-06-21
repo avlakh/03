@@ -9,17 +9,110 @@
 </head>
 <body class="bg-success">
     <div class="container">
+
+        <!-- 1 -->
         <div class="card mt-3">
             <div class="card-header p-3">
-                <h3 class="text-center">Circle</h3>
+                <h3 class="text-center">Завдання 1: Коло</h3>
             </div>
-            <div class="card-footer" id="circle_to_go" style="position: relative">
-                
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+                        <p class="text-center">Реалізуй клас, що описує коло. У класі повинні бути такі компоненти:</p>
+                        <ul>
+                            <li>поле, що зберігає радіус кола;</li>
+                            <li>get-властивість, яке повертає радіус кола;</li>
+                            <li>set-властивість, що встановлює радіус кола;</li>
+                            <li>get-властивість, яке повертає діаметр кола;</li>
+                            <li>метод, що обчислює площу кола;</li>
+                            <li>метод, що обчислює довжину кола.</li>
+                        </ul>
+                        <p>Продемонструй роботу властивостей і методів.</p>
+                    </div>
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-start">
+                        <label for="radius">Введіть радіус</label>
+                        <input type="number" name="radius" id="radiusInput" class="mt-3">
+                        <button type="button" class="btn btn-info mt-3" id="radiusButton">Виведи радіус</button>
+                        <button type="button" class="btn btn-success mt-3" id="areaButton">Виведи площу</button>
+                        <button type="button" class="btn btn-success mt-3" id="lengthButton">Виведи довжину кола</button>
+                        <div id="radiusResult">
+                            
+                        </div>
+                        <div id="areaResult">
+
+                        </div>
+                        <div id="lengthResult">
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- 2 -->
+
+        <div class="card mt-3">
+            <div class="card-header p-3">
+                <h3 class="text-center">Задання 2: Маркер</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+                        <p class="text-center">Реалізуй клас, що описує канцелярський маркер. У класі повинні бути такі компоненти:</p>
+                        <ul>
+                            <li>поле, яке зберігає колір маркера;</li>
+                            <li>поле, яке зберігає кількість чорнил у маркері (у відсотках);</li>
+                            <li>метод для вводу (приймає рядок і виводить текст відповідним кольором; текст виводиться до тих пір, поки в маркері є чорнило; один не пробільний символ — це 0,5% чорнил у маркері).</li>
+                        </ul>
+                        <p class="text-center">Реалізуй клас, що описує маркер, який можна перезаправляти. Успадкуй цей клас від простого маркера і додай метод для заправки.</p>
+                        <p class="text-center">Продемонструй роботу написаних методів.</p>
+                    </div>
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-start">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+
+        <div class="card mt-3">
+            <div class="card-header p-3">
+                <h3 class="text-center">Завдання 3: Працівники</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+                        <p class="text-center">Реалізуй клас Employee, що описує працівника, і створи масив працівників банку.</p>
+                        <p class="text-center">Реалізуй клас EmpTable для генерації HTML-коду таблиці зі списком працівників банку. Масив працівників необхідно передавати через конструктор, а отримувати HTML-код за допомогою методу getHtml ().</p>
+                        <p class="text-center">Створи об'єкт класу EmpTable і виведи на екран результат роботи методу getHtml ().</p>
+                    </div>
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-start">
+                        <table class="table table-primary table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Age</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody id="employeeTable">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="assets/js/Circle.js"></script>
+    <script></script>
+    <script src="assets/js/Employee.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
