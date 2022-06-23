@@ -68,7 +68,14 @@
                         <p class="text-center">Продемонструй роботу написаних методів.</p>
                     </div>
                     <div class="col-6 d-flex flex-column align-items-center justify-content-start">
-                        
+                        <label for="markerColorInput">Обери колір, яким хочеш написати текст</label>
+                        <input type="color" id="markerColorInput" class="mt-2">
+                        <label for="markerInkQty" class="mt-2">Кількість чорнил у відсотках</label>
+                        <input type="number" id="markerInkQty" class="mt-2">
+                        <label for="markerTextInput" class="mt-2">Обери текст, який хочеш вивести</label>
+                        <input type="text" id="markerTextInput" class="mt-2">
+                        <button type="button" class="btn btn-info mt-2" id="markerTextConfirm">Затвердити</button>
+                        <p class="mt-2">Твій текст</p>
                     </div>
                 </div>
             </div>
@@ -109,8 +116,8 @@
     </div>
 
     <script src="assets/js/Circle.js"></script>
-    <script></script>
     <script src="assets/js/Employee.js"></script>
+    <script src="assets/js/Marker.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

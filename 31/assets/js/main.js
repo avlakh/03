@@ -34,6 +34,7 @@ document.getElementById('lengthButton').addEventListener('click', function (){
 
 
 
+
 // Реалізуй клас Employee, що описує працівника, і створи масив працівників банку.
 
 const list = [
