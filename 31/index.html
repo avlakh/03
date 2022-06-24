@@ -68,14 +68,24 @@
                         <p class="text-center">Продемонструй роботу написаних методів.</p>
                     </div>
                     <div class="col-6 d-flex flex-column align-items-center justify-content-start">
+                        <!-- колір -->
                         <label for="markerColorInput">Обери колір, яким хочеш написати текст</label>
                         <input type="color" id="markerColorInput" class="mt-2">
-                        <label for="markerInkQty" class="mt-2">Кількість чорнил у відсотках</label>
-                        <input type="number" id="markerInkQty" class="mt-2">
-                        <label for="markerTextInput" class="mt-2">Обери текст, який хочеш вивести</label>
+                        <!-- кількість чорнил -->
+                        <label for="markerInkQty" class="mt-2">Опиши кількість чорнил у відсотках</label>
+                        <input type="number" id="markerInkQty" class="mt-2" min="1" max="100">
+                        <!-- текст -->
+                        <label for="markerTextInput" class="mt-2">Напиши текст, який хочеш вивести</label>
                         <input type="text" id="markerTextInput" class="mt-2">
+                        <!-- кнопка на вивід тексту-->
                         <button type="button" class="btn btn-info mt-2" id="markerTextConfirm">Затвердити</button>
+                        <!-- кнопка на поповнення чорнила -->
+                        <button type="button" class="btn btn-success mt-2" id="inkRefill">Поповнити чорнило</button>
+                        <!-- результат -->
                         <p class="mt-2">Твій текст</p>
+                        <div id="markerOutput">
+                            
+                        </div>
                     </div>
                 </div>
             </div>

@@ -32,7 +32,23 @@ document.getElementById('lengthButton').addEventListener('click', function (){
 
 // Реалізуй клас, що описує канцелярський маркер.
 
+// виводимо текст
 
+document.getElementById("markerTextConfirm").addEventListener("click", function () {
+    const textColor = document.getElementById("markerColorInput").value;
+    const inkAmount = document.getElementById("markerInkQty").value;
+    const myMarker = new Marker(textColor, inkAmount);
+    const text = document.getElementById("markerTextInput").value;
+    myMarker.showText(text);
+});
+
+// поповнюємо чорнила
+
+document.getElementById("inkRefill").addEventListener("click", function () {
+    const refillMarker = new fullMarker();
+    refillMarker.refill();
+    document.getElementById("markerInkQty").value = 100;
+});
 
 
 // Реалізуй клас Employee, що описує працівника, і створи масив працівників банку.
