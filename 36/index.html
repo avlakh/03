@@ -23,7 +23,6 @@
                                 <select name="movie_type" v-model="movieType"  class="form-control">
                                     <option value="movie">Full-length film</option>
                                     <option value="series">TV series</option>
-                                    <option value="episode">TV episode</option>
                                 </select>
                             </div>
                             <div class="col-1">
@@ -48,7 +47,7 @@
             </div>
             <div class="card mt-4" v-if="showFavoritesList">
                 <div class="card-body row" >
-                    <h3>Your favorite movies list</h3>
+                    <h3 class="mt-2">Your favorite movies list</h3>
                     <template class="card col-3 mb-3" v-for="movie in favorites" :key="movie.imdbID">
                         <movie-item :movie="movie" @get-movie="getMovieInfo" @add-remove="addRemoveFavorites"/>
                     </template>
