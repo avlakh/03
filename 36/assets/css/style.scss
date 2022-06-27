@@ -38,10 +38,20 @@ body {
     border-radius: 15px;
 }
 
-
 img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     vertical-align: top;
+}
+
+svg {
+    height: 100%;
+    width: 100%;
+}
+
+.btn-favorite {
+    bottom: 20px;
+    height: 40px;
+    width: 40px;
 }

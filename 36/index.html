@@ -20,19 +20,17 @@
                                 <input type="search" class="form-control" placeholder="Enter movie title" v-model="search">
                             </div>
                             <div class="col-2">
-                                <select name="movie_type" id="movie_type_filter" class="form-control">
-                                    <optgroup label="Movie type">
-                                        <option value="full">Full-length film</option>
-                                        <option value="short">Short film</option>
-                                        <option value="tv_series">TV series</option>
-                                    </optgroup>
+                                <select name="movie_type" v-model="movieType"  class="form-control">
+                                    <option value="movie">Full-length film</option>
+                                    <option value="series">TV series</option>
+                                    <option value="episode">TV episode</option>
                                 </select>
                             </div>
                             <div class="col-1">
                                 <button type="submit" class="btn btn-info">Search</button>
                             </div>
                             <div class="col-2">
-                                <button type="button" class="btn btn-success" @click="showFavorites()">See your favorites</button>
+                                <button type="button" class="btn btn-success" @click="getFavorites()">See your favorites</button>
                             </div>
                         </div>
                     </form>
@@ -48,43 +46,36 @@
                     </template>
                 </div>
             </div>
+            <div class="card mt-4" v-if="showFavoritesList">
+                <div class="card-body row" >
+                    <h3>Your favorite movies list</h3>
+                    <template class="card col-3 mb-3" v-for="movie in favorites" :key="movie.imdbID">
+                        <movie-item :movie="movie" @get-movie="getMovieInfo" @add-remove="addRemoveFavorites"/>
+                    </template>
+                </div>
+            </div>
         </div>
         <div class="modal_overlay" v-if="showModal">
             <div class="my_modal">
-                <h3 class="text-center">{{ movieInfo.Title }}</h3>
+                <h3 class="text-center text-uppercase"><b>{{ movieInfo.Title }}</b></h3>
                 <div class="modal_flex">
                     <div class="modal_img">
-                        <img v-if="movie.Poster !== 'N/A'" :src="movieInfo.Poster" :alt="movieInfo.Title">
-                        <img v-else src="https://via.placeholder.com/468x60" :alt="movieInfo.Title">
+                        <img v-if="movieInfo.Poster !== 'N/A'" :src="movieInfo.Poster" :alt="movieInfo.Title">
                     </div>
                     <div class="modal_info">
                         <h5><b>Director:</b> {{movieInfo.Director}}</h5>
                         <h5><b>Year:</b> {{movieInfo.Year}}</h5>
                         <h5><b>Genre:</b> {{movieInfo.Genre}}</h5>
+                        <h5><b>Language:</b> {{movieInfo.Language}}</h5>
+                        <h5><b>Actors:</b> {{movieInfo.Actors}}</h5>
                         <h5><b>Runtime</b> {{movieInfo.Runtime}}</h5>
                         <h5><b>Box Office:</b> {{movieInfo.BoxOffice}}</h5>
-                        <h5 v-if="movieInfo.Ratings.length !== 0"><b>Rating:</b> {{movieInfo.Ratings[0].Value}}</h5>
+                        <h5><b>Rating:</b> {{movieInfo.imdbRating}}</h5>
+                        <h5><b>Metascore:</b> {{movieInfo.Metascore}}</h5>
                         <h5><b>Plot:</b> {{movieInfo.Plot}}</h5>
-                        <button type="button" class="btn btn-success mt-2" @click="showModal = false">Close the window</button>
+                        <button type="button" class="btn btn-success mt-2" @click="showModal = false">Close the window</button> 
                     </div>
                 </div>  
-            </div>
-        </div>
-        <div class="modal_overlay" v-if="showFavoritesList">
-            <div class="favorites_modal">
-                <h3>Your favorite movies list</h3>
-                <template class="card col-3 mb-3" v-for="movie in favorites" :key="movie.imdbID">
-                    <movie-item :movie="movie" @get-movie="getMovieInfo(movie.imdbID)" @add-remove="addRemoveFavorites(movie.imdbID)"/>
-                </template>
-                <!-- <div class="row">
-                    <div class="card col-4 p-2" v-for="movie in favorites" :key="movie.imdbID">
-                        <h3>{{movie.Title}}</h3>
-                        <img :src="movie.Poster" :alt="movie.Title">
-                        <h2>{{movie.Year}}</h2>
-                        <button type="button" class="btn btn-primary" @click="getMovieInfo(movie.imdbID)">Details</button>
-                    </div>
-                </div> -->
-                <button type="button" class="btn btn-success mt-2" @click="showFavoritesList = false">Close the window</button>
             </div>
         </div>
     </div>
@@ -94,16 +85,17 @@
             <img :src="movie.Poster" class="card-img-top mt-2" :alt="movie.Title">
             <div class="card-body row">
                 <h5 class="card-title">{{ movie.Title }}</h5>
-                <!-- індикатор чи працює муві ліст віз фейворіт -->
-                <h2 v-if="movie.inFav">Text</h2>
-                <!-- індикатор -->
                 <p class="card-text">{{ movie.Year }}</p>
                 <div class="row">
                     <div class="col-4">
                         <button type="button" class="btn btn-primary" @click="getMovieInfo(movie.imdbID)">Details</button>
                     </div>
-                    <div class="col-8">
-                        <button type="button" class="btn btn-success" @click="addRemoveFavorites(movie.imdbID)">Add to favorites</button>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-success btn-favorite" @click="addRemoveFavorites(movie.imdbID)">
+                            <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                                <path :fill="movie.inFav ? '#f00' : '#fff'" d="M34,9c-4.2,0-7.9,2.1-10,5.4C21.9,11.1,18.2,9,14,9C7.4,9,2,14.4,2,21c0,11.9,22,24,22,24s22-12,22-24 C46,14.4,40.6,9,34,9z"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -116,13 +108,3 @@
     <script src="assets/js/movies.js"></script>
 </body>
 </html>
-
-
-<!-- додавання у фейворіт -->
-<!-- плашка, коли додав у фейворіт -->
-<!-- може додати searchResult на false, коли відкривається улюблені фільми, і showFavoritesList на true - тоді покажуться улюблені і не буде проблеми з модалкою -->
-<!-- селект - чи повний метр чи серіал - після поля пошуку: всі, серіал, фільм -->
-
-
-
-<!-- кольори 19:56 зробити іконку, потім повертаємось до цього на 20:07 -->
