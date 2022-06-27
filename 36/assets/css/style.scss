@@ -1,0 +1,47 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.modal_overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 00, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.my_modal,
+.favorites_modal {
+    background-color: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+}
+
+.my_modal {
+    z-index: 120;
+}
+
+.modal_flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.modal_img img,
+.card-img-top {
+    border-radius: 15px;
+}
+
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}

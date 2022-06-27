@@ -32,7 +32,7 @@
 
 // using axios library
 
-// axios('assets/data/cart.json')
+// axios.get('assets/data/cart.json')
 //     .then(resp=>{
 //         console.log(resp);
 //         // resp data for axios
