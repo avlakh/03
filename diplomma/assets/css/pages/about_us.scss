@@ -49,6 +49,11 @@ ol, ul {
     list-style: none;
 }
 
+p {
+    opacity: 0.7;
+    line-height: 28px;
+}
+
 // general custom styles
 
 h1 {
@@ -91,10 +96,284 @@ h6 {
 // imported
 
 // main
+// about us
 
-main {
-    height: 1000px;
+.about_us_home {
+    padding: 220px 0 105px;
 }
+
+.about_us_home_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 120px;
+}
+
+.about_us_home_descr {
+    align-self: flex-start;
+    padding-top: 24px;
+    h4 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+        color: $dark-blue;
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-weight: 600;
+        font-size: 54px;
+        line-height: 74px;
+        color: $dark-blue;
+        margin-bottom: 32px;
+    }
+    p {
+        color: $dark-blue;
+    }
+}
+
+.about_us_home_img {
+    height: 100%;
+    width: 100%;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        vertical-align: top;
+    }
+}
+
+// who we are
+
+.who_we_are {
+    background-color: #F4F5F5;
+    h4 {
+        padding: 75px 0 0 80px;
+        font-size: 16px;
+        line-height: 28px;
+        color: $dark-blue;
+    }
+}
+
+.who_we_are_flex {
+    display: flex;
+    gap: 33px;
+    padding: 0 80px 80px 80px;
+}
+
+.who_we_are_descr h3 {
+    margin-bottom: 15px;
+}
+
+.who_we_are_descr p {
+    color: $dark-blue;
+}
+
+.who_we_are_img {
+    height: 100%;
+    width: 100%;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+// our process
+
+.our_process {
+    padding: 128px 0;
+    h2 {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+}
+
+.our_process_flex {
+    display: flex;
+    gap: 32px;
+}
+
+.our_process_card {
+    padding-top: 52px;
+    h6 {
+        margin-bottom: 13px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -55px;
+            border: 1px solid $royal-blue;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: $royal-blue;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            border-bottom: 2px dashed rgba(36, 5, 242, .4);
+            width: 224px;
+            top: -45px;
+            right: 25px;
+        }
+    }
+}
+
+// our mission
+
+.our_mission {
+    background-color: #EEF4FA;
+    .container {
+        padding: 128px 0;
+    }
+}
+
+.our_mission_flex {
+    display: flex;
+    gap: 140px;
+    &:first-of-type {
+        margin-bottom: 78px;
+    }
+}
+
+.our_mission_descr {
+    align-self: center;
+    h4 {
+        font-size: 16px;
+        line-height: 28px;
+        color: $dark-blue;
+    }
+}
+
+// benefits
+// reused features from the index.scss
+
+.benefits {
+    padding: 128px 0;
+    h2 {
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 48px;
+    }
+}
+
+.benefits_grid {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+    .benefits_card {
+        background-color: $grey;
+        padding: 48px 32px 42px 48px;
+        img {
+            padding-bottom: 25px;
+        }
+        h6 {
+            padding-bottom: 12px;
+        }
+        p {
+            line-height: 28px;
+            color: rgba(40, 41, 56, 0.7)
+        }
+    }
+}
+
+.benefits_users {
+    display: flex;
+    gap: 89px;
+    align-items: center;
+}
+
+.benefits_users_numbers h5 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: $dark-blue;
+    opacity: 0.7;
+}
+
+.benefits_users_logos {
+    display: flex;
+    gap: 70px;
+    img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// our team
+
+.our_team {
+    background-color: $grey;
+    padding: 128px 0;
+    h2 {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+}
+
+.our_team_grid {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr 1fr;
+    gap: 32px;
+}
+
+.our_team_card {
+    background-color: #fff;
+    padding: 48px 63px 32px;
+    .our_team_photo_link {
+        position: relative;
+        display: block;
+        margin-bottom: 22px;
+        overflow: hidden;
+        &:hover .our_card_img_bg {
+            transform: translate(0);
+        }
+    }
+    .our_card_img_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        width: 168px;
+        height: 168px;
+        border-radius: 50%;
+        transform: translate(-168px);
+        background: linear-gradient(348.37deg, #5239FA 17.97%, rgba(255, 255, 255, 0) 79.2%);
+        .our_card_soc_list {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 10px;
+            svg:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+    h6 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+        color: #1D2130;
+    }
+    h5 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #1D2130;
+        text-align: center;
+        opacity: 0.7;
+    }
+}
+
 
 // footer
 // imported

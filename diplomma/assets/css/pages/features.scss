@@ -1,0 +1,240 @@
+@use '../header';
+@use '../footer';
+
+// color vars
+
+$royal-blue: #2405F2;
+$dark-blue: #282938;
+$grey: #F4F6FC;
+$yellow: #FCD980;
+$tint-blue: #1C1E53;
+$accent: #EEF4FA;
+$light-yellow: rgba(252, 217, 128, 0.1);
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    color: $dark-blue;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+a, button {
+    transition: all .2s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+p {
+    opacity: 0.7;
+    line-height: 28px;
+}
+
+// general custom styles
+
+h1 {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 74px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 56px;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 56px;
+}
+
+h5 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+h6 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+// header
+// imported
+
+// main
+
+main {
+    height: 3000px;
+}
+
+// hero section 
+.hero_section {
+    background-color: $tint-blue;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 100px;
+        padding: 197px 0 128px;
+    }
+}
+
+.hero_text {
+    padding-top: 60px;
+}
+
+.hero_text_body {
+    margin-bottom: 30px;
+    h1 {
+        color: white;
+        margin-bottom: 34px;
+    }
+    p {
+        font-weight: 500;
+        line-height: 28px;
+        color: rgba($color: #fff, $alpha: 0.7);
+    }
+}
+
+.round_btn {
+    display: inline-block;
+    background-color: #FCD980;
+    border-radius: 41px;
+    padding: 16px 56px;
+    font-family: 'Manrope';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    color: #1B1C2B;
+    &:hover {
+        background-color: #FDE4A6;
+    }
+}
+
+.hero_img {
+    padding: 23px 18px 0px 0px;
+}
+
+// benefits
+// reused from the about_us
+
+.benefits {
+    padding: 90px 0;
+    h2 {
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 48px;
+    }
+}
+
+.benefits_users {
+    display: flex;
+    gap: 89px;
+    align-items: center;
+    margin-bottom: 96px;
+}
+
+.benefits_users_numbers h5 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: $dark-blue;
+    opacity: 0.7;
+}
+
+.benefits_users_logos {
+    display: flex;
+    gap: 70px;
+    img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.benefits_grid {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+    .benefits_card {
+        background-color: $grey;
+        padding: 48px 32px 42px 48px;
+        img {
+            padding-bottom: 25px;
+        }
+        h6 {
+            padding-bottom: 12px;
+        }
+        p {
+            line-height: 28px;
+            color: rgba(40, 41, 56, 0.7)
+        }
+    }
+}
+
+// our approach
+
+.our_mission {
+    background-color: #EEF4FA;
+    .container {
+        padding: 128px 0;
+    }
+}
+
+.our_mission_flex {
+    display: flex;
+    gap: 140px;
+    &:first-of-type {
+        margin-bottom: 78px;
+    }
+}
+
+.our_mission_descr {
+    align-self: center;
+    h4 {
+        font-size: 16px;
+        line-height: 28px;
+        color: $dark-blue;
+    }
+}
+
+// footer
+// imported

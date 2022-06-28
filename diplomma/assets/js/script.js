@@ -2,5 +2,5 @@ $(function () {
     $('.clients_flex_slider').slick({
         
     });
-    $('.faqs_accord').accordion()
+    $('.faqs_accord').accordion();
 })

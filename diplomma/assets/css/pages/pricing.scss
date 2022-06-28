@@ -1,0 +1,270 @@
+@use '../header';
+@use '../footer';
+
+// color vars
+
+$royal-blue: #2405F2;
+$dark-blue: #282938;
+$grey: #F4F6FC;
+$yellow: #FCD980;
+$tint-blue: #1C1E53;
+$accent: #EEF4FA;
+$light-yellow: rgba(252, 217, 128, 0.1);
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    color: $dark-blue;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+a, button {
+    transition: all .2s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+p {
+    opacity: 0.7;
+    line-height: 28px;
+}
+
+// general custom styles
+
+h1 {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 74px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 56px;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 56px;
+}
+
+h5 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+h6 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+// header
+// imported
+
+// main
+// pricing plans
+
+.pricing_plans {
+    padding: 220px 0 128px;
+}
+
+.pricing_plans_text {
+    width: 45%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 64px;
+    h2 {
+        margin-bottom: 16px;
+    }
+}
+
+.pricing_cards_flex {
+    display: flex;
+    gap: 32px;
+}
+
+.pricing_card {
+    padding-bottom: 62px;
+    background-color: $grey;
+    border-radius: 12px;
+    transition: all .2s ease;
+    h6 {
+        margin-bottom: 8px;
+    }
+    p {
+        margin-bottom: 50px;
+    }
+    &:hover {
+        background-color: $tint-blue;
+        color: #fff;
+    }
+    &:hover .hover_yellow {
+        color: $yellow;
+    }
+    &:hover .btn {
+        background-color: $yellow;
+        color: $dark-blue;
+    }
+    &:hover .btn:hover {
+        background-color: #FDE4A6;
+    }
+}
+
+.pricing_card_wrap {
+    padding: 64px 76px 0 48px;
+}
+
+.card_price {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 24px;
+    h4 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: $royal-blue;
+    }
+}
+
+.pricing_card_features {
+    margin-bottom: 79px;
+    li {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 24px;
+        &:last-of-type {
+            margin-bottom: 0px;
+        }
+        .features_na {
+            opacity: 0.7;
+        }
+    }
+}
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 51px;
+    background-color: $dark-blue;
+    text-align: center;
+    border-radius: 41px;
+    max-width: 254px;
+    font-family: 'Manrope';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    color: $grey;
+}
+
+.p_complex {
+    margin-bottom: 44px;
+}
+
+.ul_complex {
+    margin-bottom: 60px;
+    li {
+        margin-bottom: 18px;
+        &:last-of-type {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+// faqs
+// taken from index.html
+
+.faqs {
+    height: 692px;
+    padding-bottom: 128px;
+}
+
+.faqs_flex {
+    display: flex;
+    gap: 95px;
+}
+
+.faqs_descr {
+    h3 {
+        color: $dark-blue;
+        margin-bottom: 16px;
+    }
+    a {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+        text-align: center;
+        color: $royal-blue;
+        opacity: 0.8;
+    }
+}
+
+.faqs_number {
+    margin-right: 56px;
+}
+
+.faqs_text {
+    padding-left: 59px;
+}
+
+.faqs_accord {
+
+    .faqs_heading {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        color: $dark-blue;
+    }
+    .faqs_number {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        color: $royal-blue;
+    }
+    p {
+        padding-left: 63px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+        color: $dark-blue;
+        opacity: 0.8;
+    }
+}
+
+// footer
+// imported
