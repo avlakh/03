@@ -1,30 +1,30 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+<section class="banner" role="banner">
+				<SiteHeader />
+				<div class="container">
+						<div class="col-md-10 col-md-offset-1">
+								<div class="banner-text text-center">
+										<h1>Your Favorite One Page Multi Purpose Template</h1>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna vel scelerisque nisl consectetur et.</p>
+										<a href="#" class="btn btn-large">Find out more</a>
+								</div>
+						</div>
+				</div>
+		</section>
+	<nav>
+		<router-link to="/">Home</router-link> |
+		<router-link to="/about">About</router-link>
+	</nav>
+	<router-view/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-nav {
-  padding: 30px;
-}
+import SiteHeader from '@/components/SiteHeader'
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+export default {
+	components : {
+		SiteHeader
+	}
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>

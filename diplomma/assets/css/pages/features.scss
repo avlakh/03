@@ -96,11 +96,6 @@ h6 {
 // imported
 
 // main
-
-main {
-    height: 3000px;
-}
-
 // hero section 
 .hero_section {
     background-color: $tint-blue;
@@ -152,7 +147,7 @@ main {
 // reused from the about_us
 
 .benefits {
-    padding: 90px 0;
+    padding: 84px 0;
     h2 {
         text-align: center;
         width: 50%;
@@ -212,27 +207,107 @@ main {
 
 // our approach
 
-.our_mission {
-    background-color: #EEF4FA;
-    .container {
-        padding: 128px 0;
-    }
+
+.our_approach {
+    padding: 128px 0;
 }
 
-.our_mission_flex {
+.our_approach_no_ptop {
+    padding-bottom: 128px;
+}
+
+.our_approach_flex {
     display: flex;
-    gap: 140px;
-    &:first-of-type {
-        margin-bottom: 78px;
+    gap: 70px;
+}
+
+.our_approach_descr {
+    padding-top: 40px;
+    h4 {
+        font-size: 18px;
+        line-height: 32px;
+        color: $dark-blue;
+        margin-bottom: 22px;
+    }
+    h3 {
+        margin-bottom: 30px;
     }
 }
 
-.our_mission_descr {
-    align-self: center;
-    h4 {
-        font-size: 16px;
-        line-height: 28px;
+.our_approach_img { 
+    width: 100%;
+    height: 100%;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.our_approach_grey {
+    background-color: $grey;
+}
+
+.our_approach_yellow {
+    background-color: $light-yellow;
+}
+
+// faqs
+// taken from index.html
+
+.faqs {
+    padding: 128px 0;
+}
+
+.faqs_flex {
+    display: flex;
+    gap: 95px;
+}
+
+.faqs_descr {
+    h3 {
         color: $dark-blue;
+        margin-bottom: 16px;
+    }
+    a {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+        text-align: center;
+        color: $royal-blue;
+        opacity: 0.8;
+    }
+}
+
+.faqs_number {
+    margin-right: 56px;
+}
+
+.faqs_text {
+    padding-left: 59px;
+}
+
+.faqs_accord {
+
+    .faqs_heading {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        color: $dark-blue;
+    }
+    .faqs_number {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        color: $royal-blue;
+    }
+    p {
+        padding-left: 63px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+        color: $dark-blue;
+        opacity: 0.8;
     }
 }
 
