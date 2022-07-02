@@ -16,30 +16,40 @@ const App = {
         return {
             API_KEY: '294b52ec',
             search: '',
+            year: '',
             movieList: [],
             movieInfo: {},
             movieType: 'movie',
             showModal: false,
             favorites: [],
             showFavoritesList: false,
-            searchResult: false
+            searchResult: false,
+            totalPages: 0,
+            page: 1,
+            perPage: 10
         }
     }, components: {
         movieItem
+    }, created () {
+        this.favorites = JSON.parse(localStorage.getItem('favorite_films'));
     }, methods: {
         searchMovies(){
             if (this.search !== '') {
                 this.selectCategory()
-                axios.get(`https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.movieType}`)
+                axios.get(`https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.movieType}&y=${this.year}&page=${this.page}`)
                     .then(response => {
                         this.movieList = response.data.Search
                         this.searchResult = true;
                         this.showFavoritesList = false;
+                        this.totalPages = Math.ceil(response.data.totalResults / 10)
                     })
                     .catch(err=>{
                         console.log(err);
                     });
             }
+        }, goToPage(pageNum) {
+            this.page = pageNum;
+            this.searchMovies();
         },
         selectCategory(event){
             if (event === 'movie') {
@@ -88,38 +98,20 @@ const App = {
                 arr.push(element)
             });
             return arr
+        },
+        toggleTheme (){
+            const inputStatus = document.getElementById('theme_toggle');
+            inputStatus.addEventListener('change', (e)=>{
+                if (e.target.checked) {
+                    document.getElementById('theme_css').href = 'assets/css/dark.min.css';
+                    localStorage.setItem('theme', 'dark')
+                } else {
+                    document.getElementById('theme_css').href = 'assets/css/style.min.css';
+                    localStorage.setItem('theme', 'light')
+                }
+            })
         }
     }
 }
 
 Vue.createApp(App).mount('#app')
-
-/*
-
-Actors: "Robert Pattinson, Zoë Kravitz, Jeffrey Wright"
-Awards: "2 wins & 7 nominations"
-BoxOffice: "$369,345,583"
-Country: "United States"
-DVD: "19 Apr 2022"
-Director: "Matt Reeves"
-Genre: "Action, Crime, Drama"
-Language: "English, Spanish, Latin, Italian"
-Metascore: "72"
-Plot: "When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement."
-Poster: "https://m.media-amazon.com/images/M/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDYtZTk3MTQ3NGQxZGEwXkEyXkFqcGdeQXVyMzMwOTU5MDk@._V1_SX300.jpg"
-Production: "N/A"
-Rated: "PG-13"
-Ratings: [{Source: "Internet Movie Database", Value: "7.9/10"}, {Source: "Rotten Tomatoes", Value: "85%"},…]
-Released: "04 Mar 2022"
-Response: "True"
-Runtime: "176 min"
-Title: "The Batman"
-Type: "movie"
-Website: "N/A"
-Writer: "Matt Reeves, Peter Craig, Bill Finger"
-Year: "2022"
-imdbID: "tt1877830"
-imdbRating: "7.9"
-imdbVotes: "510,059"
-
-*/

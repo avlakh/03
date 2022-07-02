@@ -6,29 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css" id="theme_css">
 </head>
-<body class="bg-success">
+<body>
     <div id="app">
         <div class="container pt-4">
             <div class="card mb-4">
-                <h1 class="text-center mt-2">IMDB Movie Search</h1>
+                <div class="row header_panel">
+                    <div class="col-9 main_text">
+                        <h1 class="text-center mt-2">IMDB Movie Search</h1>
+                    </div>
+                    <div class="col-2 toggle_switch">
+                        <label for="theme_toggle">Dark Theme</label>
+                        <input @click="toggleTheme()" class="toggle" id="theme_toggle" type="checkbox" />
+                    </div>
+                </div>
                 <div class="card-body">
                     <form id="search_form" @submit.prevent="searchMovies">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-5 name_input">
                                 <input type="search" class="form-control" placeholder="Enter movie title" v-model="search">
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 type_input">
                                 <select name="movie_type" v-model="movieType"  class="form-control">
                                     <option value="movie">Full-length film</option>
                                     <option value="series">TV series</option>
                                 </select>
                             </div>
-                            <div class="col-1">
+                            <div class="col-2 year_input">
+                                <input type="number" name="movie_year" v-model="year" class="form-control" min="0" placeholder="Year">
+                            </div>
+                            <div class="col-1 search_button">
                                 <button type="submit" class="btn btn-info">Search</button>
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 favorites_button">
                                 <button type="button" class="btn btn-success" @click="getFavorites()">See your favorites</button>
                             </div>
                         </div>
@@ -43,6 +54,13 @@
                     <template class="card col-3 mb-3" v-for="movie in movieListWithFavorite()" :key="movie.imdbID">
                         <movie-item :movie="movie" @get-movie="getMovieInfo" @add-remove="addRemoveFavorites"/>
                     </template>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+                            <li class="page-item" v-for="index in totalPages" :key="index"><a class="page-link" @click="goToPage(index)">{{ index }}</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                      </nav>
                 </div>
             </div>
             <div class="card mt-4" v-if="showFavoritesList">
@@ -80,16 +98,16 @@
     </div>
 
     <template id="movieItem">
-        <div class="card col-3 mb-3">
+        <div class="card col-3 mb-3 film_card">
             <img :src="movie.Poster" class="card-img-top mt-2" :alt="movie.Title">
             <div class="card-body row">
                 <h5 class="card-title">{{ movie.Title }}</h5>
                 <p class="card-text">{{ movie.Year }}</p>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-4 details_button">
                         <button type="button" class="btn btn-primary" @click="getMovieInfo(movie.imdbID)">Details</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 add_favorites_button">
                         <button type="button" class="btn btn-success btn-favorite" @click="addRemoveFavorites(movie.imdbID)">
                             <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
                                 <path :fill="movie.inFav ? '#f00' : '#fff'" d="M34,9c-4.2,0-7.9,2.1-10,5.4C21.9,11.1,18.2,9,14,9C7.4,9,2,14.4,2,21c0,11.9,22,24,22,24s22-12,22-24 C46,14.4,40.6,9,34,9z"/>
@@ -107,3 +125,21 @@
     <script src="assets/js/movies.js"></script>
 </body>
 </html>
+
+<!-- 1. Пошук фільмів
+    - за назвою DONE 
+    - з урахуванням типу DONE 
+    - з урахуванням року DONE
+2. Улюблені фільми (favourite)
+    - підвантажувати одразу DONE
+    - зберігати у localStorage DONE
+3. Використати CSS фреймворки (Bootstrap)
+    - адаптивність! DONE
+4. Дві (або більше) візуальні теми світла/темна 
+    - поточну тему зберігати у cookies
+5. Рейтинги фільмів
+    - у вигляді прогресбару
+6. Посторінкова навігація
+7. Детальний перегляд у модальному вікні DONE
+8* анімація
+ -->
