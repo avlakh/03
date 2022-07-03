@@ -118,10 +118,40 @@ svg {
     width: 100%;
 }
 
+
 .btn-favorite {
     bottom: 20px;
     height: 40px;
     width: 40px;
+}
+
+.detail_close_button {
+    float: right;
+}
+
+.ratings_source {
+    margin-right: 10px;
+}
+
+.progress_bar_wrap {
+    width: 70%;
+    height: 10px;
+    background-color: #ccc;
+}
+
+.progress_bar {
+    height: 10px;
+    background-color: #4CD964;
+}
+
+// pagination
+
+.pagination {
+    flex-wrap: wrap;
+}
+
+.page-item {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1400px) {

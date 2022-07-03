@@ -32,6 +32,8 @@ const App = {
         movieItem
     }, created () {
         this.favorites = JSON.parse(localStorage.getItem('favorite_films'));
+    }, mounted () {
+        this.checkToggleTheme();
     }, methods: {
         searchMovies(){
             if (this.search !== '') {
@@ -47,10 +49,11 @@ const App = {
                         console.log(err);
                     });
             }
-        }, goToPage(pageNum) {
+        }, 
+        goToPage(pageNum) {
             this.page = pageNum;
             this.searchMovies();
-        },
+        }, 
         selectCategory(event){
             if (event === 'movie') {
                 movieType = 'movie'
@@ -110,7 +113,21 @@ const App = {
                     localStorage.setItem('theme', 'light')
                 }
             })
-        }
+        },
+        checkToggleTheme (){
+            const themeStatus = localStorage.getItem('theme');
+            let inputStatus = document.getElementById('theme_toggle');
+            if (themeStatus === 'dark'){
+                document.getElementById('theme_css').href = 'assets/css/dark.min.css';
+                inputStatus.checked = true;
+            } else {
+                document.getElementById('theme_css').href = 'assets/css/style.min.css';
+                inputStatus.checked = false;
+            }
+        },
+        styleProgressBar () {
+            const percentage = parseInt(this.movieInfo.Ratings[index].Value);
+        },
     }
 }
 

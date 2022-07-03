@@ -124,6 +124,22 @@ svg {
     width: 40px;
 }
 
+.detail_close_button {
+    float: right;
+}
+
+.ratings_source {
+    margin-right: 10px;
+}
+
+.pagination {
+    flex-wrap: wrap;
+}
+
+.page-item {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1400px) {
     .col-4.details_button {
         width: 50%;

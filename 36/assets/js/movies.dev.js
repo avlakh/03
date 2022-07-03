@@ -36,6 +36,9 @@ var App = {
   created: function created() {
     this.favorites = JSON.parse(localStorage.getItem('favorite_films'));
   },
+  mounted: function mounted() {
+    this.checkToggleTheme();
+  },
   methods: {
     searchMovies: function searchMovies() {
       var _this = this;
@@ -125,6 +128,21 @@ var App = {
           localStorage.setItem('theme', 'light');
         }
       });
+    },
+    checkToggleTheme: function checkToggleTheme() {
+      var themeStatus = localStorage.getItem('theme');
+      var inputStatus = document.getElementById('theme_toggle');
+
+      if (themeStatus === 'dark') {
+        document.getElementById('theme_css').href = 'assets/css/dark.min.css';
+        inputStatus.checked = true;
+      } else {
+        document.getElementById('theme_css').href = 'assets/css/style.min.css';
+        inputStatus.checked = false;
+      }
+    },
+    styleProgressBar: function styleProgressBar() {
+      var percentage = parseInt(this.movieInfo.Ratings[index].Value);
     }
   }
 };
