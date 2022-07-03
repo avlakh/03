@@ -132,6 +132,17 @@ svg {
     margin-right: 10px;
 }
 
+.progress_bar_wrap {
+    width: 70%;
+    height: 10px;
+    background-color: #ccc;
+}
+
+.progress_bar {
+    height: 10px;
+    background-color: #4CD964;
+}
+
 .pagination {
     flex-wrap: wrap;
 }
