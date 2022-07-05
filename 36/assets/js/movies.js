@@ -119,9 +119,7 @@ const App = {
             let arr = [];
             this.movieList.forEach(element => {
                 let findFav = this.favorites.find(item => {
-                    if (this.favorites != null ) {
-                        return element.imdbID === item.imdbID
-                    }
+                    return element.imdbID === item.imdbID
                 });
                 element.inFav = findFav !== undefined ? true : false
                 arr.push(element)
