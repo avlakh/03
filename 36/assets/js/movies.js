@@ -119,11 +119,14 @@ const App = {
             let arr = [];
             this.movieList.forEach(element => {
                 let findFav = this.favorites.find(item => {
-                    return element.imdbID === item.imdbID
+                    if (favorites != null ) {
+                        return element.imdbID === item.imdbID
+                    }
                 });
                 element.inFav = findFav !== undefined ? true : false
                 arr.push(element)
             });
+            console.log(arr)
             return arr
         },
         toggleTheme (){

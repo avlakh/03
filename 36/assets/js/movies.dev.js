@@ -132,12 +132,15 @@ var App = {
       var arr = [];
       this.movieList.forEach(function (element) {
         var findFav = _this3.favorites.find(function (item) {
-          return element.imdbID === item.imdbID;
+          if (favorites != null) {
+            return element.imdbID === item.imdbID;
+          }
         });
 
         element.inFav = findFav !== undefined ? true : false;
         arr.push(element);
       });
+      console.log(arr);
       return arr;
     },
     toggleTheme: function toggleTheme() {
