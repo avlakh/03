@@ -135,7 +135,7 @@ var App = {
           return element.imdbID === item.imdbID;
         });
 
-        element.inFav = findFav !== undefined ? true : false;
+        element.inFav = findFav !== undefined || null ? true : false;
         arr.push(element);
       });
       return arr;
