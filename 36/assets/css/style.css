@@ -74,6 +74,10 @@ body {
   z-index: 100;
 }
 
+.display_none {
+  display: none;
+}
+
 .my_modal,
 .favorites_modal {
   background-color: #fff;
@@ -113,7 +117,11 @@ svg {
   width: 100%;
 }
 
-.btn-favorite {
+.btn_custom {
+  background-color: #eee;
+}
+
+.btn_favorite {
   bottom: 20px;
   height: 40px;
   width: 40px;
@@ -128,14 +136,18 @@ svg {
 }
 
 .progress_bar_wrap {
-  width: 70%;
+  background-color: #eee;
+  width: 90%;
   height: 10px;
-  background-color: #ccc;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin-bottom: 10px;
 }
 
 .progress_bar {
-  height: 10px;
-  background-color: #4CD964;
+  background-color: green;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .pagination {

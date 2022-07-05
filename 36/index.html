@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css" id="theme_css">
 </head>
 <body>
@@ -14,7 +15,7 @@
             <div class="card mb-4">
                 <div class="row header_panel">
                     <div class="col-9 main_text">
-                        <h1 class="text-center mt-2">IMDB Movie Search</h1>
+                        <h1 class="text-center mt-2 animate__animated animate__fadeInDown">IMDB Movie Search</h1>
                     </div>
                     <div class="col-2 toggle_switch">
                         <label for="theme_toggle">Dark Theme</label>
@@ -37,16 +38,16 @@
                                 <input type="number" name="movie_year" v-model="year" class="form-control" min="0" placeholder="Year">
                             </div>
                             <div class="col-1 search_button">
-                                <button type="submit" class="btn btn-info">Search</button>
+                                <button type="submit" class="btn btn_custom animate__animated animate__fadeInDownBig">Search</button>
                             </div>
                             <div class="col-2 favorites_button">
-                                <button type="button" class="btn btn-success" @click="getFavorites()">See your favorites</button>
+                                <button type="button" class="btn btn_custom animate__animated animate__fadeInDownBig" @click="getFavorites()">See your favorites</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="card" v-if="searchResult">
+            <div class="card animate__animated animate__backInUp" v-if="searchResult">
                 <div class="card-header">
                     <h3 class="mt-2">Here are results for your search:</h3>
                 </div>
@@ -54,13 +55,12 @@
                     <template class="card col-3 mb-3" v-for="movie in movieListWithFavorite()" :key="movie.imdbID">
                         <movie-item :movie="movie" @get-movie="getMovieInfo" @add-remove="addRemoveFavorites"/>
                     </template>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item" v-for="index in totalPages" :key="index"><a class="page-link" @click="goToPage(index)">{{ index }}</a></li>
-                      </nav>
+                    <div class="d-flex justify-content-center">
+                        <pagination :page="page" :total="totalPages" @go-to-page="goToPage"></pagination>
+                    </div>
                 </div>
             </div>
-            <div class="card mt-4" v-if="showFavoritesList">
+            <div class="card mt-4 animate__animated animate__backInUp" v-if="showFavoritesList">
                 <div class="card-body row" >
                     <h3 class="mt-2">Your favorite movies list</h3>
                     <template class="card col-3 mb-3" v-for="movie in favorites" :key="movie.imdbID">
@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="modal_overlay" v-if="showModal">
-            <div class="my_modal">
+            <div class="my_modal animate__animated animate__rotateIn">
                 <h3 class="text-center text-uppercase"><b>{{ movieInfo.Title }}</b></h3>
                 <div class="modal_flex">
                     <div class="modal_img">
@@ -81,21 +81,34 @@
                         <h5><b>Director:</b> {{movieInfo.Director}}</h5>
                         <h5><b>Year:</b> {{movieInfo.Year}}</h5>
                         <h5><b>Genre:</b> {{movieInfo.Genre}}</h5>
-                        <h5><b>Box Office:</b> {{movieInfo.BoxOffice}}</h5>
-                        <h5><b><span class="ratings_source">{{movieInfo.Ratings[0].Source}}:</span></b><span>{{movieInfo.Ratings[0].Value}}</span></h5>
-                        <div class="progress_bar_wrap">
-                            <div class="progress_bar"></div>
-                        </div>
-                        <h5><b><span class="ratings_source">{{movieInfo.Ratings[1].Source}}:</span></b><span>{{movieInfo.Ratings[1].Value}}</span></h5>
-                        <h5><b><span class="ratings_source">{{movieInfo.Ratings[2].Source}}:</span></b><span>{{movieInfo.Ratings[2].Value}}</span></h5>
-                        <h5><b>Rating:</b> {{movieInfo.imdbRating}}</h5>
-                        <h5><b>Metascore:</b> {{movieInfo.Metascore}}</h5>
                         <h5><b>Plot:</b> {{movieInfo.Plot}}</h5>
-                        <button type="button" class="btn btn-success mt-2 detail_close_button" @click="showModal = false">Close the window</button> 
+                        <div v-if="movieInfo.Ratings[0] !== 'undefined'">
+                            <h5><b>{{movieInfo.Ratings[0].Source}}</b>: {{ movieInfo.Ratings[0].Value }}</h5>
+                            <div class="progress_bar_wrap">
+                                <div class="progress_bar" :style="{width: this.styleProgressBar(0) }">
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="movieInfo.Ratings[1] !== 'undefined'">
+                            <h5><b>{{movieInfo.Ratings[1].Source}}</b>: {{ movieInfo.Ratings[1].Value }}</h5>
+                            <div class="progress_bar_wrap">
+                                <div class="progress_bar" :style="{ width: movieInfo.Ratings[1].Value}">
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="movieInfo.Metascore !== 'N/A'">
+                            <h5><b>{{movieInfo.Ratings[2].Source}}</b>: {{ movieInfo.Ratings[2].Value }}</h5>
+                            <div class="progress_bar_wrap">
+                                <div class="progress_bar" :style="{width: movieInfo.Metascore + '%' }">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn_custom mt-2 detail_close_button" @click="showModal = false">Close the window</button> 
                     </div>
                 </div>  
             </div>
         </div>
+        <div id="pop_up"></div>
     </div>
 
     <template id="movieItem">
@@ -107,10 +120,10 @@
                 <p class="card-text">{{ movie.Year }}</p>
                 <div class="row">
                     <div class="col-4 details_button">
-                        <button type="button" class="btn btn-primary" @click="getMovieInfo(movie.imdbID)">Details</button>
+                        <button type="button" class="btn btn_custom" @click="getMovieInfo(movie.imdbID)">Details</button>
                     </div>
                     <div class="col-4 add_favorites_button">
-                        <button type="button" class="btn btn-success btn-favorite" @click="addRemoveFavorites(movie.imdbID)">
+                        <button type="button" class="btn btn-success btn_favorite" @click="addRemoveFavorites(movie.imdbID)">
                             <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
                                 <path :fill="movie.inFav ? '#f00' : '#fff'" d="M34,9c-4.2,0-7.9,2.1-10,5.4C21.9,11.1,18.2,9,14,9C7.4,9,2,14.4,2,21c0,11.9,22,24,22,24s22-12,22-24 C46,14.4,40.6,9,34,9z"/>
                             </svg>
@@ -121,11 +134,46 @@
         </div>
     </template>
 
-    
+    <template id="pagination">
+        <nav v-if="total !== 0">
+            <ul class="pagination">
+                <li class="page-item" :class="{disabled: page === 1}">
+                    <a class="page-link" href="#" @click.prevent="goToPage(page-1)">Previous</a>
+                </li>
+
+                <template v-if="page > 4">
+                    <li class="page-item">
+                        <a class="page-link" href="#" @click.prevent="goToPage(1)">1</a>
+                    </li>
+                    <li>
+                        <a class="page-link">...</a>
+                    </li>
+                </template>
+
+                <li class="page-item" v-for="p in total" :class="{active: p === page}" :key="p">
+                    <a class="page-link" href="#" v-if="Math.abs(p - page) < 4" @click.prevent="goToPage(p)">{{ p }}</a>
+                </li>
+
+                <template v-if="page < 39">
+                    <li>
+                        <a class="page-link">...</a>
+                    </li>
+                    <li class="page-item"  :class="{disabled: page === total}">
+                        <a class="page-link" href="#" @click.prevent="goToPage(total)">{{total}}</a>
+                    </li>
+                </template>
+
+                <li class="page-item" :class="{disabled: page === total}">
+                    <a class="page-link" href="#" @click.prevent="goToPage(page+1)">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </template>
 
     <script src="assets/js/axios.min.js"></script>
     <script src="assets/js/vue.global.js"></script>
     <script src="assets/js/movies.js"></script>
+    <script src="assets/js/wow.js"></script>
 </body>
 </html>
 

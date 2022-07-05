@@ -12,11 +12,31 @@ var movieItem = {
   },
   template: '#movieItem'
 };
+var Pagination = {
+  props: {
+    page: {
+      type: Number,
+      "default": 1,
+      required: true
+    },
+    total: {
+      type: Number,
+      "default": 0,
+      required: true
+    }
+  },
+  methods: {
+    goToPage: function goToPage(new_page) {
+      this.$emit('goToPage', new_page);
+    }
+  },
+  template: '#pagination'
+};
 var App = {
   data: function data() {
     return {
       API_KEY: '294b52ec',
-      search: '',
+      search: 'Batman',
       year: '',
       movieList: [],
       movieInfo: {},
@@ -26,18 +46,21 @@ var App = {
       showFavoritesList: false,
       searchResult: false,
       totalPages: 0,
+      darkThemeToggle: false,
       page: 1,
       perPage: 10
     };
   },
   components: {
-    movieItem: movieItem
+    movieItem: movieItem,
+    Pagination: Pagination
   },
   created: function created() {
     this.favorites = JSON.parse(localStorage.getItem('favorite_films'));
   },
   mounted: function mounted() {
     this.checkToggleTheme();
+    new WOW().init();
   },
   methods: {
     searchMovies: function searchMovies() {
@@ -53,11 +76,9 @@ var App = {
         })["catch"](function (err) {
           console.log(err);
         });
+      } else {
+        this.showPopup('Enter movie title');
       }
-    },
-    goToPage: function goToPage(pageNum) {
-      this.page = pageNum;
-      this.searchMovies();
     },
     selectCategory: function selectCategory(event) {
       if (event === 'movie') {
@@ -97,8 +118,10 @@ var App = {
         var item = this.movieList[index];
         item.inFav = true;
         this.favorites.push(item);
+        this.showPopup("Added to favorites.");
       } else {
         this.favorites.splice(index2, 1);
+        this.showPopup("Removed from favorites.");
       }
 
       localStorage.setItem('favorite_films', JSON.stringify(this.favorites));
@@ -118,19 +141,27 @@ var App = {
       return arr;
     },
     toggleTheme: function toggleTheme() {
+      var _this4 = this;
+
       var inputStatus = document.getElementById('theme_toggle');
       inputStatus.addEventListener('change', function (e) {
         if (e.target.checked) {
-          document.getElementById('theme_css').href = 'assets/css/dark.min.css';
-          localStorage.setItem('theme', 'dark');
+          document.getElementById('theme_css').href = 'assets/css/dark.min.css'; // localStorage.setItem('theme', 'dark')
+
+          document.cookie = 'dark';
+          _this4.darkThemeToggle = true;
         } else {
-          document.getElementById('theme_css').href = 'assets/css/style.min.css';
-          localStorage.setItem('theme', 'light');
+          document.getElementById('theme_css').href = 'assets/css/style.min.css'; // localStorage.setItem('theme', 'light')
+
+          document.cookie = 'light';
+          _this4.darkThemeToggle = false;
         }
       });
     },
     checkToggleTheme: function checkToggleTheme() {
-      var themeStatus = localStorage.getItem('theme');
+      // можна через сторедж теж
+      // const themeStatus = localStorage.getItem('theme');
+      var themeStatus = document.cookie;
       var inputStatus = document.getElementById('theme_toggle');
 
       if (themeStatus === 'dark') {
@@ -141,8 +172,23 @@ var App = {
         inputStatus.checked = false;
       }
     },
-    styleProgressBar: function styleProgressBar() {
-      var percentage = parseInt(this.movieInfo.Ratings[index].Value);
+    goToPage: function goToPage(new_page) {
+      this.page = new_page;
+      this.searchMovies();
+    },
+    styleProgressBar: function styleProgressBar(index) {
+      var width = parseFloat(this.movieInfo.Ratings[index].Value) * 10 + '%';
+      return width;
+    },
+    showPopup: function showPopup(text) {
+      var popup = document.getElementById('pop_up');
+      var html = '';
+      html += "\n            <div class=\"modal_overlay\">\n                <div class=\"my_modal animate__animated animate__rotateIn text-center\">\n                <h5><b>".concat(text, "</b><h5>\n                </div>\n            </div>\n            ");
+      popup.insertAdjacentHTML("afterbegin", html);
+      setTimeout(function () {
+        var el = document.querySelector(".modal_overlay");
+        el.classList.add("display_none");
+      }, 1500);
     }
   }
 };

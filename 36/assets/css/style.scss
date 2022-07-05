@@ -72,11 +72,15 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 00, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100;
+}
+
+.display_none {
+    display: none;
 }
 
 .my_modal,
@@ -118,8 +122,11 @@ svg {
     width: 100%;
 }
 
+.btn_custom {
+    background-color: #eee;
+}
 
-.btn-favorite {
+.btn_favorite {
     bottom: 20px;
     height: 40px;
     width: 40px;
@@ -134,14 +141,17 @@ svg {
 }
 
 .progress_bar_wrap {
-    width: 70%;
+    background-color: #eee;
+    width: 90%;
     height: 10px;
-    background-color: #ccc;
+    border-radius: 5px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
 }
-
 .progress_bar {
-    height: 10px;
-    background-color: #4CD964;
+    background-color: green;
+    height: 100%;
+    border-radius: 10px;
 }
 
 // pagination

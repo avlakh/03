@@ -11,11 +11,32 @@ const movieItem = {
     template: '#movieItem'
 };
 
+const Pagination = {
+    props: {
+        page: {
+            type: Number,
+            default: 1,
+            required: true
+        }, 
+        total: {
+            type: Number,
+            default: 0,
+            required: true
+        }
+    },
+    methods : {
+        goToPage (new_page){
+            this.$emit('goToPage', new_page)
+        }
+    },
+    template: '#pagination'
+}
+
 const App = {
     data() {
         return {
             API_KEY: '294b52ec',
-            search: '',
+            search: 'Batman',
             year: '',
             movieList: [],
             movieInfo: {},
@@ -25,15 +46,18 @@ const App = {
             showFavoritesList: false,
             searchResult: false,
             totalPages: 0,
+            darkThemeToggle: false,
             page: 1,
             perPage: 10
         }
     }, components: {
-        movieItem
+        movieItem,
+        Pagination
     }, created () {
         this.favorites = JSON.parse(localStorage.getItem('favorite_films'));
     }, mounted () {
         this.checkToggleTheme();
+        new WOW().init();
     }, methods: {
         searchMovies(){
             if (this.search !== '') {
@@ -48,11 +72,9 @@ const App = {
                     .catch(err=>{
                         console.log(err);
                     });
+            } else {
+                this.showPopup('Enter movie title')
             }
-        }, 
-        goToPage(pageNum) {
-            this.page = pageNum;
-            this.searchMovies();
         }, 
         selectCategory(event){
             if (event === 'movie') {
@@ -85,9 +107,11 @@ const App = {
             if (index2 === -1 ) {
                 let item = this.movieList[index]
                 item.inFav = true;
-                this.favorites.push(item)
+                this.favorites.push(item);
+                this.showPopup("Added to favorites.");
             } else {
                 this.favorites.splice(index2, 1);
+                this.showPopup("Removed from favorites.")
             }
             localStorage.setItem('favorite_films', JSON.stringify(this.favorites))
         },
@@ -107,15 +131,21 @@ const App = {
             inputStatus.addEventListener('change', (e)=>{
                 if (e.target.checked) {
                     document.getElementById('theme_css').href = 'assets/css/dark.min.css';
-                    localStorage.setItem('theme', 'dark')
+                    // localStorage.setItem('theme', 'dark')
+                    document.cookie = 'dark';
+                    this.darkThemeToggle = true;
                 } else {
                     document.getElementById('theme_css').href = 'assets/css/style.min.css';
-                    localStorage.setItem('theme', 'light')
+                    // localStorage.setItem('theme', 'light')
+                    document.cookie = 'light';
+                    this.darkThemeToggle = false;
                 }
             })
         },
         checkToggleTheme (){
-            const themeStatus = localStorage.getItem('theme');
+            // можна через сторедж теж
+            // const themeStatus = localStorage.getItem('theme');
+            const themeStatus = document.cookie;
             let inputStatus = document.getElementById('theme_toggle');
             if (themeStatus === 'dark'){
                 document.getElementById('theme_css').href = 'assets/css/dark.min.css';
@@ -125,9 +155,30 @@ const App = {
                 inputStatus.checked = false;
             }
         },
-        styleProgressBar () {
-            const percentage = parseInt(this.movieInfo.Ratings[index].Value);
+        goToPage(new_page) {
+            this.page = new_page;
+            this.searchMovies();
         },
+        styleProgressBar(index) {
+            const width = parseFloat(this.movieInfo.Ratings[index].Value) * 10 + '%';
+            return width;
+        },
+        showPopup(text) {
+            const popup = document.getElementById('pop_up');
+            let html = '';
+            html += `
+            <div class="modal_overlay">
+                <div class="my_modal animate__animated animate__rotateIn text-center">
+                <h5><b>${text}</b><h5>
+                </div>
+            </div>
+            `
+            popup.insertAdjacentHTML("afterbegin", html)
+            setTimeout(() => {
+                let el = document.querySelector(".modal_overlay")
+                el.classList.add("display_none")
+            }, 1500)
+        }
     }
 }
 
