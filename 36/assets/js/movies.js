@@ -119,7 +119,7 @@ const App = {
             let arr = [];
             this.movieList.forEach(element => {
                 let findFav = this.favorites.find(item => {
-                    if (favorites != null ) {
+                    if (this.favorites != null ) {
                         return element.imdbID === item.imdbID
                     }
                 });

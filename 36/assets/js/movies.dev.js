@@ -132,7 +132,7 @@ var App = {
       var arr = [];
       this.movieList.forEach(function (element) {
         var findFav = _this3.favorites.find(function (item) {
-          if (favorites != null) {
+          if (_this3.favorites != null) {
             return element.imdbID === item.imdbID;
           }
         });
