@@ -56,7 +56,7 @@ var App = {
     Pagination: Pagination
   },
   created: function created() {
-    this.favorites = JSON.parse(localStorage.getItem('favorite_films'));
+    this.favorites = JSON.parse(localStorage.getItem('favorite_films')) || [];
   },
   mounted: function mounted() {
     this.checkToggleTheme();

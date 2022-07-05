@@ -54,7 +54,7 @@ const App = {
         movieItem,
         Pagination
     }, created () {
-        this.favorites = JSON.parse(localStorage.getItem('favorite_films'));
+        this.favorites = JSON.parse(localStorage.getItem('favorite_films')) || [];
     }, mounted () {
         this.checkToggleTheme();
         new WOW().init();
