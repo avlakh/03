@@ -46,7 +46,6 @@ var App = {
       showFavoritesList: false,
       searchResult: false,
       totalPages: 0,
-      darkThemeToggle: false,
       page: 1,
       perPage: 10
     };
@@ -142,20 +141,16 @@ var App = {
       return arr;
     },
     toggleTheme: function toggleTheme() {
-      var _this4 = this;
-
       var inputStatus = document.getElementById('theme_toggle');
       inputStatus.addEventListener('change', function (e) {
         if (e.target.checked) {
           document.getElementById('theme_css').href = 'assets/css/dark.min.css'; // localStorage.setItem('theme', 'dark')
 
           document.cookie = 'dark';
-          _this4.darkThemeToggle = true;
         } else {
           document.getElementById('theme_css').href = 'assets/css/style.min.css'; // localStorage.setItem('theme', 'light')
 
           document.cookie = 'light';
-          _this4.darkThemeToggle = false;
         }
       });
     },

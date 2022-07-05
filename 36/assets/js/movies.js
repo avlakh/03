@@ -46,7 +46,6 @@ const App = {
             showFavoritesList: false,
             searchResult: false,
             totalPages: 0,
-            darkThemeToggle: false,
             page: 1,
             perPage: 10
         }
@@ -134,12 +133,10 @@ const App = {
                     document.getElementById('theme_css').href = 'assets/css/dark.min.css';
                     // localStorage.setItem('theme', 'dark')
                     document.cookie = 'dark';
-                    this.darkThemeToggle = true;
                 } else {
                     document.getElementById('theme_css').href = 'assets/css/style.min.css';
                     // localStorage.setItem('theme', 'light')
                     document.cookie = 'light';
-                    this.darkThemeToggle = false;
                 }
             })
         },
