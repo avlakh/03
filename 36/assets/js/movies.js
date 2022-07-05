@@ -70,7 +70,7 @@ const App = {
                         this.totalPages = Math.ceil(response.data.totalResults / 10)
                     })
                     .catch(err=>{
-                        console.log(err);
+                        console.log(err)
                     });
             } else {
                 this.showPopup('Enter movie title')
@@ -121,7 +121,7 @@ const App = {
                 let findFav = this.favorites.find(item => {
                     return element.imdbID === item.imdbID
                 });
-                element.inFav = findFav !== undefined || null ? true : false;
+                element.inFav = findFav !== undefined ? true : false
                 arr.push(element)
             });
             return arr
