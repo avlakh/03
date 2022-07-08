@@ -244,3 +244,57 @@ h6 {
 
 // footer
 // imported
+
+// responsive 
+
+@media screen and (max-width: 1200px) {
+    .case_keywords_flex {
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+    }
+    .case_header {
+        padding: 128px 0 64px;
+    }
+    .case_header_text {
+        h2 {
+            width: 100%;
+        }
+        p {
+            width: 100%;
+        }
+    }
+    .build_together .round_btn {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .case_header_descr {
+        flex-wrap: wrap;
+    }
+    .case_about {
+        padding-top: 30px;
+    }
+    .build_together {
+        padding: 55px 0;
+        &_text {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .case_header_descr {
+        gap: 20px;
+    }
+    .case_keywords {
+        padding-top: 24px;;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .build_together .round_btn {
+        width: 80%;
+    }
+}

@@ -12,6 +12,25 @@
     <link rel="stylesheet" href="assets/css/pages/index.min.css">
 </head>
 <body>
+    <div id="side_block">
+        <div class="wrapper">
+            <nav id="mobile_menu_container">
+                <div class="logo_wrap">
+                    <a href="#"><img src="assets/images/home/main_logo.svg" alt="finsweet_main_logo"></a>
+                </div>
+                <ul class="mobile_menu_list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="pages/about_us.html">About us</a></li>
+                    <li><a href="pages/features.html">Features</a></li>
+                    <li><a href="pages/pricing.html">Pricing</a></li>
+                    <li><a href="pages/works.html">Works</a></li>
+                    <li><a href="pages/blogs.html">Blog</a></li>
+                </ul>
+                <a href="pages/contact.html" id="header_contact_btn">Contact us</a> 
+            </nav>
+        </div>
+    </div>
+    <div id="page_overlay"></div>
     <header>
         <div class="container header_flex">
             <div class="logo_wrap">
@@ -22,13 +41,20 @@
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="pages/about_us.html">About us</a></li>
-                        <li><a href="#">Features</a></li>
+                        <li><a href="pages/features.html">Features</a></li>
                         <li><a href="pages/pricing.html">Pricing</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="pages/works.html">Works</a></li>
+                        <li><a href="pages/blogs.html">Blog</a></li>
                     </ul>
                 </nav>
-                <a href="#" id="header_contact_btn">Contact us</a>
+                <a href="pages/contact.html" id="header_contact_btn">Contact us</a>
+                <div class="hamburger_menu">
+                    <button class="hamburger hamburger--arrow" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -41,8 +67,8 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                     </div>
                     <div class="hero_btn">
-                        <a href="#" class="round_btn">View our work</a>
-                        <a href="#" class="arrow_btn">View Pricing</a>
+                        <a href="pages/works.html" class="round_btn">View our work</a>
+                        <a href="pages/pricing.html" class="arrow_btn">View Pricing</a>
                     </div>
                 </div>
                 <div class="hero_img">
@@ -55,11 +81,10 @@
                 <div class="we_work_text">
                     <h2>How we work</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <a href="#" class="arrow_btn">Get in touch with us</a>
+                    <a href="pages/contact.html" class="arrow_btn">Get in touch with us</a>
                 </div>
                 <div class="we_work_grid">
                     <div class="we_work_card">
-                        <!-- perhaps I should use before::after -->
                         <img src="assets/images/home/how_we_work/pointer_1.svg" alt="we_work_pointer1">
                         <h5>Strategy</h5>
                         <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .</p>
@@ -86,7 +111,7 @@
             <div class="container">
                 <div class="our_projects_text">
                     <h2>View our projects</h2>
-                    <a href="#" class="arrow_btn">View More</a>
+                    <a href="pages/works.html" class="arrow_btn">View More</a>
                 </div>
                 <div class="our_projects_grid">
                     <div class="our_projects_big_card">
@@ -96,7 +121,7 @@
                         <div class="big_card_overlay">
                             <h6>Workhub office Webflow Webflow Design</h6>
                             <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam </p>
-                            <a href="#">View project</a>
+                            <a href="#" class="arrow_btn">View project</a>
                         </div>
                     </div>
                     <div class="our_projects_small_grid">
@@ -106,14 +131,14 @@
                             </div>
                             <div class="small_card_overlay sm_card_up_overlay">
                                 <h6>Unisaas Website Design</h6>
-                                <a href="#">View portfolio</a>
+                                <a href="#" class="arrow_btn">View portfolio</a>
                             </div>
                         </div>
                         <div class="our_projects_small_card sm_card_bot">
                             <div class="small_card_img"><a href="#"><img src="assets/images/home/our_projects/small_card_bot.jpg" alt="our_projects_small_card_bot"></a></div>
                             <div class="small_card_overlay sm_card_bot_overlay">
                                 <h6>Unisaas Website Design</h6>
-                                <a href="#">View portfolio</a>
+                                <a href="#" class="arrow_btn">View portfolio</a>
                             </div>
                         </div>
                     </div>
@@ -256,7 +281,7 @@
                         <button type="submit" class="round_btn">Send an Inquiry</button>
                     </form>
                     <div class="arrow_wrap">
-                        <a href="#" class="arrow_btn">Get in touch with us</a>
+                        <a href="pages/contact.html" class="arrow_btn">Get in touch with us</a>
                     </div>
                 </div>
             </div>
@@ -339,12 +364,12 @@
                     </div>
                     <nav>
                         <ul class="footer_bottom_menu">
-                            <li><a href="">Home</a></li>
-                            <li><a href="">About us</a></li>
-                            <li><a href="">Features</a></li>
-                            <li><a href="">Pricing</a></li>
-                            <li><a href="">FAQ</a></li>
-                            <li><a href="">Blog</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="pages/about_us.html">About us</a></li>
+                            <li><a href="pages/features.html">Features</a></li>
+                            <li><a href="pages/pricing.html">Pricing</a></li>
+                            <li><a href="pages/works.html">Works</a></li>
+                            <li><a href="pages/blogs.html">Blog</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -364,4 +389,5 @@
     perhaps mixins for arrow btn links - partly done
     one style for arrow btn described in the general custom styles - partly done
     ask Sasha for accordion
+    add SEO
 -->

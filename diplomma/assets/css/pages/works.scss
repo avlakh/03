@@ -234,3 +234,41 @@ h6 {
 
 // footer
 // imported
+
+// responsive 
+
+@media screen and (max-width: 1200px) {
+    .works_home_section {
+        padding: 120px 0 60px;
+    }
+    .works_home_flex p {
+        padding: 0px;
+    }
+    .build_together .round_btn {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .build_together {
+        padding: 55px 0;
+        &_text {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .templates_list {
+        flex-wrap: wrap;
+    }
+    .templates_grid {
+        grid-template: 1fr 1fr 1fr 1fr / 1fr;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .build_together .round_btn {
+        width: 80%;
+    }
+}

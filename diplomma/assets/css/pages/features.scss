@@ -237,10 +237,10 @@ h6 {
 .our_approach_img { 
     width: 100%;
     height: 100%;
+    object-fit: cover;
     img {
         height: 100%;
         width: 100%;
-        object-fit: cover;
     }
 }
 
@@ -313,3 +313,62 @@ h6 {
 
 // footer
 // imported
+
+// responsive 
+
+@media screen and (max-width: 1200px) {
+    .benefits_users {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .benefits_grid {
+        grid-template: 1fr / 1fr 1fr;
+    }
+    .our_approach {
+        padding: 64px 0;
+    }
+    .our_approach_flex {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .hero_text {
+        width: 100%;
+    }
+    .hero_img {
+        display: none;
+    }
+    .benefits {
+        padding: 64px 0;
+    }
+    .benefits_users {
+        gap: 60px;
+    }
+    .benefits_users_logos {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+    .faqs {
+        padding: 60px 0;
+    }
+    .faqs_flex {
+        flex-wrap: wrap;
+        gap: 45px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .benefits h2 {
+        width: 100%;
+    }
+    .benefits_grid {
+        grid-template: 1fr 1fr / 1fr;
+    }
+    .our_approach .container {
+        padding: 64px 0;
+    }
+}

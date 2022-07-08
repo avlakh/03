@@ -20,6 +20,10 @@ header {
   gap: 35px;
 }
 
+.hamburger_menu {
+  display: none;
+}
+
 #main_menu ul {
   display: flex;
   gap: 12px;
@@ -66,6 +70,7 @@ header {
   right: -41px;
   width: 24px;
   border-top: 2px solid #F4F6FC;
+  transition: all 0.2s ease;
 }
 .arrow_btn:after {
   content: "";
@@ -77,14 +82,182 @@ header {
   right: -41px;
   border-bottom: 2px solid #F4F6FC;
   border-left: 2px solid #F4F6FC;
+  transition: all 0.2s ease;
 }
 .arrow_btn:hover {
   color: #FCD980;
 }
 .arrow_btn:hover::before, .arrow_btn:hover::after {
   border-color: #FCD980;
+  transform: translateX(30px);
+}
+.arrow_btn:hover::after {
+  transform: translateX(30px) rotate(-135deg);
 }
 
+#side_block {
+  display: block;
+  width: 320px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #5474fd;
+  padding: 20px;
+  height: 100vh;
+  z-index: 2000;
+  -webkit-transform: translate(-320px);
+  -ms-transform: translate(-320px);
+  transform: translate(-320px);
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+#side_block.open {
+  -webkit-transform: translate(0px);
+  -ms-transform: translate(0px);
+  transform: translate(0px);
+}
+
+#page_overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  z-index: 1500;
+}
+#page_overlay.open {
+  display: block;
+}
+
+#mobile_menu_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.mobile_menu_list li {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.mobile_menu_list li a {
+  font-size: 22px;
+  color: #fff;
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: #fff;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #fff;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  background-color: #fff;
+  margin-top: -2px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+   * Arrow
+   */
+.hamburger--arrow.is-active .hamburger-inner::before {
+  transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
+}
+
+.hamburger--arrow.is-active .hamburger-inner::after {
+  transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
+}
+
+@media screen and (max-width: 1000px) {
+  #main_menu {
+    display: none;
+  }
+
+  .main_menu_wrap .hamburger_menu {
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  #header_contact_btn {
+    display: none;
+  }
+}
 .footer_top {
   background-color: #1C1E53;
 }
@@ -179,6 +352,59 @@ header {
   gap: 32px;
 }
 
+@media screen and (max-width: 1200px) {
+  .footer_top_us {
+    padding: 0px;
+  }
+
+  .footer_top_info {
+    padding: 0px;
+  }
+
+  .footer_top_descr {
+    padding: 0px;
+  }
+
+  .footer_top_contact {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .footer_top_descr {
+    align-self: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .footer_bottom_flex {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .footer_top_flex {
+    padding-top: 50px;
+    flex-wrap: wrap;
+  }
+
+  .footer_top_us {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .footer_top_descr {
+    width: 100%;
+    padding-bottom: 25px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer_bottom_flex {
+    flex-direction: column;
+  }
+
+  .footer_bottom_menu {
+    flex-wrap: wrap;
+  }
+}
 *, *::before, *::after {
   padding: 0;
   margin: 0;
@@ -392,11 +618,11 @@ h6 {
 .our_approach_img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .our_approach_img img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
 }
 
 .our_approach_grey {
@@ -456,4 +682,68 @@ h6 {
   line-height: 32px;
   color: #282938;
   opacity: 0.8;
+}
+
+@media screen and (max-width: 1200px) {
+  .benefits_users {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .benefits_grid {
+    grid-template: 1fr/1fr 1fr;
+  }
+
+  .our_approach {
+    padding: 64px 0;
+  }
+
+  .our_approach_flex {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .hero_text {
+    width: 100%;
+  }
+
+  .hero_img {
+    display: none;
+  }
+
+  .benefits {
+    padding: 64px 0;
+  }
+
+  .benefits_users {
+    gap: 60px;
+  }
+
+  .benefits_users_logos {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .faqs {
+    padding: 60px 0;
+  }
+
+  .faqs_flex {
+    flex-wrap: wrap;
+    gap: 45px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .benefits h2 {
+    width: 100%;
+  }
+
+  .benefits_grid {
+    grid-template: 1fr 1fr/1fr;
+  }
+
+  .our_approach .container {
+    padding: 64px 0;
+  }
 }

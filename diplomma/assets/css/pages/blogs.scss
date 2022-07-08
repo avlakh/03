@@ -208,3 +208,49 @@ h6 {
 
 // footer
 // imported
+
+// responsive 
+
+@media screen and (max-width: 1200px) {
+    .blog_home {
+        padding: 120px 0px 0px;
+    }
+    .blog_home_main_text h2 {
+        padding: 0px ;
+    }
+    .blog_home_descr {
+        p {
+            padding: 0px ;
+        }
+        a {
+            width: 40%;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .blog_card_wrap {
+        grid-template: 1fr 1fr 1fr / 1fr 1fr;
+        .blog_card {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .our_blog {
+        margin-bottom: 64px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .blog_card_wrap {
+        grid-template: 1fr 1fr 1fr 1fr / 1fr;
+    }
+    .blog_card_wrap .blog_card {
+        width: 100%;
+    }
+}

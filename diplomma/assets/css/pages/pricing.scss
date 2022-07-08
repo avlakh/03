@@ -210,7 +210,6 @@ h6 {
 // taken from index.html
 
 .faqs {
-    height: 692px;
     padding-bottom: 128px;
 }
 
@@ -268,3 +267,34 @@ h6 {
 
 // footer
 // imported
+
+// responsive 
+
+@media screen and (max-width: 1200px) {
+    .pricing_plans {
+        padding: 128px 0 64px;
+    }
+    .pricing_plans_text {
+        width: 100%;
+    }
+    .pricing_cards_flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pricing_card {
+        text-align: center;
+    }
+    .pricing_card_wrap {
+        padding: 32px 36px 0 24px; 
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .faqs {
+        padding: 60px 0;
+    }
+    .faqs_flex {
+        flex-wrap: wrap;
+        gap: 45px;
+    }
+}

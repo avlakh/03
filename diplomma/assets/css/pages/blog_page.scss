@@ -37,7 +37,7 @@ body {
 }
 
 .text_container {
-    width: 100%;
+    width: 90%;
     max-width: 842px;
     margin: 0 auto;
 }
@@ -165,3 +165,14 @@ h6 {
 
 // footer
 // imported
+
+// responsive
+
+@media screen and (max-width: 1200px) {
+    .blog_home {
+        padding: 120px 0px 0px;
+    }
+    .blog_home_main_text h2 {
+        padding: 0px ;
+    }
+}

@@ -119,8 +119,6 @@ h6 {
     }
 }
 
-
-
 .privacy_main_text {
     h3, p, ul{
         margin-bottom: 32px;
@@ -134,5 +132,16 @@ h6 {
                 margin-bottom: 0px;
             }
         }
+    }
+}
+
+// responsive
+
+@media screen and (max-width: 1200px) {
+    .privacy {
+        padding: 128px 0 64px;
+    }
+    .privacy_head_text {
+        width: 100%;
     }
 }
