@@ -136,10 +136,10 @@
 
     <template id="pagination" v-if="total !==0">
 
-        <nav aria-label="Page navigation example">
+        <nav>
            <ul class="pagination">
   
-              <li class="page-item" :class="{disabled: isDisableFirst}">
+              <li class="page-item" :class="{disabled: isDisabledFirst}">
                  <a class="page-link" href="#" @click.prevent="goToPage(page-1)">Previous</a>
               </li>
   
@@ -167,7 +167,7 @@
                  </li>
               </template>
   
-              <li class="page-item" :class="{disabled: isDisableLast}">
+              <li class="page-item" :class="{disabled: isDisabledLast}">
                  <a class="page-link" href="#" @click.prevent="goToPage(page+1)">Next</a>
               </li>
            </ul>
