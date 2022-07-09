@@ -154,7 +154,7 @@
                     <a class="page-link" href="#" v-if="Math.abs(p - page) < 4" @click.prevent="goToPage(p)">{{ p }}</a>
                 </li>
 
-                <template v-if="page < 39">
+                <template v-if="page < total - 3">
                     <li>
                         <a class="page-link">...</a>
                     </li>
