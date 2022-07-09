@@ -24,6 +24,48 @@ const Pagination = {
             required: true
         }
     },
+    computed: {
+        isDisabledFirst() {
+            return this.page === 1
+        },
+        isDisabledLast() {
+            return this.page === this.total
+        },
+        showFirst() {
+            return this.page > 4 && this.total > 6
+        },
+        showLast() {
+            return this.page < this.total - 3 && this.total > 6
+        },
+        pageRange() {
+            let from = this.page - 2;
+            let to = this.page + 2;
+
+            if (this.page < 5) {
+                from = 1;
+                to = 5;
+            }
+
+            if (this.page > this.total - 4) {
+                from = this.total - 4;
+                to = this.total;
+            }
+
+            if (from < 1) {
+                from = 1
+            }
+
+            if (to > this.total) {
+                to = total
+            }
+
+            if(this.total === 6){
+                from = 1
+            }
+
+            return Array(to - from + 1).fill().map((_, idx) => from + idx)
+        }
+    },
     methods : {
         goToPage (new_page){
             this.$emit('goToPage', new_page)

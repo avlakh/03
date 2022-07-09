@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form id="search_form" @submit.prevent="searchMovies">
+                    <form id="search_form" @submit.prevent="goToPage(1)">
                         <div class="row">
                             <div class="col-5 name_input">
                                 <input type="search" class="form-control" placeholder="Enter movie title" v-model="search">
@@ -134,39 +134,43 @@
         </div>
     </template>
 
-    <template id="pagination">
-        <nav v-if="total !== 0">
-            <ul class="pagination">
-                <li class="page-item" :class="{disabled: page === 1}">
-                    <a class="page-link" href="#" @click.prevent="goToPage(page-1)">Previous</a>
-                </li>
+    <template id="pagination" v-if="total !==0">
 
-                <template v-if="page > 4">
-                    <li class="page-item">
-                        <a class="page-link" href="#" @click.prevent="goToPage(1)">1</a>
-                    </li>
-                    <li>
-                        <a class="page-link">...</a>
-                    </li>
-                </template>
-
-                <li class="page-item" v-for="p in total" :class="{active: p === page}" :key="p">
-                    <a class="page-link" href="#" v-if="Math.abs(p - page) < 4" @click.prevent="goToPage(p)">{{ p }}</a>
-                </li>
-
-                <template v-if="page < total - 3">
-                    <li>
-                        <a class="page-link">...</a>
-                    </li>
-                    <li class="page-item"  :class="{disabled: page === total}">
-                        <a class="page-link" href="#" @click.prevent="goToPage(total)">{{total}}</a>
-                    </li>
-                </template>
-
-                <li class="page-item" :class="{disabled: page === total}">
-                    <a class="page-link" href="#" @click.prevent="goToPage(page+1)">Next</a>
-                </li>
-            </ul>
+        <nav aria-label="Page navigation example">
+           <ul class="pagination">
+  
+              <li class="page-item" :class="{disabled: isDisableFirst}">
+                 <a class="page-link" href="#" @click.prevent="goToPage(page-1)">Previous</a>
+              </li>
+  
+              <template v-if="showFirst">
+                 <li class="page-item" aria-current="page">
+                    <a class="page-link" href="#" @click.prevent="goToPage(1)">1</a>
+                 </li>
+                 <li class="page-item" aria-current="page">
+                    <a class="page-link">...</a>
+                 </li>
+              </template>
+  
+              <template v-for="p in pageRange">
+                 <li class="page-item" :class="{active: p === page}">
+                    <a class="page-link" href="#" @click.prevent="goToPage(p)">{{p}}</a>
+                 </li>
+              </template>
+  
+              <template v-if="showLast">
+                 <li class="page-item" aria-current="page">
+                    <a class="page-link">...</a>
+                 </li>
+                 <li class="page-item" aria-current="page">
+                    <a class="page-link" href="#" @click.prevent="goToPage(total)">{{total}}</a>
+                 </li>
+              </template>
+  
+              <li class="page-item" :class="{disabled: isDisableLast}">
+                 <a class="page-link" href="#" @click.prevent="goToPage(page+1)">Next</a>
+              </li>
+           </ul>
         </nav>
     </template>
 

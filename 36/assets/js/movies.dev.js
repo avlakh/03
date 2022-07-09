@@ -25,6 +25,50 @@ var Pagination = {
       required: true
     }
   },
+  computed: {
+    isDisabledFirst: function isDisabledFirst() {
+      return this.page === 1;
+    },
+    isDisabledLast: function isDisabledLast() {
+      return this.page === this.total;
+    },
+    showFirst: function showFirst() {
+      return this.page > 4 && this.total > 6;
+    },
+    showLast: function showLast() {
+      return this.page < this.total - 3 && this.total > 6;
+    },
+    pageRange: function pageRange() {
+      var from = this.page - 2;
+      var to = this.page + 2;
+
+      if (this.page < 5) {
+        from = 1;
+        to = 5;
+      }
+
+      if (this.page > this.total - 4) {
+        from = this.total - 4;
+        to = this.total;
+      }
+
+      if (from < 1) {
+        from = 1;
+      }
+
+      if (to > this.total) {
+        to = total;
+      }
+
+      if (this.total === 6) {
+        from = 1;
+      }
+
+      return Array(to - from + 1).fill().map(function (_, idx) {
+        return from + idx;
+      });
+    }
+  },
   methods: {
     goToPage: function goToPage(new_page) {
       this.$emit('goToPage', new_page);
