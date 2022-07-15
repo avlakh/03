@@ -16,6 +16,16 @@ const routes = [
     path: '/SiteFeatures',
     name: 'SiteFeatures',
     component: () => import('../views/SiteFeatures.vue')
+  },
+  {
+    path: '/mynews',
+    name: 'MyNews',
+    component: () => import ('../views/mynews/NewsList.vue')
+  },
+  {
+    path: '/mynews/:title',
+    name: 'MyOneNews',
+    component: () => import ('../views/mynews/OneNews.vue')
   }
 ]
 

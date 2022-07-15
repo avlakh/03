@@ -37,6 +37,22 @@ var routes = [{
       return _interopRequireWildcard(require('../views/SiteFeatures.vue'));
     });
   }
+}, {
+  path: '/mynews',
+  name: 'MyNews',
+  component: function component() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require('../views/mynews/NewsList.vue'));
+    });
+  }
+}, {
+  path: '/mynews/:title',
+  name: 'MyOneNews',
+  component: function component() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require('../views/mynews/OneNews.vue'));
+    });
+  }
 }];
 var router = (0, _vueRouter.createRouter)({
   history: (0, _vueRouter.createWebHashHistory)(),

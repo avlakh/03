@@ -1,7 +1,6 @@
 <template>
     <h1>Features</h1>
     <FeaturesList/>
-    <component/>
 </template>
 
 <script>

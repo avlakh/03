@@ -635,33 +635,33 @@ h6 {
   height: 100%;
 }
 
-.benefits {
+.features {
   padding: 128px 0;
 }
-.benefits h2 {
+.features h2 {
   text-align: center;
   width: 50%;
   margin: 0 auto;
   margin-bottom: 48px;
 }
 
-.benefits_grid {
+.features_grid {
   display: grid;
   grid-template: 1fr/1fr 1fr 1fr;
   gap: 32px;
   margin-bottom: 48px;
 }
-.benefits_grid .benefits_card {
+.features_grid .features_card {
   background-color: #F4F6FC;
   padding: 48px 32px 42px 48px;
 }
-.benefits_grid .benefits_card img {
+.features_grid .features_card img {
   padding-bottom: 25px;
 }
-.benefits_grid .benefits_card h6 {
+.features_grid .features_card h6 {
   padding-bottom: 12px;
 }
-.benefits_grid .benefits_card p {
+.features_grid .features_card p {
   line-height: 28px;
   color: rgba(40, 41, 56, 0.7);
 }

@@ -258,7 +258,7 @@ h6 {
 // benefits
 // reused features from the index.scss
 
-.benefits {
+.features {
     padding: 128px 0;
     h2 {
         text-align: center;
@@ -268,12 +268,12 @@ h6 {
     }
 }
 
-.benefits_grid {
+.features_grid {
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr;
     gap: 32px;
     margin-bottom: 48px;
-    .benefits_card {
+    .features_card {
         background-color: $grey;
         padding: 48px 32px 42px 48px;
         img {

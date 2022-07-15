@@ -1,15 +1,17 @@
 <template>
   <div class="home">
-    <SiteFeatures/>
+    <last-news/>
+    <!-- <SiteFeatures/> -->
   </div>
 </template>
 
 <script>
-import SiteFeatures from './SiteFeatures.vue'
+// import SiteFeatures from './SiteFeatures.vue'
+import LastNews from './mynews/LastNews.vue'
 // @ is an alias to /src
 
 export default {
-  components:  {SiteFeatures },
-  name: 'SiteFeatures',
+  components:  {/*SiteFeatures*/ LastNews },
+  // name: 'SiteFeatures',
 }
 </script>
