@@ -161,10 +161,10 @@ var App = {
         var item = this.movieList[index];
         item.inFav = true;
         this.favorites.push(item);
-        this.showPopup("Added to favorites.");
+        this.showPopup('Added to favorites.');
       } else {
         this.favorites.splice(index2, 1);
-        this.showPopup("Removed from favorites.");
+        this.showPopup('Removed from favorites.');
       }
 
       localStorage.setItem('favorite_films', JSON.stringify(this.favorites));
@@ -223,11 +223,11 @@ var App = {
     showPopup: function showPopup(text) {
       var popup = document.getElementById('pop_up');
       var html = '';
-      html += "\n            <div class=\"modal_overlay\">\n                <div class=\"my_modal animate__animated animate__rotateIn text-center\">\n                <h5><b>".concat(text, "</b><h5>\n                </div>\n            </div>\n            ");
-      popup.insertAdjacentHTML("afterbegin", html);
+      html += "\n            <div class=\"modal_overlay\">\n                <div class=\"my_modal animate__animated animate__tada text-center\">\n                <h5><b>".concat(text, "</b><h5>\n                </div>\n            </div>\n            ");
+      popup.insertAdjacentHTML('afterbegin', html);
       setTimeout(function () {
-        var el = document.querySelector(".modal_overlay");
-        el.classList.add("display_none");
+        var el = document.querySelector('.modal_overlay');
+        el.classList.add('display_none');
       }, 1500);
     }
   }
